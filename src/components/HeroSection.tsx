@@ -1,11 +1,8 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-
 const HeroSection = () => {
-  return (
-    <div className="hero-gradient py-20 md:py-28 px-4">
+  return <div className="hero-gradient py-20 md:py-28 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center md:text-left md:flex md:items-center md:justify-between">
           <div className="md:w-1/2">
@@ -13,9 +10,7 @@ const HeroSection = () => {
               <span className="block">Gabriel PELENGA MANGI</span>
               <span className="block text-primary mt-1">Data Analyst</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto md:mx-0">
-              Spécialiste en analyse de données avec expertise en Power BI, visualisation de données et automatisation de process et de données
-            </p>
+            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto md:mx-0">Je délivre des insights clairs et automatisés à partir de vos données, grâce à une maîtrise avancée de Power BI et de la visualisation.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <Button asChild size="lg" className="rounded-full px-8">
                 <Link to="/cv">Mon CV</Link>
@@ -37,8 +32,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default HeroSection;

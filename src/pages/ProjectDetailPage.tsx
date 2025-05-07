@@ -58,7 +58,7 @@ const ProjectDetailPage = () => {
               <img src={project.image} alt={project.title} className="w-full h-full object-cover" onError={e => {
               // Fallback on error
               const target = e.target as HTMLImageElement;
-              target.src = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71';
+              target.src = 'https://www.onpointbasketball.com/wp-content/uploads/2023/04/NBA-logo-white-background.png';
             }} />
             </div>
           </div>

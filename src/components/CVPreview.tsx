@@ -3,47 +3,48 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Link } from 'react-router-dom';
 
 const CVPreview = () => {
   const skills = [
-    'Power BI', 'Excel', 'SQL', 'Data Analysis', 'Tableau', 'Python', 'R', 'Data Visualization'
+    'Python', 'SQL', 'Power BI', 'Excel', 'Tableau', 'Databricks', 'KPI commerciaux', 'Méthode Agile'
   ];
   
   const experiences = [
     {
-      title: 'Data Analyst',
-      company: 'Entreprise ABC',
-      period: '2020 - Présent',
-      description: 'Analyse de données et création de tableaux de bord Power BI pour le suivi des KPIs.'
+      title: 'Analyst BI & Analyst Performance commerciales',
+      company: 'Vérisure',
+      period: 'Septembre 2024 - Présent',
+      description: 'Gestion de données commerciales et analyse des KPI commerciales.'
     },
     {
-      title: 'Analyste Business Intelligence',
-      company: 'Société XYZ',
-      period: '2018 - 2020',
-      description: 'Développement de solutions BI et analyse de données commerciales.'
+      title: 'Chef de projet & Business Analyst',
+      company: 'Greenflex / Total Energie',
+      period: 'Avril 2024 - Septembre 2024',
+      description: 'Gestion de paramétrage de données clients et pilotage de projet en agilité.'
     }
   ];
   
   const education = [
     {
-      degree: 'Master en Data Science',
-      school: 'Université de Paris',
-      year: '2018'
+      degree: 'MSc Analytics for Business',
+      school: 'Eugenia School (Paris 10)',
+      year: '2024 - 2026'
     },
     {
-      degree: 'Licence en Statistiques',
-      school: 'Université de Lyon',
-      year: '2016'
+      degree: 'Bachelor Responsable Marketing Commercial',
+      school: 'CFA Codis (Paris 10)',
+      year: '2022 - 2023'
     }
   ];
   
   return (
     <Card className="p-6 shadow-md">
       <div className="mb-8">
-        <h2 className="text-2xl font-bold mb-2">John Doe</h2>
-        <h3 className="text-xl text-primary mb-2">Data Analyst</h3>
+        <h2 className="text-2xl font-bold mb-2">Gabriel PELENGA MANGI</h2>
+        <h3 className="text-xl text-primary mb-2">MSc Analytics for Business | Business Analyst</h3>
         <p className="text-gray-600 mb-4">
-          Passionné par l'analyse de données et la création de visualisations percutantes pour faciliter la prise de décision.
+          Spécialiste en analyse de données commerciales qui combine expertise technique et vision stratégique pour transformer les données en décisions pertinentes.
         </p>
         <div className="flex justify-between items-center">
           <div>
@@ -51,17 +52,24 @@ const CVPreview = () => {
               <svg className="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
               </svg>
-              +33 6 12 34 56 78
+              06.72.62.01.65
             </p>
             <p className="flex items-center text-sm text-gray-600 mt-1">
               <svg className="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
               </svg>
-              john.doe@example.com
+              gabrielpelenga@gmail.com
+            </p>
+            <p className="flex items-center text-sm text-gray-600 mt-1">
+              <svg className="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>
+              En recherche d'alternance pour Septembre 2025
             </p>
           </div>
           <div>
-            <Button>Télécharger CV</Button>
+            <Button asChild>
+              <Link to="/cv">Voir CV Complet</Link>
+            </Button>
           </div>
         </div>
       </div>

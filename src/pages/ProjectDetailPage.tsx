@@ -69,10 +69,13 @@ const ProjectDetailPage = () => {
               <h2 className="text-2xl font-bold mb-4">Description du projet</h2>
               <div className="prose max-w-none">
                 
-                <p className="mb-4">Permettre à tous, connaisseurs comme novices, d'accéder facilement aux statistiques clés des meilleurs joueurs et de comparer leurs performances.</p>
+                <p className="mb-4">Ce tableau de bord Power BI a été créé pour offrir une visualisation claire et intuitive des performances des stars de la NBA durant la saison 2023-2024.
+
+
+Permettre à tous, connaisseurs comme novices, d'accéder facilement aux statistiques clés des meilleurs joueurs et de comparer leurs performances.</p>
                 <h3 className="text-xl font-bold mt-6 mb-2">Objectifs</h3>
                 <ul className="list-disc pl-6 mb-4 space-y-1">
-                  <li>Centraliser les données de différentes sources en un tableau de bord unique</li>
+                  <li>Visualisation des statistiques essentielles (points, passes, rebonds</li>
                   <li>Permettre une analyse en temps réel des performances commerciales</li>
                   <li>Faciliter l'identification des tendances et des anomalies</li>
                   <li>Créer des visualisations interactives pour une meilleure prise de décision</li>

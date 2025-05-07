@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -7,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const CVPreview = () => {
   const skills = [
-    'Python', 'SQL', 'Power BI', 'Excel', 'Tableau', 'Databricks', 'KPI commerciaux', 'Méthode Agile'
+    'Python', 'SQL', 'Power BI', 'Excel', 'Tableau', 'Databricks', 'KPI commerciaux', 'Méthode Agile', 'Automatisation'
   ];
   
   const experiences = [
@@ -44,7 +43,7 @@ const CVPreview = () => {
         <h2 className="text-2xl font-bold mb-2">Gabriel PELENGA MANGI</h2>
         <h3 className="text-xl text-primary mb-2">MSc Analytics for Business | Business Analyst</h3>
         <p className="text-gray-600 mb-4">
-          Spécialiste en analyse de données commerciales qui combine expertise technique et vision stratégique pour transformer les données en décisions pertinentes.
+          Spécialiste en analyse de données commerciales qui combine expertise technique, vision stratégique et automatisation de process pour transformer les données en décisions pertinentes.
         </p>
         <div className="flex justify-between items-center">
           <div>

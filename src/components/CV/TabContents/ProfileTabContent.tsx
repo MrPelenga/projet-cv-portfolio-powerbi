@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const ProfileTabContent = () => {
@@ -11,9 +10,9 @@ const ProfileTabContent = () => {
           technique et vision stratégique pour transformer les données en décisions pertinentes.
         </p>
         <p>
-          Professionnel polyvalent avec une solide expérience en gestion de projets et 
-          analyse commerciale, cherchant à déployer ses compétences en data science et 
-          business intelligence dans un environnement stimulant.
+          Professionnel polyvalent avec une solide expérience en gestion de projets,  
+          analyse commerciale et automatisation de process et de données, cherchant à déployer 
+          ses compétences en data science et business intelligence dans un environnement stimulant.
         </p>
       </div>
       
@@ -28,7 +27,7 @@ const ProfileTabContent = () => {
             </div>
             <div>
               <h4 className="font-medium">Business Analyst avec expertise BI</h4>
-              <p className="text-sm text-gray-600">Analyse de données et visualisation</p>
+              <p className="text-sm text-gray-600">Analyse de données, visualisation et automatisation</p>
             </div>
           </div>
           

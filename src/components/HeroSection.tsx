@@ -14,7 +14,7 @@ const HeroSection = () => {
               <span className="block text-primary mt-1">Data Analyst</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto md:mx-0">
-              Spécialiste en analyse de données avec expertise en Power BI et visualisation de données
+              Spécialiste en analyse de données avec expertise en Power BI, visualisation de données et automatisation de process et de données
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <Button asChild size="lg" className="rounded-full px-8">

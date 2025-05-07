@@ -20,12 +20,7 @@ const Index = () => {
             <h2 className="section-title text-center mb-12">À Propos</h2>
             <div className="bg-white rounded-xl shadow-md p-8 max-w-3xl mx-auto">
               <p className="text-lg mb-6">Bienvenue sur mon portfolio professionnel. Je suis un spécialiste de l'analyse de données passionné par la création de tableaux de bord interactifs et percutants avec Power BI. Mon objectif principal est de transformer des données brutes et complexes en insights clairs et actionnables, permettant ainsi aux entreprises de prendre des décisions éclairées et stratégiques.</p>
-              <p className="text-lg">
-                Avec plusieurs années d'expérience dans le domaine de la Business Intelligence, 
-                j'ai développé une expertise particulière dans la visualisation de données et 
-                les analyses prédictives. Parcourez mon CV et mes projets pour en savoir plus 
-                sur mon travail.
-              </p>
+              <p className="text-lg">Fort d'une expérience pratique acquise au fil de mes projets en alternance dans le domaine de la Business Intelligence, j'ai développé une expertise solide en visualisation de données, en identification de tendances clés et en analyses prédictives.</p>
             </div>
           </div>
         </section>

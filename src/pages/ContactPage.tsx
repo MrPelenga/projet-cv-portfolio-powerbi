@@ -1,0 +1,77 @@
+
+import React from 'react';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import ContactForm from '@/components/ContactForm';
+import { Mail, Linkedin, Phone } from 'lucide-react';
+
+const ContactPage = () => {
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Navbar />
+      
+      <main className="flex-grow py-16 px-4 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <h1 className="text-4xl font-bold text-center mb-12">Contact</h1>
+          
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Informations de contact */}
+            <div className="bg-white rounded-xl shadow-md p-8">
+              <h2 className="text-2xl font-semibold mb-6">Mes Coordonnées</h2>
+              
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="bg-primary/10 p-3 rounded-full">
+                    <Mail className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Email</p>
+                    <a href="mailto:gabrielpelenga@gmail.com" className="font-medium hover:text-primary transition-colors">
+                      gabrielpelenga@gmail.com
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-4">
+                  <div className="bg-primary/10 p-3 rounded-full">
+                    <Linkedin className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">LinkedIn</p>
+                    <a 
+                      href="https://www.linkedin.com/in/gabriel-pelenga-mangi-820487182/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="font-medium hover:text-primary transition-colors"
+                    >
+                      Gabriel PELENGA MANGI
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-4">
+                  <div className="bg-primary/10 p-3 rounded-full">
+                    <Phone className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Téléphone</p>
+                    <a href="tel:+33672620165" className="font-medium hover:text-primary transition-colors">
+                      06 72 62 01 65
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* Formulaire de contact */}
+            <ContactForm />
+          </div>
+        </div>
+      </main>
+      
+      <Footer />
+    </div>
+  );
+};
+
+export default ContactPage;

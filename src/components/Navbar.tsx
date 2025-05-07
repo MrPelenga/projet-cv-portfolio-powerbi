@@ -24,8 +24,8 @@ const Navbar = () => {
             <Link to="/projets" className="px-3 py-2 text-gray-700 hover:text-primary font-medium">
               Projets
             </Link>
-            <Button variant="outline" className="ml-4">
-              Contact
+            <Button asChild variant="outline" className="ml-4">
+              <Link to="/contact">Contact</Link>
             </Button>
           </div>
 

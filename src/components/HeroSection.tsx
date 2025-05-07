@@ -10,7 +10,7 @@ const HeroSection = () => {
         <div className="text-center md:text-left md:flex md:items-center md:justify-between">
           <div className="md:w-1/2">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
-              <span className="block">John Doe</span>
+              <span className="block">Gabriel PELENGA MANGI</span>
               <span className="block text-primary mt-1">Data Analyst</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto md:mx-0">

@@ -121,7 +121,7 @@ Permettre à tous, connaisseurs comme novices, d'accéder facilement aux statist
             <h2 className="text-2xl font-bold mb-6">Captures d'écran</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {[1, 2, 3].map(i => <div key={i} className="aspect-[4/3] rounded-md overflow-hidden shadow-sm">
-                  <img src={`https://images.unsplash.com/photo-1551288049-bebda4e38f71?h=300&w=400&fit=crop&q=80`} alt={`Capture d'écran ${i}`} className="w-full h-full object-cover" />
+                  <img src={`https://www.onpointbasketball.com/wp-content/uploads/2023/04/NBA-logo-white-background.png`} alt={`Capture d'écran ${i}`} className="w-full h-full object-cover" />
                 </div>)}
             </div>
           </div>
@@ -135,7 +135,7 @@ Permettre à tous, connaisseurs comme novices, d'accéder facilement aux statist
                     <img src={relatedProject.image} alt={relatedProject.title} className="w-full h-full object-cover" onError={e => {
                   // Fallback on error
                   const target = e.target as HTMLImageElement;
-                  target.src = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71';
+                  target.src = 'https://www.onpointbasketball.com/wp-content/uploads/2023/04/NBA-logo-white-background.png';
                 }} />
                   </div>
                   <CardContent className="p-4">

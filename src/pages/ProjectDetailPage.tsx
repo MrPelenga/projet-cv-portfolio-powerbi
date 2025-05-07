@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
@@ -7,16 +6,17 @@ import { projectsData } from '@/components/ProjectsList';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
-
 const ProjectDetailPage = () => {
-  const { id } = useParams<{ id: string }>();
-  
+  const {
+    id
+  } = useParams<{
+    id: string;
+  }>();
+
   // Find the project based on ID
   const project = projectsData.find(p => p.id === id);
-  
   if (!project) {
-    return (
-      <div className="flex flex-col min-h-screen">
+    return <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow flex items-center justify-center">
           <div className="text-center">
@@ -28,12 +28,9 @@ const ProjectDetailPage = () => {
           </div>
         </main>
         <Footer />
-      </div>
-    );
+      </div>;
   }
-  
-  return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
+  return <div className="flex flex-col min-h-screen bg-gray-50">
       <Navbar />
       
       <main className="flex-grow">
@@ -44,9 +41,7 @@ const ProjectDetailPage = () => {
               <div>
                 <h1 className="text-4xl font-bold mb-2">{project.title}</h1>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag) => (
-                    <Badge key={tag} variant="secondary">{tag}</Badge>
-                  ))}
+                  {project.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
                 </div>
               </div>
               <Button asChild variant="secondary">
@@ -60,16 +55,11 @@ const ProjectDetailPage = () => {
           {/* Project Image */}
           <div className="mb-10">
             <div className="aspect-[16/9] overflow-hidden rounded-lg shadow-md">
-              <img 
-                src={project.image} 
-                alt={project.title} 
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  // Fallback on error
-                  const target = e.target as HTMLImageElement;
-                  target.src = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71';
-                }}
-              />
+              <img src={project.image} alt={project.title} className="w-full h-full object-cover" onError={e => {
+              // Fallback on error
+              const target = e.target as HTMLImageElement;
+              target.src = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71';
+            }} />
             </div>
           </div>
           
@@ -78,13 +68,8 @@ const ProjectDetailPage = () => {
             <div className="md:col-span-2">
               <h2 className="text-2xl font-bold mb-4">Description du projet</h2>
               <div className="prose max-w-none">
-                <p className="mb-4">
-                  {project.description}
-                </p>
-                <p className="mb-4">
-                  Ce dashboard Power BI a été conçu pour offrir une vue d'ensemble complète des performances de l'entreprise,
-                  permettant aux décideurs d'identifier rapidement les tendances importantes et les opportunités d'amélioration.
-                </p>
+                
+                <p className="mb-4">Permettre à tous, connaisseurs comme novices, d'accéder facilement aux statistiques clés des meilleurs joueurs et de comparer leurs performances.</p>
                 <h3 className="text-xl font-bold mt-6 mb-2">Objectifs</h3>
                 <ul className="list-disc pl-6 mb-4 space-y-1">
                   <li>Centraliser les données de différentes sources en un tableau de bord unique</li>
@@ -132,15 +117,9 @@ const ProjectDetailPage = () => {
           <div className="mb-12">
             <h2 className="text-2xl font-bold mb-6">Captures d'écran</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="aspect-[4/3] rounded-md overflow-hidden shadow-sm">
-                  <img 
-                    src={`https://images.unsplash.com/photo-1551288049-bebda4e38f71?h=300&w=400&fit=crop&q=80`}
-                    alt={`Capture d'écran ${i}`} 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ))}
+              {[1, 2, 3].map(i => <div key={i} className="aspect-[4/3] rounded-md overflow-hidden shadow-sm">
+                  <img src={`https://images.unsplash.com/photo-1551288049-bebda4e38f71?h=300&w=400&fit=crop&q=80`} alt={`Capture d'écran ${i}`} className="w-full h-full object-cover" />
+                </div>)}
             </div>
           </div>
           
@@ -148,19 +127,13 @@ const ProjectDetailPage = () => {
           <div>
             <h2 className="text-2xl font-bold mb-6">Projets similaires</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {projectsData.filter(p => p.id !== project.id).slice(0, 3).map((relatedProject) => (
-                <Card key={relatedProject.id} className="overflow-hidden card-hover">
+              {projectsData.filter(p => p.id !== project.id).slice(0, 3).map(relatedProject => <Card key={relatedProject.id} className="overflow-hidden card-hover">
                   <div className="h-48 overflow-hidden">
-                    <img 
-                      src={relatedProject.image} 
-                      alt={relatedProject.title} 
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        // Fallback on error
-                        const target = e.target as HTMLImageElement;
-                        target.src = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71';
-                      }}
-                    />
+                    <img src={relatedProject.image} alt={relatedProject.title} className="w-full h-full object-cover" onError={e => {
+                  // Fallback on error
+                  const target = e.target as HTMLImageElement;
+                  target.src = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71';
+                }} />
                   </div>
                   <CardContent className="p-4">
                     <h3 className="font-bold mb-1">{relatedProject.title}</h3>
@@ -169,16 +142,13 @@ const ProjectDetailPage = () => {
                       <Link to={relatedProject.link}>Voir le projet</Link>
                     </Button>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </div>
       </main>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default ProjectDetailPage;

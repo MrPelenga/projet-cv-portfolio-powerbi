@@ -8,7 +8,7 @@ const HeroSection = () => {
           <div className="md:w-1/2">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
               <span className="block">Gabriel PELENGA MANGI</span>
-              <span className="block text-primary mt-1">Data Analyst</span>
+              <span className="block text-primary mt-1 text-left text-4xl">Business Data Analyst</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto md:mx-0">Je délivre des insights clairs et automatisés à partir de vos données, grâce à une maîtrise avancée de Power BI et de la visualisation.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">

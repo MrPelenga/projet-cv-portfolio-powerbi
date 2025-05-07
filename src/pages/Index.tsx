@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -7,10 +6,8 @@ import ProjectsList from '@/components/ProjectsList';
 import CVPreview from '@/components/CVPreview';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-
 const Index = () => {
-  return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
+  return <div className="flex flex-col min-h-screen bg-gray-50">
       <Navbar />
       
       <main className="flex-grow">
@@ -22,12 +19,7 @@ const Index = () => {
           <div className="max-w-7xl mx-auto">
             <h2 className="section-title text-center mb-12">À Propos</h2>
             <div className="bg-white rounded-xl shadow-md p-8 max-w-3xl mx-auto">
-              <p className="text-lg mb-6">
-                Bienvenue sur mon portfolio professionnel. Je suis spécialisé dans l'analyse de données 
-                et la création de tableaux de bord interactifs avec Power BI. Mon objectif est de transformer 
-                des données complexes en insights actionnables pour aider les entreprises à prendre 
-                des décisions éclairées.
-              </p>
+              <p className="text-lg mb-6">Bienvenue sur mon portfolio professionnel. Je suis un spécialiste de l'analyse de données passionné par la création de tableaux de bord interactifs et percutants avec Power BI. Mon objectif principal est de transformer des données brutes et complexes en insights clairs et actionnables, permettant ainsi aux entreprises de prendre des décisions éclairées et stratégiques.</p>
               <p className="text-lg">
                 Avec plusieurs années d'expérience dans le domaine de la Business Intelligence, 
                 j'ai développé une expertise particulière dans la visualisation de données et 
@@ -92,8 +84,6 @@ const Index = () => {
       </main>
       
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;

@@ -21,7 +21,7 @@ export const projectsData: Project[] = [
     id: '1',
     title: 'Dashboard Power BI',
     description: 'Analyse complète des ventes et tendances avec visualisations interactives.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71',
+    image: 'https://www.onpointbasketball.com/wp-content/uploads/2023/04/NBA-logo-white-background.png',
     tags: ['Power BI', 'Data Analysis', 'Dashboard'],
     link: '/projets/1'
   },

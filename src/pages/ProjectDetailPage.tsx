@@ -108,7 +108,7 @@ const ProjectDetailPage = () => {
                       <p className="">{project.tags.join(', ')}</p>
                     </div>
                     <div className="pt-4">
-                      <Button className="w-full">Voir la démo</Button>
+                      
                     </div>
                   </div>
                 </CardContent>

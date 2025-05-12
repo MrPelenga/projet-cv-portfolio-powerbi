@@ -29,7 +29,7 @@ export const projectsData: Project[] = [
     id: '2',
     title: 'Gofusion EcoVeille',
     description: 'Scénario Make automatisant la collecte d\'informations environnementales pour générer du contenu pour le blog de Gofusion.',
-    image: '/lovable-uploads/258bfcae-02ac-4615-aa7d-2b85de87455f.png',
+    image: '/lovable-uploads/8dd28d84-ffbf-4033-b95a-c923bf8eec21.png',
     tags: ['Make', 'API', 'SEO'],
     link: '/projets/2'
   },
@@ -59,7 +59,7 @@ const ProjectsList = ({ limit }: ProjectsListProps) => {
             <img 
               src={project.image} 
               alt={project.title} 
-              className="w-full h-full object-cover"
+              className={project.id === '2' ? "w-full h-full object-contain p-4" : "w-full h-full object-cover"}
               onError={(e) => {
                 // Fallback on error
                 const target = e.target as HTMLImageElement;

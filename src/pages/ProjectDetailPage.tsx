@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
@@ -6,15 +7,13 @@ import { projectsData } from '@/components/ProjectsList';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
+
 const ProjectDetailPage = () => {
-  const {
-    id
-  } = useParams<{
-    id: string;
-  }>();
+  const { id } = useParams<{ id: string }>();
 
   // Find the project based on ID
   const project = projectsData.find(p => p.id === id);
+  
   if (!project) {
     return <div className="flex flex-col min-h-screen">
         <Navbar />
@@ -35,7 +34,12 @@ const ProjectDetailPage = () => {
   const nbaPlayerImages = id === "1" ? ["/lovable-uploads/7daacdd5-4076-4c9d-b6ad-a88f7af23b74.png", "/lovable-uploads/dbf798b8-ca51-4501-8ccc-ce557c7d069b.png", "/lovable-uploads/654a5bfc-a418-4c15-b506-4a58c490231c.png"] : [];
   
   // Gofusion EcoVeille images for project ID 2
-  const gofusionImages = id === "2" ? ["/lovable-uploads/258bfcae-02ac-4615-aa7d-2b85de87455f.png", "/lovable-uploads/d533ed2d-dfd2-40a6-8fa7-e2ee98933758.png", "/lovable-uploads/e8e183ec-d9c6-4565-b923-f22434466752.png"] : [];
+  const gofusionImages = id === "2" ? [
+    "/lovable-uploads/8dd28d84-ffbf-4033-b95a-c923bf8eec21.png",
+    "/lovable-uploads/258bfcae-02ac-4615-aa7d-2b85de87455f.png", 
+    "/lovable-uploads/d533ed2d-dfd2-40a6-8fa7-e2ee98933758.png", 
+    "/lovable-uploads/e8e183ec-d9c6-4565-b923-f22434466752.png"
+  ] : [];
   
   return <div className="flex flex-col min-h-screen bg-gray-50">
       <Navbar />
@@ -135,8 +139,12 @@ const ProjectDetailPage = () => {
                   <img src={imgSrc} alt={`Dashboard NBA Statistiques ${index + 1}`} className="w-full h-full object-cover" />
                 </div>
               )) : id === "2" ? gofusionImages.map((imgSrc, index) => (
-                <div key={index} className="aspect-video rounded-md overflow-hidden shadow-lg border border-gray-200">
-                  <img src={imgSrc} alt={`Gofusion EcoVeille ${index + 1}`} className="w-full h-full object-cover" />
+                <div key={index} className={`aspect-video rounded-md overflow-hidden shadow-lg border border-gray-200 ${index === 0 ? "flex items-center justify-center bg-white" : ""}`}>
+                  <img 
+                    src={imgSrc} 
+                    alt={`Gofusion EcoVeille ${index + 1}`} 
+                    className={index === 0 ? "w-3/4 h-auto object-contain" : "w-full h-full object-cover"} 
+                  />
                 </div>
               )) : [1, 2, 3].map(i => (
                 <div key={i} className="aspect-[4/3] rounded-md overflow-hidden shadow-sm">
@@ -174,4 +182,5 @@ const ProjectDetailPage = () => {
       <Footer />
     </div>;
 };
+
 export default ProjectDetailPage;

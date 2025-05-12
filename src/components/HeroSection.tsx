@@ -1,6 +1,9 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+
 const HeroSection = () => {
   return <div className="hero-gradient py-20 md:py-28 px-4">
       <div className="max-w-7xl mx-auto">
@@ -10,7 +13,7 @@ const HeroSection = () => {
               <span className="block">Gabriel PELENGA MANGI</span>
               <span className="block text-primary mt-1 text-left text-4xl">Business Data Analyst</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto md:mx-0">Je délivre des insights clairs et automatisés à partir de vos données, grâce à une maîtrise avancée de Power BI et de la visualisation.</p>
+            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto md:mx-0">Je délivre des insights clairs et automatisés à partir de vos données, grâce à une maîtrise avancée de Power BI et de la visualisation et automatisation de process et de données.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <Button asChild size="lg" className="rounded-full px-8">
                 <Link to="/cv">Mon CV</Link>
@@ -22,11 +25,12 @@ const HeroSection = () => {
           </div>
           <div className="md:w-1/2 mt-12 md:mt-0 flex justify-center">
             <div className="bg-white rounded-full p-1 shadow-xl">
-              <div className="w-40 h-40 md:w-56 md:h-56 rounded-full bg-gray-300 overflow-hidden">
-                {/* Placeholder pour photo de profil - remplacez par votre photo */}
-                <svg className="h-full w-full text-gray-400" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 14.25c-4.65 0-8.25 1.83-8.25 4.15V20h16.5v-1.6c0-2.32-3.6-4.15-8.25-4.15ZM12 13c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4Z" />
-                </svg>
+              <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden">
+                <img 
+                  src="/lovable-uploads/a800ede8-6357-4e94-b0f9-df456a52625c.png" 
+                  alt="Gabriel PELENGA MANGI" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>

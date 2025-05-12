@@ -27,10 +27,10 @@ export const projectsData: Project[] = [
   },
   {
     id: '2',
-    title: 'Analyse Financière',
-    description: 'Rapport financier avec prévisions et tendances historiques.',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f',
-    tags: ['Finance', 'Power BI', 'Forecasting'],
+    title: 'Gofusion EcoVeille',
+    description: 'Scénario Make automatisant la collecte d\'informations environnementales pour générer du contenu pour le blog de Gofusion.',
+    image: '/lovable-uploads/258bfcae-02ac-4615-aa7d-2b85de87455f.png',
+    tags: ['Make', 'API', 'SEO'],
     link: '/projets/2'
   },
   {

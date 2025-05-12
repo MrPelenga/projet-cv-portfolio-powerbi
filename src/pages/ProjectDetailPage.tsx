@@ -33,6 +33,10 @@ const ProjectDetailPage = () => {
 
   // NBA player images for project ID 1
   const nbaPlayerImages = id === "1" ? ["/lovable-uploads/7daacdd5-4076-4c9d-b6ad-a88f7af23b74.png", "/lovable-uploads/dbf798b8-ca51-4501-8ccc-ce557c7d069b.png", "/lovable-uploads/654a5bfc-a418-4c15-b506-4a58c490231c.png"] : [];
+  
+  // Gofusion EcoVeille images for project ID 2
+  const gofusionImages = id === "2" ? ["/lovable-uploads/258bfcae-02ac-4615-aa7d-2b85de87455f.png", "/lovable-uploads/d533ed2d-dfd2-40a6-8fa7-e2ee98933758.png", "/lovable-uploads/e8e183ec-d9c6-4565-b923-f22434466752.png"] : [];
+  
   return <div className="flex flex-col min-h-screen bg-gray-50">
       <Navbar />
       
@@ -71,22 +75,28 @@ const ProjectDetailPage = () => {
             <div className="md:col-span-2">
               <h2 className="text-2xl font-bold mb-4">Description du projet</h2>
               <div className="prose max-w-none">
-                
-                <p className="mb-4">Ce scénario Make automatise la collecte d'informations provenant de sites web spécialisés dans l'environnement et le développement durable. L'objectif est de générer du contenu pertinent et actualisé pour le blog de l'entreprise Gofusion. Ce processus permet d'assurer une veille informative efficace sur les thématiques environnementales, facilitant ainsi la création régulière d'articles de qualité alignés avec les valeurs et l'expertise de Gofusion</p>
-                <h3 className="text-xl font-bold mt-6 mb-2">Objectifs</h3>
-                <ul className="list-disc pl-6 mb-4 space-y-1">
-                  <li>Automatiser la veille informationnelle sur les thématiques environnementales et de développement durable</li>
-                  <li>Gagner du temps dans le processus de création de contenu pour le blog</li>
-                  <li>Alimenter le blog de Gofusion avec du contenu pertinent et à jour</li>
-                  <li>Collecter régulièrement des informations actualisées depuis des sources spécialisées fiables</li>
-                </ul>
-                <h3 className="text-xl font-bold mt-6 mb-2">Technologies utilisées</h3>
-                <ul className="list-disc pl-6 mb-4 space-y-1">
-                  <li>MAKE</li>
-                  <li>GSheet</li>
-                  <li>API</li>
-                  <li>SEranking</li>
-                </ul>
+                {id === "2" ? (
+                  <>
+                    <p className="mb-4">Ce scénario Make automatise la collecte d'informations provenant de sites web spécialisés dans l'environnement et le développement durable. L'objectif est de générer du contenu pertinent et actualisé pour le blog de l'entreprise Gofusion. Ce processus permet d'assurer une veille informative efficace sur les thématiques environnementales, facilitant ainsi la création régulière d'articles de qualité alignés avec les valeurs et l'expertise de Gofusion</p>
+                    <h3 className="text-xl font-bold mt-6 mb-2">Objectifs</h3>
+                    <ul className="list-disc pl-6 mb-4 space-y-1">
+                      <li>Automatiser la veille informationnelle sur les thématiques environnementales et de développement durable</li>
+                      <li>Gagner du temps dans le processus de création de contenu pour le blog</li>
+                      <li>Alimenter le blog de Gofusion avec du contenu pertinent et à jour</li>
+                      <li>Collecter régulièrement des informations actualisées depuis des sources spécialisées fiables</li>
+                    </ul>
+                    <h3 className="text-xl font-bold mt-6 mb-2">Technologies utilisées</h3>
+                    <ul className="list-disc pl-6 mb-4 space-y-1">
+                      <li>MAKE</li>
+                      <li>GSheet</li>
+                      <li>API</li>
+                      <li>SEranking</li>
+                    </ul>
+                  </>
+                ) : (
+                  // Keep existing description for other projects
+                  <p className="mb-4">Ce scénario Make automatise la collecte d'informations provenant de sites web spécialisés dans l'environnement et le développement durable. L'objectif est de générer du contenu pertinent et actualisé pour le blog de l'entreprise Gofusion. Ce processus permet d'assurer une veille informative efficace sur les thématiques environnementales, facilitant ainsi la création régulière d'articles de qualité alignés avec les valeurs et l'expertise de Gofusion</p>
+                )}
               </div>
             </div>
             
@@ -116,15 +126,23 @@ const ProjectDetailPage = () => {
             </div>
           </div>
           
-          {/* Gallery - Use specific NBA images for project with ID 1 */}
+          {/* Gallery - Use specific NBA images for project with ID 1 or Gofusion images for project with ID 2 */}
           <div className="mb-12">
             <h2 className="text-2xl font-bold mb-6">Captures d'écran</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {id === "1" ? nbaPlayerImages.map((imgSrc, index) => <div key={index} className="aspect-video rounded-md overflow-hidden shadow-lg border border-gray-200">
-                    <img src={imgSrc} alt={`Dashboard NBA Statistiques ${index + 1}`} className="w-full h-full object-cover" />
-                  </div>) : [1, 2, 3].map(i => <div key={i} className="aspect-[4/3] rounded-md overflow-hidden shadow-sm">
-                    <img src={`https://www.onpointbasketball.com/wp-content/uploads/2023/04/NBA-logo-white-background.png`} alt={`Capture d'écran ${i}`} className="w-full h-full object-cover" />
-                  </div>)}
+              {id === "1" ? nbaPlayerImages.map((imgSrc, index) => (
+                <div key={index} className="aspect-video rounded-md overflow-hidden shadow-lg border border-gray-200">
+                  <img src={imgSrc} alt={`Dashboard NBA Statistiques ${index + 1}`} className="w-full h-full object-cover" />
+                </div>
+              )) : id === "2" ? gofusionImages.map((imgSrc, index) => (
+                <div key={index} className="aspect-video rounded-md overflow-hidden shadow-lg border border-gray-200">
+                  <img src={imgSrc} alt={`Gofusion EcoVeille ${index + 1}`} className="w-full h-full object-cover" />
+                </div>
+              )) : [1, 2, 3].map(i => (
+                <div key={i} className="aspect-[4/3] rounded-md overflow-hidden shadow-sm">
+                  <img src={`https://www.onpointbasketball.com/wp-content/uploads/2023/04/NBA-logo-white-background.png`} alt={`Capture d'écran ${i}`} className="w-full h-full object-cover" />
+                </div>
+              ))}
             </div>
           </div>
           

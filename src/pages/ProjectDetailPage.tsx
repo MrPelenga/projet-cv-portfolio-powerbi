@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
@@ -7,13 +6,15 @@ import { projectsData } from '@/components/ProjectsList';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
-
 const ProjectDetailPage = () => {
-  const { id } = useParams<{ id: string }>();
+  const {
+    id
+  } = useParams<{
+    id: string;
+  }>();
 
   // Find the project based on ID
   const project = projectsData.find(p => p.id === id);
-  
   if (!project) {
     return <div className="flex flex-col min-h-screen">
         <Navbar />
@@ -29,14 +30,9 @@ const ProjectDetailPage = () => {
         <Footer />
       </div>;
   }
-  
+
   // NBA player images for project ID 1
-  const nbaPlayerImages = id === "1" ? [
-    "/lovable-uploads/7daacdd5-4076-4c9d-b6ad-a88f7af23b74.png",
-    "/lovable-uploads/dbf798b8-ca51-4501-8ccc-ce557c7d069b.png",
-    "/lovable-uploads/654a5bfc-a418-4c15-b506-4a58c490231c.png"
-  ] : [];
-  
+  const nbaPlayerImages = id === "1" ? ["/lovable-uploads/7daacdd5-4076-4c9d-b6ad-a88f7af23b74.png", "/lovable-uploads/dbf798b8-ca51-4501-8ccc-ce557c7d069b.png", "/lovable-uploads/654a5bfc-a418-4c15-b506-4a58c490231c.png"] : [];
   return <div className="flex flex-col min-h-screen bg-gray-50">
       <Navbar />
       
@@ -76,10 +72,7 @@ const ProjectDetailPage = () => {
               <h2 className="text-2xl font-bold mb-4">Description du projet</h2>
               <div className="prose max-w-none">
                 
-                <p className="mb-4">Ce tableau de bord Power BI a été créé pour offrir une visualisation claire et intuitive des performances des stars de la NBA durant la saison 2023-2024.
-
-
-Permettre à tous, connaisseurs comme novices, d'accéder facilement aux statistiques clés des meilleurs joueurs et de comparer leurs performances.</p>
+                <p className="mb-4">Ce scénario Make automatise la collecte d'informations provenant de sites web spécialisés dans l'environnement et le développement durable. L'objectif est de générer du contenu pertinent et actualisé pour le blog de l'entreprise Gofusion. Ce processus permet d'assurer une veille informative efficace sur les thématiques environnementales, facilitant ainsi la création régulière d'articles de qualité alignés avec les valeurs et l'expertise de Gofusion</p>
                 <h3 className="text-xl font-bold mt-6 mb-2">Objectifs</h3>
                 <ul className="list-disc pl-6 mb-4 space-y-1">
                   <li>Visualisation des statistiques essentielles (points, passes, rebonds)</li>
@@ -104,15 +97,15 @@ Permettre à tous, connaisseurs comme novices, d'accéder facilement aux statist
                   <div className="space-y-4">
                     <div>
                       <h4 className="font-semibold text-gray-600">Client</h4>
-                      <p>NBA Analytics Team</p>
+                      <p>Gofusion</p>
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-600">Période</h4>
-                      <p>Saison NBA 2023-2024</p>
+                      <p>Mars 2025</p>
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-600">Catégorie</h4>
-                      <p>{project.tags.join(', ')}</p>
+                      <p className="">{project.tags.join(', ')}</p>
                     </div>
                     <div className="pt-4">
                       <Button className="w-full">Voir la démo</Button>
@@ -127,27 +120,11 @@ Permettre à tous, connaisseurs comme novices, d'accéder facilement aux statist
           <div className="mb-12">
             <h2 className="text-2xl font-bold mb-6">Captures d'écran</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {id === "1" ? (
-                nbaPlayerImages.map((imgSrc, index) => (
-                  <div key={index} className="aspect-video rounded-md overflow-hidden shadow-lg border border-gray-200">
-                    <img 
-                      src={imgSrc} 
-                      alt={`Dashboard NBA Statistiques ${index + 1}`} 
-                      className="w-full h-full object-cover" 
-                    />
-                  </div>
-                ))
-              ) : (
-                [1, 2, 3].map(i => (
-                  <div key={i} className="aspect-[4/3] rounded-md overflow-hidden shadow-sm">
-                    <img 
-                      src={`https://www.onpointbasketball.com/wp-content/uploads/2023/04/NBA-logo-white-background.png`} 
-                      alt={`Capture d'écran ${i}`} 
-                      className="w-full h-full object-cover" 
-                    />
-                  </div>
-                ))
-              )}
+              {id === "1" ? nbaPlayerImages.map((imgSrc, index) => <div key={index} className="aspect-video rounded-md overflow-hidden shadow-lg border border-gray-200">
+                    <img src={imgSrc} alt={`Dashboard NBA Statistiques ${index + 1}`} className="w-full h-full object-cover" />
+                  </div>) : [1, 2, 3].map(i => <div key={i} className="aspect-[4/3] rounded-md overflow-hidden shadow-sm">
+                    <img src={`https://www.onpointbasketball.com/wp-content/uploads/2023/04/NBA-logo-white-background.png`} alt={`Capture d'écran ${i}`} className="w-full h-full object-cover" />
+                  </div>)}
             </div>
           </div>
           
@@ -179,5 +156,4 @@ Permettre à tous, connaisseurs comme novices, d'accéder facilement aux statist
       <Footer />
     </div>;
 };
-
 export default ProjectDetailPage;

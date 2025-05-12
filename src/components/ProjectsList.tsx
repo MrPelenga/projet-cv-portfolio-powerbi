@@ -19,10 +19,10 @@ export interface Project {
 export const projectsData: Project[] = [
   {
     id: '1',
-    title: 'Dashboard Power BI',
-    description: 'Analyse complète des ventes et tendances avec visualisations interactives.',
-    image: 'https://www.onpointbasketball.com/wp-content/uploads/2023/04/NBA-logo-white-background.png',
-    tags: ['Power BI', 'Data Analysis', 'Dashboard'],
+    title: 'Dashboard NBA Stats',
+    description: 'Tableau de bord Power BI présentant les statistiques des stars de la NBA pour la saison 2023-2024 avec visualisations interactives.',
+    image: '/lovable-uploads/7daacdd5-4076-4c9d-b6ad-a88f7af23b74.png',
+    tags: ['Power BI', 'Data Analysis', 'Dashboard', 'NBA'],
     link: '/projets/1'
   },
   {

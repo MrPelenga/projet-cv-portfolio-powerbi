@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
@@ -6,15 +7,13 @@ import { projectsData } from '@/components/ProjectsList';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
+
 const ProjectDetailPage = () => {
-  const {
-    id
-  } = useParams<{
-    id: string;
-  }>();
+  const { id } = useParams<{ id: string }>();
 
   // Find the project based on ID
   const project = projectsData.find(p => p.id === id);
+  
   if (!project) {
     return <div className="flex flex-col min-h-screen">
         <Navbar />
@@ -30,6 +29,14 @@ const ProjectDetailPage = () => {
         <Footer />
       </div>;
   }
+  
+  // NBA player images for project ID 1
+  const nbaPlayerImages = id === "1" ? [
+    "/lovable-uploads/7daacdd5-4076-4c9d-b6ad-a88f7af23b74.png",
+    "/lovable-uploads/dbf798b8-ca51-4501-8ccc-ce557c7d069b.png",
+    "/lovable-uploads/654a5bfc-a418-4c15-b506-4a58c490231c.png"
+  ] : [];
+  
   return <div className="flex flex-col min-h-screen bg-gray-50">
       <Navbar />
       
@@ -75,10 +82,10 @@ const ProjectDetailPage = () => {
 Permettre à tous, connaisseurs comme novices, d'accéder facilement aux statistiques clés des meilleurs joueurs et de comparer leurs performances.</p>
                 <h3 className="text-xl font-bold mt-6 mb-2">Objectifs</h3>
                 <ul className="list-disc pl-6 mb-4 space-y-1">
-                  <li>Visualisation des statistiques essentielles (points, passes, rebonds</li>
-                  <li>Permettre une analyse en temps réel des performances commerciales</li>
-                  <li>Faciliter l'identification des tendances et des anomalies</li>
-                  <li>Créer des visualisations interactives pour une meilleure prise de décision</li>
+                  <li>Visualisation des statistiques essentielles (points, passes, rebonds)</li>
+                  <li>Permettre une analyse en temps réel des performances des joueurs</li>
+                  <li>Faciliter l'identification des tendances et des performances exceptionnelles</li>
+                  <li>Créer des visualisations interactives pour une meilleure analyse comparative</li>
                 </ul>
                 <h3 className="text-xl font-bold mt-6 mb-2">Technologies utilisées</h3>
                 <ul className="list-disc pl-6 mb-4 space-y-1">
@@ -97,11 +104,11 @@ Permettre à tous, connaisseurs comme novices, d'accéder facilement aux statist
                   <div className="space-y-4">
                     <div>
                       <h4 className="font-semibold text-gray-600">Client</h4>
-                      <p>Entreprise ABC</p>
+                      <p>NBA Analytics Team</p>
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-600">Période</h4>
-                      <p>Janvier - Mars 2023</p>
+                      <p>Saison NBA 2023-2024</p>
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-600">Catégorie</h4>
@@ -116,13 +123,31 @@ Permettre à tous, connaisseurs comme novices, d'accéder facilement aux statist
             </div>
           </div>
           
-          {/* Gallery */}
+          {/* Gallery - Use specific NBA images for project with ID 1 */}
           <div className="mb-12">
             <h2 className="text-2xl font-bold mb-6">Captures d'écran</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {[1, 2, 3].map(i => <div key={i} className="aspect-[4/3] rounded-md overflow-hidden shadow-sm">
-                  <img src={`https://www.onpointbasketball.com/wp-content/uploads/2023/04/NBA-logo-white-background.png`} alt={`Capture d'écran ${i}`} className="w-full h-full object-cover" />
-                </div>)}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {id === "1" ? (
+                nbaPlayerImages.map((imgSrc, index) => (
+                  <div key={index} className="aspect-video rounded-md overflow-hidden shadow-lg border border-gray-200">
+                    <img 
+                      src={imgSrc} 
+                      alt={`Dashboard NBA Statistiques ${index + 1}`} 
+                      className="w-full h-full object-cover" 
+                    />
+                  </div>
+                ))
+              ) : (
+                [1, 2, 3].map(i => (
+                  <div key={i} className="aspect-[4/3] rounded-md overflow-hidden shadow-sm">
+                    <img 
+                      src={`https://www.onpointbasketball.com/wp-content/uploads/2023/04/NBA-logo-white-background.png`} 
+                      alt={`Capture d'écran ${i}`} 
+                      className="w-full h-full object-cover" 
+                    />
+                  </div>
+                ))
+              )}
             </div>
           </div>
           
@@ -154,4 +179,5 @@ Permettre à tous, connaisseurs comme novices, d'accéder facilement aux statist
       <Footer />
     </div>;
 };
+
 export default ProjectDetailPage;

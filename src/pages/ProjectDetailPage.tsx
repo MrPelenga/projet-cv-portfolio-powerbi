@@ -98,8 +98,8 @@ const ProjectDetailPage = () => {
                     </ul>
                   </>
                 ) : (
-                  // Keep existing description for other projects
-                  <p className="mb-4">Ce scénario Make automatise la collecte d'informations provenant de sites web spécialisés dans l'environnement et le développement durable. L'objectif est de générer du contenu pertinent et actualisé pour le blog de l'entreprise Gofusion. Ce processus permet d'assurer une veille informative efficace sur les thématiques environnementales, facilitant ainsi la création régulière d'articles de qualité alignés avec les valeurs et l'expertise de Gofusion</p>
+                  // Pour le projet NBA (ID 1), restaurer la description originale
+                  <p className="mb-4">Ce tableau de bord Power BI présente les statistiques des stars de la NBA pour la saison 2023-2024. Il offre une visualisation interactive des performances des joueurs, permettant aux utilisateurs d'explorer et d'analyser les données de manière intuitive. Les visualisations comprennent des statistiques clés comme les points par match, les rebonds, les passes décisives et les pourcentages de tir.</p>
                 )}
               </div>
             </div>

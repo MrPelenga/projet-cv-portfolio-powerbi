@@ -123,11 +123,11 @@ const ProjectDetailPage = () => {
                   <div className="space-y-4">
                     <div>
                       <h4 className="font-semibold text-gray-600">Client</h4>
-                      <p>Gofusion</p>
+                      <p>Freelance </p>
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-600">Période</h4>
-                      <p>Mars 2025</p>
+                      <p>Saison 2023-2024</p>
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-600">Catégorie</h4>

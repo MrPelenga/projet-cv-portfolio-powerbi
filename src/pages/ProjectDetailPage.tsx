@@ -7,6 +7,7 @@ import { projectsData } from '@/components/ProjectsList';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const ProjectDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -63,6 +64,21 @@ const ProjectDetailPage = () => {
         </div>
         
         <div className="max-w-7xl mx-auto px-4 py-12">
+          {/* NBA Logo added at the top of the page for project ID 1 */}
+          {id === "1" && (
+            <div className="mb-10 flex justify-center">
+              <div className="max-w-2xl w-full">
+                <AspectRatio ratio={16/9} className="bg-white rounded-lg shadow-md overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/1e3f2b15-068d-4a4e-be9e-fbafda62442b.png" 
+                    alt="Logo NBA" 
+                    className="w-full h-full object-contain p-6"
+                  />
+                </AspectRatio>
+              </div>
+            </div>
+          )}
+          
           {/* Project Image */}
           <div className="mb-10">
             <div className="aspect-[16/9] overflow-hidden rounded-lg shadow-md">

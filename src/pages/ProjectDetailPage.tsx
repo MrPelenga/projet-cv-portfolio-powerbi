@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
@@ -8,13 +7,15 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
-
 const ProjectDetailPage = () => {
-  const { id } = useParams<{ id: string }>();
+  const {
+    id
+  } = useParams<{
+    id: string;
+  }>();
 
   // Find the project based on ID
   const project = projectsData.find(p => p.id === id);
-  
   if (!project) {
     return <div className="flex flex-col min-h-screen">
         <Navbar />
@@ -33,15 +34,9 @@ const ProjectDetailPage = () => {
 
   // NBA player images for project ID 1
   const nbaPlayerImages = id === "1" ? ["/lovable-uploads/7daacdd5-4076-4c9d-b6ad-a88f7af23b74.png", "/lovable-uploads/dbf798b8-ca51-4501-8ccc-ce557c7d069b.png", "/lovable-uploads/654a5bfc-a418-4c15-b506-4a58c490231c.png"] : [];
-  
+
   // Gofusion EcoVeille images for project ID 2
-  const gofusionImages = id === "2" ? [
-    "/lovable-uploads/8dd28d84-ffbf-4033-b95a-c923bf8eec21.png",
-    "/lovable-uploads/258bfcae-02ac-4615-aa7d-2b85de87455f.png", 
-    "/lovable-uploads/d533ed2d-dfd2-40a6-8fa7-e2ee98933758.png", 
-    "/lovable-uploads/e8e183ec-d9c6-4565-b923-f22434466752.png"
-  ] : [];
-  
+  const gofusionImages = id === "2" ? ["/lovable-uploads/8dd28d84-ffbf-4033-b95a-c923bf8eec21.png", "/lovable-uploads/258bfcae-02ac-4615-aa7d-2b85de87455f.png", "/lovable-uploads/d533ed2d-dfd2-40a6-8fa7-e2ee98933758.png", "/lovable-uploads/e8e183ec-d9c6-4565-b923-f22434466752.png"] : [];
   return <div className="flex flex-col min-h-screen bg-gray-50">
       <Navbar />
       
@@ -65,29 +60,17 @@ const ProjectDetailPage = () => {
         
         <div className="max-w-7xl mx-auto px-4 py-12">
           {/* NBA Logo added at the top of the page for project ID 1 */}
-          {id === "1" && (
-            <div className="mb-10 flex justify-center">
+          {id === "1" && <div className="mb-10 flex justify-center">
               <div className="max-w-2xl w-full">
-                <AspectRatio ratio={16/9} className="bg-white rounded-lg shadow-md overflow-hidden">
-                  <img 
-                    src="/lovable-uploads/1e3f2b15-068d-4a4e-be9e-fbafda62442b.png" 
-                    alt="Logo NBA" 
-                    className="w-full h-full object-contain p-6"
-                  />
+                <AspectRatio ratio={16 / 9} className="bg-white rounded-lg shadow-md overflow-hidden">
+                  <img src="/lovable-uploads/1e3f2b15-068d-4a4e-be9e-fbafda62442b.png" alt="Logo NBA" className="w-full h-full object-contain p-6" />
                 </AspectRatio>
               </div>
-            </div>
-          )}
+            </div>}
           
           {/* Project Image */}
           <div className="mb-10">
-            <div className="aspect-[16/9] overflow-hidden rounded-lg shadow-md">
-              <img src={project.image} alt={project.title} className="w-full h-full object-cover" onError={e => {
-              // Fallback on error
-              const target = e.target as HTMLImageElement;
-              target.src = 'https://www.onpointbasketball.com/wp-content/uploads/2023/04/NBA-logo-white-background.png';
-            }} />
-            </div>
+            
           </div>
           
           {/* Project Info */}
@@ -95,8 +78,7 @@ const ProjectDetailPage = () => {
             <div className="md:col-span-2">
               <h2 className="text-2xl font-bold mb-4">Description du projet</h2>
               <div className="prose max-w-none">
-                {id === "2" ? (
-                  <>
+                {id === "2" ? <>
                     <p className="mb-4">Ce scénario Make automatise la collecte d'informations provenant de sites web spécialisés dans l'environnement et le développement durable. L'objectif est de générer du contenu pertinent et actualisé pour le blog de l'entreprise Gofusion. Ce processus permet d'assurer une veille informative efficace sur les thématiques environnementales, facilitant ainsi la création régulière d'articles de qualité alignés avec les valeurs et l'expertise de Gofusion</p>
                     <h3 className="text-xl font-bold mt-6 mb-2">Objectifs</h3>
                     <ul className="list-disc pl-6 mb-4 space-y-1">
@@ -112,10 +94,9 @@ const ProjectDetailPage = () => {
                       <li>API</li>
                       <li>SEranking</li>
                     </ul>
-                  </>
-                ) : (
-                  // Pour le projet NBA (ID 1), restaurer la description originale avec objectifs et technologies
-                  <>
+                  </> :
+              // Pour le projet NBA (ID 1), restaurer la description originale avec objectifs et technologies
+              <>
                     <p className="mb-4">Ce tableau de bord Power BI présente les statistiques des stars de la NBA pour la saison 2023-2024. Il offre une visualisation interactive des performances des joueurs, permettant aux utilisateurs d'explorer et d'analyser les données de manière intuitive. Les visualisations comprennent des statistiques clés comme les points par match, les rebonds, les passes décisives et les pourcentages de tir.</p>
                     <h3 className="text-xl font-bold mt-6 mb-2">Objectifs</h3>
                     <ul className="list-disc pl-6 mb-4 space-y-1">
@@ -131,8 +112,7 @@ const ProjectDetailPage = () => {
                       <li>API NBA Stats</li>
                       <li>Power Query</li>
                     </ul>
-                  </>
-                )}
+                  </>}
               </div>
             </div>
             
@@ -166,23 +146,13 @@ const ProjectDetailPage = () => {
           <div className="mb-12">
             <h2 className="text-2xl font-bold mb-6">Captures d'écran</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {id === "1" ? nbaPlayerImages.map((imgSrc, index) => (
-                <div key={index} className="aspect-video rounded-md overflow-hidden shadow-lg border border-gray-200">
+              {id === "1" ? nbaPlayerImages.map((imgSrc, index) => <div key={index} className="aspect-video rounded-md overflow-hidden shadow-lg border border-gray-200">
                   <img src={imgSrc} alt={`Dashboard NBA Statistiques ${index + 1}`} className="w-full h-full object-cover" />
-                </div>
-              )) : id === "2" ? gofusionImages.map((imgSrc, index) => (
-                <div key={index} className={`aspect-video rounded-md overflow-hidden shadow-lg border border-gray-200 ${index === 0 ? "flex items-center justify-center bg-white" : ""}`}>
-                  <img 
-                    src={imgSrc} 
-                    alt={`Gofusion EcoVeille ${index + 1}`} 
-                    className={index === 0 ? "w-3/4 h-auto object-contain" : "w-full h-full object-cover"} 
-                  />
-                </div>
-              )) : [1, 2, 3].map(i => (
-                <div key={i} className="aspect-[4/3] rounded-md overflow-hidden shadow-sm">
+                </div>) : id === "2" ? gofusionImages.map((imgSrc, index) => <div key={index} className={`aspect-video rounded-md overflow-hidden shadow-lg border border-gray-200 ${index === 0 ? "flex items-center justify-center bg-white" : ""}`}>
+                  <img src={imgSrc} alt={`Gofusion EcoVeille ${index + 1}`} className={index === 0 ? "w-3/4 h-auto object-contain" : "w-full h-full object-cover"} />
+                </div>) : [1, 2, 3].map(i => <div key={i} className="aspect-[4/3] rounded-md overflow-hidden shadow-sm">
                   <img src={`https://www.onpointbasketball.com/wp-content/uploads/2023/04/NBA-logo-white-background.png`} alt={`Capture d'écran ${i}`} className="w-full h-full object-cover" />
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
           
@@ -214,5 +184,4 @@ const ProjectDetailPage = () => {
       <Footer />
     </div>;
 };
-
 export default ProjectDetailPage;

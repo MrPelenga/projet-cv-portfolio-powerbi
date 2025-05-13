@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
+import { allProjects } from '@/data/projects';
 
 // Types for our projects
 export interface Project {
@@ -13,35 +14,17 @@ export interface Project {
   image: string;
   tags: string[];
   link: string;
+  screenshots?: string[];
+  logo?: string;
+  description_extended?: string;
+  objectives?: string[];
+  technologies?: string[];
+  client?: string;
+  period?: string;
 }
 
-// Sample projects data
-export const projectsData: Project[] = [
-  {
-    id: '1',
-    title: 'Dashboard NBA Stats',
-    description: 'Tableau de bord Power BI présentant les statistiques des stars de la NBA pour la saison 2023-2024 avec visualisations interactives.',
-    image: '/lovable-uploads/7daacdd5-4076-4c9d-b6ad-a88f7af23b74.png',
-    tags: ['Power BI', 'Data Analysis', 'Dashboard', 'NBA'],
-    link: '/projets/1'
-  },
-  {
-    id: '2',
-    title: 'Gofusion EcoVeille',
-    description: 'Scénario Make automatisant la collecte d\'informations environnementales pour générer du contenu pour le blog de Gofusion.',
-    image: '/lovable-uploads/8dd28d84-ffbf-4033-b95a-c923bf8eec21.png',
-    tags: ['Make', 'API', 'SEO'],
-    link: '/projets/2'
-  },
-  {
-    id: '3',
-    title: 'Marketing Analytics',
-    description: 'Analyse des performances de campagnes marketing et ROI.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71',
-    tags: ['Marketing', 'Analytics', 'Data Visualization'],
-    link: '/projets/3'
-  }
-];
+// Export the projects data from our organized files
+export const projectsData = allProjects;
 
 interface ProjectsListProps {
   limit?: number;

@@ -109,7 +109,7 @@ const ProjectDetailPage = () => {
                     <ul className="list-disc pl-6 mb-4 space-y-1">
                       <li>Power BI</li>
                       <li>DAX</li>
-                      <li>API NBA Stats</li>
+                      <li>NBA Stats</li>
                       <li>Power Query</li>
                     </ul>
                   </>}

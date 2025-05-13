@@ -98,8 +98,24 @@ const ProjectDetailPage = () => {
                     </ul>
                   </>
                 ) : (
-                  // Pour le projet NBA (ID 1), restaurer la description originale
-                  <p className="mb-4">Ce tableau de bord Power BI présente les statistiques des stars de la NBA pour la saison 2023-2024. Il offre une visualisation interactive des performances des joueurs, permettant aux utilisateurs d'explorer et d'analyser les données de manière intuitive. Les visualisations comprennent des statistiques clés comme les points par match, les rebonds, les passes décisives et les pourcentages de tir.</p>
+                  // Pour le projet NBA (ID 1), restaurer la description originale avec objectifs et technologies
+                  <>
+                    <p className="mb-4">Ce tableau de bord Power BI présente les statistiques des stars de la NBA pour la saison 2023-2024. Il offre une visualisation interactive des performances des joueurs, permettant aux utilisateurs d'explorer et d'analyser les données de manière intuitive. Les visualisations comprennent des statistiques clés comme les points par match, les rebonds, les passes décisives et les pourcentages de tir.</p>
+                    <h3 className="text-xl font-bold mt-6 mb-2">Objectifs</h3>
+                    <ul className="list-disc pl-6 mb-4 space-y-1">
+                      <li>Créer un tableau de bord interactif pour visualiser les statistiques des joueurs NBA</li>
+                      <li>Permettre des comparaisons de performances entre différents joueurs</li>
+                      <li>Offrir des filtres dynamiques pour personnaliser l'analyse</li>
+                      <li>Présenter les données de façon claire et visuellement attrayante</li>
+                    </ul>
+                    <h3 className="text-xl font-bold mt-6 mb-2">Technologies utilisées</h3>
+                    <ul className="list-disc pl-6 mb-4 space-y-1">
+                      <li>Power BI</li>
+                      <li>DAX</li>
+                      <li>API NBA Stats</li>
+                      <li>Power Query</li>
+                    </ul>
+                  </>
                 )}
               </div>
             </div>

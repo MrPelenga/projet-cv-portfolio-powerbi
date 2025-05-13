@@ -107,7 +107,7 @@ const ProjectDetailPage = () => {
                     </ul>
                     <h3 className="text-xl font-bold mt-6 mb-2">Technologies utilisées</h3>
                     <ul className="list-disc pl-6 mb-4 space-y-1">
-                      <li>Python</li>
+                      <li>Power Bi</li>
                       <li>DAX</li>
                       <li>NBA Stats</li>
                       <li>Power Query</li>

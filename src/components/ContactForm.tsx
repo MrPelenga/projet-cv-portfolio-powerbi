@@ -1,10 +1,12 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
 import { useForm } from 'react-hook-form';
 import { useToast } from "@/hooks/use-toast";
+import emailjs from 'emailjs-com';
 
 type FormValues = {
   name: string;
@@ -12,18 +14,49 @@ type FormValues = {
   message: string;
 };
 
+// EmailJS constants
+const SERVICE_ID = 'service_gmailjs';  // You'll need to create a service in EmailJS
+const TEMPLATE_ID = 'template_contact'; // You'll need to create a template in EmailJS
+const USER_ID = 'YOUR_USER_ID';        // Replace with your actual EmailJS user ID
+
 const ContactForm = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { register, handleSubmit, reset, formState: { errors } } = useForm<FormValues>();
   
-  const onSubmit = (data: FormValues) => {
-    console.log('Form data:', data);
-    // Ici, vous pourriez implémenter l'envoi du formulaire par email
-    toast({
-      title: "Message envoyé !",
-      description: "Merci de m'avoir contacté. Je vous répondrai dans les plus brefs délais.",
-    });
-    reset();
+  const onSubmit = async (data: FormValues) => {
+    setIsSubmitting(true);
+    
+    try {
+      const templateParams = {
+        to_email: 'gabrielpelenga@gmail.com',
+        from_name: data.name,
+        from_email: data.email,
+        message: data.message
+      };
+      
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        templateParams,
+        USER_ID
+      );
+      
+      toast({
+        title: "Message envoyé !",
+        description: "Merci de m'avoir contacté. Je vous répondrai dans les plus brefs délais.",
+      });
+      reset();
+    } catch (error) {
+      console.error('Erreur lors de l\'envoi de l\'email:', error);
+      toast({
+        title: "Erreur",
+        description: "Une erreur est survenue lors de l'envoi de votre message. Veuillez réessayer.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -60,16 +93,23 @@ const ContactForm = () => {
         
         <div className="space-y-2">
           <Label htmlFor="message">Message</Label>
-          <textarea
+          <Textarea
             id="message"
-            className="flex min-h-32 w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm resize-none"
+            className="min-h-32 resize-none"
             placeholder="Votre message..."
             {...register('message', { required: 'Le message est requis' })}
           />
           {errors.message && <p className="text-sm text-destructive">{errors.message.message}</p>}
         </div>
         
-        <Button type="submit" size="lg" className="w-full">Envoyer</Button>
+        <Button 
+          type="submit" 
+          size="lg" 
+          className="w-full"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
+        </Button>
       </form>
     </div>
   );

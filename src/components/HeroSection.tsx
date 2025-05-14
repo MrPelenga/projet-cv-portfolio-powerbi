@@ -24,7 +24,7 @@ const HeroSection = () => {
             </div>
           </div>
           <div className="md:w-1/2 mt-12 md:mt-0 flex justify-center">
-            <div className="bg-white rounded-full p-1 shadow-xl">
+            <div className="bg-card rounded-full p-1 shadow-xl">
               <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden">
                 <img 
                   src="/lovable-uploads/a800ede8-6357-4e94-b0f9-df456a52625c.png" 

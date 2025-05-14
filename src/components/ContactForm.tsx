@@ -15,9 +15,9 @@ type FormValues = {
 };
 
 // EmailJS constants
-const SERVICE_ID = 'service_gmailjs';  // You'll need to create a service in EmailJS
-const TEMPLATE_ID = 'template_contact'; // You'll need to create a template in EmailJS
-const USER_ID = 'YOUR_USER_ID';        // Replace with your actual EmailJS user ID
+const SERVICE_ID = 'service_hexlq7l';
+const TEMPLATE_ID = 'template_ak5pmqq';
+const USER_ID = '3BNU_eAllRCKjlCv_';
 
 const ContactForm = () => {
   const { toast } = useToast();

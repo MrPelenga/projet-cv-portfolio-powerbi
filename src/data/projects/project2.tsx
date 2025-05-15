@@ -12,7 +12,8 @@ export const project2: Project = {
     "/lovable-uploads/8dd28d84-ffbf-4033-b95a-c923bf8eec21.png", 
     "/lovable-uploads/258bfcae-02ac-4615-aa7d-2b85de87455f.png", 
     "/lovable-uploads/d533ed2d-dfd2-40a6-8fa7-e2ee98933758.png", 
-    "/lovable-uploads/e8e183ec-d9c6-4565-b923-f22434466752.png"
+    "/lovable-uploads/e8e183ec-d9c6-4565-b923-f22434466752.png",
+    "/lovable-uploads/0c0c76c8-eaf8-476d-ad96-973ce30af4e4.png"
   ],
   description_extended: `Ce scénario Make automatise la collecte d'informations provenant de sites web spécialisés dans l'environnement et le développement durable. L'objectif est de générer du contenu pertinent et actualisé pour le blog de l'entreprise Gofusion. Ce processus permet d'assurer une veille informative efficace sur les thématiques environnementales, facilitant ainsi la création régulière d'articles de qualité alignés avec les valeurs et l'expertise de Gofusion`,
   objectives: [

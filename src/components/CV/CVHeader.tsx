@@ -2,16 +2,32 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Download } from 'lucide-react';
+import { toast } from '@/components/ui/use-toast';
 
 const CVHeader = () => {
   const handleDownloadCV = () => {
-    // Create a link to download the CV PDF file
-    const link = document.createElement('a');
-    link.href = '/lovable-uploads/a167674d-bdc0-45b1-ac29-1e814ff4fe44.png';
-    link.download = 'Gabriel_PELENGA_MANGI_CV.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // Création d'une nouvelle URL pour télécharger le CV
+    const pdfUrl = '/lovable-uploads/a167674d-bdc0-45b1-ac29-1e814ff4fe44.png';
+    
+    // Tentative de téléchargement en ouvrant dans une nouvelle fenêtre
+    const newWindow = window.open(pdfUrl, '_blank');
+    
+    // Message de confirmation
+    toast({
+      title: "Téléchargement du CV",
+      description: "Le CV s'ouvre dans un nouvel onglet. Vous pouvez l'enregistrer depuis votre navigateur.",
+      duration: 5000,
+    });
+    
+    // Si le blocage de popup empêche l'ouverture, proposer un lien direct
+    if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+      toast({
+        title: "Problème d'ouverture",
+        description: "Votre navigateur a bloqué l'ouverture. Utilisez le bouton à nouveau en autorisant les popups.",
+        variant: "destructive",
+        duration: 5000,
+      });
+    }
   };
 
   return (

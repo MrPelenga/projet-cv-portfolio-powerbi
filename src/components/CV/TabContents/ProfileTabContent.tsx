@@ -1,8 +1,6 @@
 import React from 'react';
-
 const ProfileTabContent = () => {
-  return (
-    <div className="space-y-6">
+  return <div className="space-y-6">
       <div>
         <h3 className="text-xl font-semibold mb-4">Profil Professionnel</h3>
         <p className="mb-4">
@@ -39,7 +37,7 @@ const ProfileTabContent = () => {
             </div>
             <div>
               <h4 className="font-medium">En recherche d'alternance</h4>
-              <p className="text-sm text-gray-600">Pour Septembre 2025 (4j entreprise, 1j école)</p>
+              <p className="text-sm text-gray-600">Pour Septembre 2025 (3j entreprise, 2j école)</p>
             </div>
           </div>
           
@@ -56,8 +54,6 @@ const ProfileTabContent = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default ProfileTabContent;

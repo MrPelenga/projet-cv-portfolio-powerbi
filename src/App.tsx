@@ -9,6 +9,7 @@ import CVPage from "./pages/CVPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
 import ContactPage from "./pages/ContactPage";
+import PowerBIDashboardPage from "./pages/PowerBIDashboardPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/cv" element={<CVPage />} />
           <Route path="/projets" element={<ProjectsPage />} />
           <Route path="/projets/:id" element={<ProjectDetailPage />} />
+          <Route path="/projets/4" element={<PowerBIDashboardPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

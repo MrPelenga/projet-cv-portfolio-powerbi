@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -9,6 +8,7 @@ import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/
 import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, LineChart, Line } from 'recharts';
 import { TrendingUp, DollarSign, ShoppingCart, Calendar, Home, Download } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
+import { Link } from 'react-router-dom';
 
 // Données complètes par année et pays
 const completeData = {
@@ -110,26 +110,22 @@ const PowerBIDashboard = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 p-4">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-8">
+          <div className="flex items-center gap-4">
+            <Button 
+              asChild
+              className="bg-blue-600 hover:bg-blue-700 text-white shadow-md hover:shadow-lg transition-all duration-300"
+            >
+              <Link to="/projects">
+                <Home className="mr-2 h-4 w-4" />
+                Home
+              </Link>
+            </Button>
+          </div>
           <div className="text-center flex-1">
             <h1 className="text-4xl font-bold text-white mb-2">Sales KPI</h1>
             <p className="text-blue-100">Dashboard d'analyse des performances commerciales</p>
           </div>
-          <div className="flex gap-4">
-            <Button 
-              onClick={handleHomeClick}
-              className="bg-blue-600 hover:bg-blue-700 text-white shadow-md hover:shadow-lg transition-all duration-300"
-            >
-              <Home className="mr-2 h-4 w-4" />
-              Home
-            </Button>
-            <Button 
-              onClick={handleDownloadCV}
-              className="bg-green-600 hover:bg-green-700 text-white shadow-md hover:shadow-lg transition-all duration-300"
-            >
-              <Download className="mr-2 h-4 w-4" />
-              CV Gabriel PELENGA MANGI
-            </Button>
-          </div>
+          <div className="w-20"></div> {/* Spacer pour centrer le titre */}
         </div>
 
         <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 mb-6">

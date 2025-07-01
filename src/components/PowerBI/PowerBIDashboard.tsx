@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -62,7 +61,7 @@ const completeData = {
       'Denmark': 0.25
     }
   }
-};
+} as const;
 
 const salesByDealSize = [
   { name: 'Large', value: 6.08, percentage: 60.68, color: '#1e40af' },
@@ -101,23 +100,16 @@ const yearData = [
   { year: '2005', deals: 276, sales: 8.7 }
 ];
 
+type ValidYear = '2003' | '2004' | '2005';
+
 const PowerBIDashboard = () => {
-  const [selectedYear, setSelectedYear] = useState('2004');
+  const [selectedYear, setSelectedYear] = useState<ValidYear>('2004');
   const [selectedCountry, setSelectedCountry] = useState('Tous');
   const [activeTab, setActiveTab] = useState('overview');
 
   // Calcul des KPI dynamiques basés sur les filtres
   const kpiData = useMemo(() => {
-    // Vérification que selectedYear est une clé valide
-    if (!(selectedYear in completeData)) {
-      return {
-        totalSales: 0,
-        totalOrders: 0,
-        averageBasket: 0
-      };
-    }
-    
-    const yearData = completeData[selectedYear as keyof typeof completeData];
+    const yearData = completeData[selectedYear];
     
     if (selectedCountry === 'Tous') {
       return {
@@ -141,12 +133,7 @@ const PowerBIDashboard = () => {
 
   // Données des pays filtrées par année
   const salesByCountry = useMemo(() => {
-    // Vérification que selectedYear est une clé valide
-    if (!(selectedYear in completeData)) {
-      return [];
-    }
-    
-    const yearData = completeData[selectedYear as keyof typeof completeData];
+    const yearData = completeData[selectedYear];
     return Object.entries(yearData.countries)
       .map(([country, sales]) => ({ country, sales }))
       .sort((a, b) => b.sales - a.sales)
@@ -172,7 +159,7 @@ const PowerBIDashboard = () => {
           <div className="flex flex-wrap gap-4 items-center">
             <div className="flex items-center gap-2">
               <Calendar className="text-white" size={20} />
-              <Select value={selectedYear} onValueChange={setSelectedYear}>
+              <Select value={selectedYear} onValueChange={(value: ValidYear) => setSelectedYear(value)}>
                 <SelectTrigger className="w-32 bg-white/20 text-white border-white/30">
                   <SelectValue />
                 </SelectTrigger>

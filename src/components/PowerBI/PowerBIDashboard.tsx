@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -8,6 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
 import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, LineChart, Line } from 'recharts';
 import { TrendingUp, TrendingDown, Users, DollarSign, ShoppingCart, Calendar } from 'lucide-react';
+import HorizontalBarChart from './HorizontalBarChart';
 
 // Données complètes par année et pays
 const completeData = {
@@ -65,19 +65,20 @@ const completeData = {
 } as const;
 
 const salesByDealSize = [
-  { name: 'Large', value: 6.08, percentage: 60.68, color: '#1e40af' },
-  { name: 'Medium', value: 2.64, percentage: 26.34, color: '#059669' },
-  { name: 'Small', value: 1.30, percentage: 12.98, color: '#f59e0b' }
+  { name: 'Large', value: 6.08, percentage: 60.68, color: '#3B82F6' },
+  { name: 'Medium', value: 2.64, percentage: 26.34, color: '#10B981' },
+  { name: 'Small', value: 1.30, percentage: 12.98, color: '#F59E0B' }
 ];
 
+// Données corrigées pour les graphiques horizontaux
 const salesByCategory = [
-  { category: 'Classic Cars', sales: 20000, orders: 967, averageBasket: 20.7 },
-  { category: 'Planes', sales: 18000, orders: 173, averageBasket: 104.1 },
-  { category: 'Vintage Cars', sales: 15000, orders: 238, averageBasket: 63.0 },
-  { category: 'Motorcycles', sales: 12000, orders: 331, averageBasket: 36.3 },
-  { category: 'Trucks and Buses', sales: 11000, orders: 239, averageBasket: 46.0 },
-  { category: 'Ships', sales: 9000, orders: 87, averageBasket: 103.4 },
-  { category: 'Trains', sales: 8000, orders: 77, averageBasket: 103.9 }
+  { name: 'Classic Cars', value: 20, sales: 20000, orders: 967 },
+  { name: 'Planes', value: 18, sales: 18000, orders: 173 },
+  { name: 'Motorcycles', value: 16, sales: 16000, orders: 331 },
+  { name: 'Trucks and Buses', value: 14, sales: 14000, orders: 239 },
+  { name: 'Ships', value: 12, sales: 12000, orders: 87 },
+  { name: 'Vintage Cars', value: 10, sales: 10000, orders: 238 },
+  { name: 'Trains', value: 8, sales: 8000, orders: 77 }
 ];
 
 const monthlySales2004 = [
@@ -108,7 +109,6 @@ const PowerBIDashboard = () => {
   const [selectedCountry, setSelectedCountry] = useState('Tous');
   const [activeTab, setActiveTab] = useState('overview');
 
-  // Calcul des KPI dynamiques basés sur les filtres
   const kpiData = useMemo(() => {
     const yearData = completeData[selectedYear];
     
@@ -119,8 +119,7 @@ const PowerBIDashboard = () => {
         averageBasket: yearData.averageBasket
       };
     } else {
-      // Si un pays spécifique est sélectionné
-      const countrySales = yearData.countries[selectedCountry] || 0;
+      const countrySales = yearData.countries[selectedCountry as keyof typeof yearData.countries] || 0;
       const estimatedOrders = Math.round(countrySales / (yearData.averageBasket / 1000) * 10);
       const countryBasket = estimatedOrders > 0 ? (countrySales * 1000) / estimatedOrders : 0;
       
@@ -132,32 +131,30 @@ const PowerBIDashboard = () => {
     }
   }, [selectedYear, selectedCountry]);
 
-  // Données des pays filtrées par année
+  // Données des pays filtrées par année - CORRIGÉ
   const salesByCountry = useMemo(() => {
     const yearData = completeData[selectedYear];
     return Object.entries(yearData.countries)
-      .map(([country, sales]) => ({ country, sales }))
-      .sort((a, b) => b.sales - a.sales)
+      .map(([country, sales]) => ({ name: country, value: sales }))
+      .sort((a, b) => b.value - a.value)
       .slice(0, 5);
   }, [selectedYear]);
 
   const chartConfig = {
-    sales: { label: "Ventes (M€)", color: "#059669" },
-    deals: { label: "Commandes", color: "#1e40af" },
-    averageBasket: { label: "Panier Moyen (K€)", color: "#f59e0b" },
+    sales: { label: "Ventes (M€)", color: "#10B981" },
+    deals: { label: "Commandes", color: "#3B82F6" },
+    averageBasket: { label: "Panier Moyen (K€)", color: "#F59E0B" },
     orders: { label: "Commandes", color: "#8b5cf6" }
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 p-4">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-white mb-2">Sales KPI</h1>
           <p className="text-blue-100">Dashboard d'analyse des performances commerciales</p>
         </div>
 
-        {/* Filtres */}
         <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 mb-6">
           <div className="flex flex-wrap gap-4 items-center">
             <div className="flex items-center gap-2">
@@ -197,7 +194,6 @@ const PowerBIDashboard = () => {
           </div>
         </div>
 
-        {/* Navigation par onglets */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
           <TabsList className="grid w-full grid-cols-3 bg-white/10 backdrop-blur-sm">
             <TabsTrigger value="overview" className="data-[state=active]:bg-white/20 text-white">Vue d'ensemble</TabsTrigger>
@@ -206,7 +202,6 @@ const PowerBIDashboard = () => {
           </TabsList>
 
           <TabsContent value="overview" className="space-y-6">
-            {/* KPI Cards - Maintenant dynamiques */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <Card className="bg-white/10 backdrop-blur-sm border-white/20">
                 <CardContent className="p-6">
@@ -254,9 +249,7 @@ const PowerBIDashboard = () => {
               </Card>
             </div>
 
-            {/* Graphiques principaux */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {/* Pie Chart - Répartition par taille */}
               <Card className="bg-white/10 backdrop-blur-sm border-white/20">
                 <CardHeader>
                   <CardTitle className="text-white">Somme de SALES par DEALSIZE</CardTitle>
@@ -290,7 +283,6 @@ const PowerBIDashboard = () => {
                 </CardContent>
               </Card>
 
-              {/* Bar Chart - Évolution mensuelle 2004 */}
               <Card className="bg-white/10 backdrop-blur-sm border-white/20">
                 <CardHeader>
                   <CardTitle className="text-white">Évolution des Ventes Mensuelle 2004</CardTitle>
@@ -302,7 +294,7 @@ const PowerBIDashboard = () => {
                         <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.2)" />
                         <XAxis dataKey="month" stroke="white" fontSize={10} />
                         <YAxis stroke="white" fontSize={12} />
-                        <Bar dataKey="sales" fill="#059669" radius={[4, 4, 0, 0]} />
+                        <Bar dataKey="sales" fill="#10B981" radius={[4, 4, 0, 0]} />
                         <ChartTooltip content={<ChartTooltipContent />} />
                       </BarChart>
                     </ResponsiveContainer>
@@ -314,58 +306,22 @@ const PowerBIDashboard = () => {
 
           <TabsContent value="sales" className="space-y-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {/* Panier moyen par catégorie */}
+              {/* GRAPHIQUE CORRIGÉ - Panier moyen par catégorie */}
               <Card className="bg-white/10 backdrop-blur-sm border-white/20">
                 <CardHeader>
                   <CardTitle className="text-white">Panier Moyen par PRODUCTLINE</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ChartContainer config={chartConfig} className="h-80">
-                    <ResponsiveContainer width="100%" height="100%">
-                      <BarChart data={salesByCategory} layout="horizontal">
-                        <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.2)" />
-                        <XAxis 
-                          type="number" 
-                          stroke="white" 
-                          fontSize={12}
-                          tickFormatter={(value) => `${value}K€`}
-                        />
-                        <YAxis 
-                          dataKey="category" 
-                          type="category" 
-                          stroke="white" 
-                          fontSize={10} 
-                          width={100} 
-                        />
-                        <Bar dataKey="averageBasket" fill="#059669" radius={[0, 4, 4, 0]} />
-                        <ChartTooltip 
-                          content={({ active, payload, label }) => {
-                            if (active && payload && payload.length) {
-                              return (
-                                <div className="bg-white p-2 rounded shadow-lg border">
-                                  <p className="font-medium">{label}</p>
-                                  <p className="text-green-600">
-                                    Panier moyen: {payload[0].value}K€
-                                  </p>
-                                  <p className="text-blue-600">
-                                    Ventes: {payload[0].payload.sales.toLocaleString()}€
-                                  </p>
-                                  <p className="text-purple-600">
-                                    Commandes: {payload[0].payload.orders}
-                                  </p>
-                                </div>
-                              );
-                            }
-                            return null;
-                          }}
-                        />
-                      </BarChart>
-                    </ResponsiveContainer>
-                  </ChartContainer>
+                  <HorizontalBarChart
+                    data={salesByCategory}
+                    dataKey="value"
+                    color="#10B981"
+                    formatValue={(value) => `${value}K€`}
+                    className="h-80"
+                  />
                 </CardContent>
               </Card>
 
-              {/* Ventes par année */}
               <Card className="bg-white/10 backdrop-blur-sm border-white/20">
                 <CardHeader>
                   <CardTitle className="text-white">Évolution des Ventes par Année</CardTitle>
@@ -377,7 +333,7 @@ const PowerBIDashboard = () => {
                         <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.2)" />
                         <XAxis dataKey="year" stroke="white" fontSize={12} />
                         <YAxis stroke="white" fontSize={12} />
-                        <Bar dataKey="sales" fill="#059669" radius={[4, 4, 0, 0]} />
+                        <Bar dataKey="sales" fill="#10B981" radius={[4, 4, 0, 0]} />
                         <ChartTooltip 
                           content={({ active, payload, label }) => {
                             if (active && payload && payload.length) {
@@ -405,6 +361,7 @@ const PowerBIDashboard = () => {
           </TabsContent>
 
           <TabsContent value="geography" className="space-y-6">
+            {/* GRAPHIQUE CORRIGÉ - Top 5 des pays */}
             <Card className="bg-white/10 backdrop-blur-sm border-white/20">
               <CardHeader>
                 <CardTitle className="text-white">
@@ -412,42 +369,13 @@ const PowerBIDashboard = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <ChartContainer config={chartConfig} className="h-96">
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart data={salesByCountry} layout="horizontal">
-                      <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.2)" />
-                      <XAxis 
-                        type="number" 
-                        stroke="white" 
-                        fontSize={12}
-                        tickFormatter={(value) => `${value}M€`}
-                      />
-                      <YAxis 
-                        dataKey="country" 
-                        type="category" 
-                        stroke="white" 
-                        fontSize={12} 
-                        width={80} 
-                      />
-                      <Bar dataKey="sales" fill="#059669" radius={[0, 4, 4, 0]} />
-                      <ChartTooltip 
-                        content={({ active, payload, label }) => {
-                          if (active && payload && payload.length) {
-                            return (
-                              <div className="bg-white p-2 rounded shadow-lg border">
-                                <p className="font-medium">{label}</p>
-                                <p className="text-green-600">
-                                  Ventes: {payload[0].value}M€
-                                </p>
-                              </div>
-                            );
-                          }
-                          return null;
-                        }}
-                      />
-                    </BarChart>
-                  </ResponsiveContainer>
-                </ChartContainer>
+                <HorizontalBarChart
+                  data={salesByCountry}
+                  dataKey="value"
+                  color="#3B82F6"
+                  formatValue={(value) => `${value}M€`}
+                  className="h-96"
+                />
               </CardContent>
             </Card>
           </TabsContent>

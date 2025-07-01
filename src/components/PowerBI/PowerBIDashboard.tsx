@@ -108,6 +108,15 @@ const PowerBIDashboard = () => {
 
   // Calcul des KPI dynamiques basés sur les filtres
   const kpiData = useMemo(() => {
+    // Vérification que selectedYear est une clé valide
+    if (!(selectedYear in completeData)) {
+      return {
+        totalSales: 0,
+        totalOrders: 0,
+        averageBasket: 0
+      };
+    }
+    
     const yearData = completeData[selectedYear as keyof typeof completeData];
     
     if (selectedCountry === 'Tous') {
@@ -132,6 +141,11 @@ const PowerBIDashboard = () => {
 
   // Données des pays filtrées par année
   const salesByCountry = useMemo(() => {
+    // Vérification que selectedYear est une clé valide
+    if (!(selectedYear in completeData)) {
+      return [];
+    }
+    
     const yearData = completeData[selectedYear as keyof typeof completeData];
     return Object.entries(yearData.countries)
       .map(([country, sales]) => ({ country, sales }))

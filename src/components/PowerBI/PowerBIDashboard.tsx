@@ -1,3 +1,4 @@
+
 import React, { useState, useMemo } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -70,28 +71,28 @@ const salesByDealSize = [
 ];
 
 const salesByCategory = [
-  { category: 'Classic Cars', sales: 20000, orders: 967 },
-  { category: 'Planes', sales: 18000, orders: 173 },
-  { category: 'Vintage Cars', sales: 15000, orders: 238 },
-  { category: 'Motorcycles', sales: 12000, orders: 331 },
-  { category: 'Trucks and Buses', sales: 11000, orders: 239 },
-  { category: 'Ships', sales: 9000, orders: 87 },
-  { category: 'Trains', sales: 8000, orders: 77 }
+  { category: 'Classic Cars', sales: 20000, orders: 967, averageBasket: 20.7 },
+  { category: 'Planes', sales: 18000, orders: 173, averageBasket: 104.1 },
+  { category: 'Vintage Cars', sales: 15000, orders: 238, averageBasket: 63.0 },
+  { category: 'Motorcycles', sales: 12000, orders: 331, averageBasket: 36.3 },
+  { category: 'Trucks and Buses', sales: 11000, orders: 239, averageBasket: 46.0 },
+  { category: 'Ships', sales: 9000, orders: 87, averageBasket: 103.4 },
+  { category: 'Trains', sales: 8000, orders: 77, averageBasket: 103.9 }
 ];
 
 const monthlySales2004 = [
-  { month: 'janvier', sales: 0.35 },
-  { month: 'février', sales: 0.45 },
-  { month: 'mars', sales: 0.52 },
-  { month: 'avril', sales: 0.68 },
-  { month: 'mai', sales: 0.76 },
-  { month: 'juin', sales: 0.84 },
-  { month: 'juillet', sales: 1.02 },
-  { month: 'août', sales: 1.15 },
-  { month: 'septembre', sales: 1.35 },
-  { month: 'octobre', sales: 1.68 },
-  { month: 'novembre', sales: 2.03 },
-  { month: 'décembre', sales: 1.20 }
+  { month: 'Jan', sales: 0.35 },
+  { month: 'Fév', sales: 0.45 },
+  { month: 'Mar', sales: 0.52 },
+  { month: 'Avr', sales: 0.68 },
+  { month: 'Mai', sales: 0.76 },
+  { month: 'Jun', sales: 0.84 },
+  { month: 'Jul', sales: 1.02 },
+  { month: 'Aoû', sales: 1.15 },
+  { month: 'Sep', sales: 1.35 },
+  { month: 'Oct', sales: 1.68 },
+  { month: 'Nov', sales: 2.03 },
+  { month: 'Déc', sales: 1.20 }
 ];
 
 const yearData = [
@@ -141,8 +142,10 @@ const PowerBIDashboard = () => {
   }, [selectedYear]);
 
   const chartConfig = {
-    sales: { label: "Ventes", color: "#059669" },
-    deals: { label: "Commandes", color: "#1e40af" }
+    sales: { label: "Ventes (M€)", color: "#059669" },
+    deals: { label: "Commandes", color: "#1e40af" },
+    averageBasket: { label: "Panier Moyen (K€)", color: "#f59e0b" },
+    orders: { label: "Commandes", color: "#8b5cf6" }
   };
 
   return (
@@ -311,7 +314,7 @@ const PowerBIDashboard = () => {
 
           <TabsContent value="sales" className="space-y-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {/* Ventes par catégorie */}
+              {/* Panier moyen par catégorie */}
               <Card className="bg-white/10 backdrop-blur-sm border-white/20">
                 <CardHeader>
                   <CardTitle className="text-white">Panier Moyen par PRODUCTLINE</CardTitle>
@@ -321,10 +324,41 @@ const PowerBIDashboard = () => {
                     <ResponsiveContainer width="100%" height="100%">
                       <BarChart data={salesByCategory} layout="horizontal">
                         <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.2)" />
-                        <XAxis type="number" stroke="white" fontSize={12} />
-                        <YAxis dataKey="category" type="category" stroke="white" fontSize={10} width={100} />
-                        <Bar dataKey="sales" fill="#059669" radius={[0, 4, 4, 0]} />
-                        <ChartTooltip content={<ChartTooltipContent />} />
+                        <XAxis 
+                          type="number" 
+                          stroke="white" 
+                          fontSize={12}
+                          tickFormatter={(value) => `${value}K€`}
+                        />
+                        <YAxis 
+                          dataKey="category" 
+                          type="category" 
+                          stroke="white" 
+                          fontSize={10} 
+                          width={100} 
+                        />
+                        <Bar dataKey="averageBasket" fill="#059669" radius={[0, 4, 4, 0]} />
+                        <ChartTooltip 
+                          content={({ active, payload, label }) => {
+                            if (active && payload && payload.length) {
+                              return (
+                                <div className="bg-white p-2 rounded shadow-lg border">
+                                  <p className="font-medium">{label}</p>
+                                  <p className="text-green-600">
+                                    Panier moyen: {payload[0].value}K€
+                                  </p>
+                                  <p className="text-blue-600">
+                                    Ventes: {payload[0].payload.sales.toLocaleString()}€
+                                  </p>
+                                  <p className="text-purple-600">
+                                    Commandes: {payload[0].payload.orders}
+                                  </p>
+                                </div>
+                              );
+                            }
+                            return null;
+                          }}
+                        />
                       </BarChart>
                     </ResponsiveContainer>
                   </ChartContainer>
@@ -334,7 +368,7 @@ const PowerBIDashboard = () => {
               {/* Ventes par année */}
               <Card className="bg-white/10 backdrop-blur-sm border-white/20">
                 <CardHeader>
-                  <CardTitle className="text-white">Ventes des Deals par Année</CardTitle>
+                  <CardTitle className="text-white">Évolution des Ventes par Année</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ChartContainer config={chartConfig} className="h-80">
@@ -343,8 +377,25 @@ const PowerBIDashboard = () => {
                         <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.2)" />
                         <XAxis dataKey="year" stroke="white" fontSize={12} />
                         <YAxis stroke="white" fontSize={12} />
-                        <Bar dataKey="deals" fill="#1e40af" radius={[4, 4, 0, 0]} />
-                        <ChartTooltip content={<ChartTooltipContent />} />
+                        <Bar dataKey="sales" fill="#059669" radius={[4, 4, 0, 0]} />
+                        <ChartTooltip 
+                          content={({ active, payload, label }) => {
+                            if (active && payload && payload.length) {
+                              return (
+                                <div className="bg-white p-2 rounded shadow-lg border">
+                                  <p className="font-medium">Année {label}</p>
+                                  <p className="text-green-600">
+                                    Ventes: {payload[0].value}M€
+                                  </p>
+                                  <p className="text-blue-600">
+                                    Commandes: {payload[0].payload.deals}
+                                  </p>
+                                </div>
+                              );
+                            }
+                            return null;
+                          }}
+                        />
                       </BarChart>
                     </ResponsiveContainer>
                   </ChartContainer>
@@ -365,10 +416,35 @@ const PowerBIDashboard = () => {
                   <ResponsiveContainer width="100%" height="100%">
                     <BarChart data={salesByCountry} layout="horizontal">
                       <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.2)" />
-                      <XAxis type="number" stroke="white" fontSize={12} />
-                      <YAxis dataKey="country" type="category" stroke="white" fontSize={12} width={80} />
+                      <XAxis 
+                        type="number" 
+                        stroke="white" 
+                        fontSize={12}
+                        tickFormatter={(value) => `${value}M€`}
+                      />
+                      <YAxis 
+                        dataKey="country" 
+                        type="category" 
+                        stroke="white" 
+                        fontSize={12} 
+                        width={80} 
+                      />
                       <Bar dataKey="sales" fill="#059669" radius={[0, 4, 4, 0]} />
-                      <ChartTooltip content={<ChartTooltipContent />} />
+                      <ChartTooltip 
+                        content={({ active, payload, label }) => {
+                          if (active && payload && payload.length) {
+                            return (
+                              <div className="bg-white p-2 rounded shadow-lg border">
+                                <p className="font-medium">{label}</p>
+                                <p className="text-green-600">
+                                  Ventes: {payload[0].value}M€
+                                </p>
+                              </div>
+                            );
+                          }
+                          return null;
+                        }}
+                      />
                     </BarChart>
                   </ResponsiveContainer>
                 </ChartContainer>

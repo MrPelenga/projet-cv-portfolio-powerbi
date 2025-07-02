@@ -1,15 +1,12 @@
-
 import React from 'react';
-
 const ExperienceTabContent = () => {
-  return (
-    <div className="space-y-8">
+  return <div className="space-y-8">
       <div className="border-l-2 border-primary pl-6 relative">
         <div className="absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-1"></div>
         <h3 className="text-xl font-bold">Analyst BI & Analyst Performance commerciales</h3>
         <p className="text-primary font-medium">Vérisure</p>
         <p className="text-sm text-gray-500 mb-3">Septembre 2024 - Janvier 2025</p>
-        <p className="text-sm text-blue-600 mb-2">Rythme : 3 jours en entreprise / 2 jours école</p>
+        
         <ul className="list-disc list-inside space-y-2 text-gray-700">
           <li>Gestion de données commerciales</li>
           <li>Rapport d'analyse (performance commerciales)</li>
@@ -62,8 +59,6 @@ const ExperienceTabContent = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default ExperienceTabContent;

@@ -32,7 +32,7 @@ const ExperienceTabContent = () => {
         <div className="absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-1"></div>
         <h3 className="text-xl font-bold">Business Analyst & Business Developer</h3>
         <p className="text-primary font-medium">Koésio Corporate IT</p>
-        <p className="text-sm text-gray-500 mb-3">Novembre 2023 - Octobre 2023</p>
+        <p className="text-sm text-gray-500 mb-3">Novembre 2022 - Octobre 2023</p>
         <ul className="list-disc list-inside space-y-2 text-gray-700">
           <li>Gestion de la clientèle (65 clients dont 3 grands comptes)</li>
           <li>Reportings de KPI commerciaux : taux de clic, retour sur investissement, CA généré</li>

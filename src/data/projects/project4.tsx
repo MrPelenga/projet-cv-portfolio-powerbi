@@ -4,7 +4,7 @@ import { Project } from '@/components/ProjectsList';
 export const project4: Project = {
   id: '4',
   title: 'Dashboard Power BI - Sales KPI',
-  description: 'Single Page Application (SPA) type dashboard Power BI pour analyser les performances commerciales avec graphiques interactifs et filtres dynamiques.',
+  description: 'Application web interactive reproduisant un tableau de bord commercial avec métriques de vente en temps réel et graphiques dynamiques pour le pilotage des performances business.',
   image: '/lovable-uploads/47e56869-f196-4f8f-ab58-de458a03262b.png',
   tags: ['Power BI', 'Dashboard', 'React', 'Charts', 'Analytics'],
   link: '/projets/4',

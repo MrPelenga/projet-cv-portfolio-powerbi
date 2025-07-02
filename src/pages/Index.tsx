@@ -74,7 +74,9 @@ const Index = () => {
               N'hésitez pas à me contacter pour discuter de vos besoins en analyse de données 
               ou pour toute opportunité de collaboration.
             </p>
-            <Button variant="secondary" size="lg">Me Contacter</Button>
+            <Button variant="secondary" size="lg" asChild>
+              <Link to="/contact">Me Contacter</Link>
+            </Button>
           </div>
         </section>
       </main>

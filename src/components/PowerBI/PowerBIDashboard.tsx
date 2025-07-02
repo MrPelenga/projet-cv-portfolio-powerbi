@@ -115,7 +115,7 @@ const PowerBIDashboard = () => {
               asChild
               className="bg-blue-600 hover:bg-blue-700 text-white shadow-md hover:shadow-lg transition-all duration-300"
             >
-              <Link to="/projects">
+              <Link to="/projets">
                 <Home className="mr-2 h-4 w-4" />
                 Home
               </Link>

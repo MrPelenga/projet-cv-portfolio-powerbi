@@ -1,15 +1,17 @@
 
 import React from 'react';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useTranslation();
   
   return (
     <footer className="bg-gray-50 border-t border-gray-100 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm">
-            © {currentYear} Portfolio Professionnel. Tous droits réservés.
+            © {currentYear} {t('footer.rights')}
           </p>
           
           <div className="flex space-x-6 mt-4 md:mt-0">

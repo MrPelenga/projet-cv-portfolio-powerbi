@@ -7,7 +7,10 @@ import ProjectsList from '@/components/ProjectsList';
 import CVPreview from '@/components/CVPreview';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { useTranslation } from '@/hooks/useTranslation';
 const Index = () => {
+  const { t } = useTranslation();
+  
   return <div className="flex flex-col min-h-screen bg-background">
       <Navbar />
       
@@ -18,10 +21,10 @@ const Index = () => {
         {/* About Section */}
         <section className="py-16 px-4">
           <div className="max-w-7xl mx-auto">
-            <h2 className="section-title text-center mb-12">À Propos</h2>
+            <h2 className="section-title text-center mb-12">{t('about.title')}</h2>
             <div className="bg-card rounded-xl shadow-md p-8 max-w-3xl mx-auto">
-              <p className="text-lg mb-6">Bienvenue sur mon portfolio professionnel. Je suis un spécialiste de l'analyse de données passionné par la création de tableaux de bord interactifs et percutants avec Power BI. Mon objectif principal est de transformer des données brutes et complexes en insights clairs et actionnables, permettant ainsi aux entreprises de prendre des décisions éclairées et stratégiques.</p>
-              <p className="text-lg">Au cours de mes différentes expériences, j'ai développé une maîtrise approfondie de Power BI et des outils d'automatisation, me permettant de générer des visualisations percutantes et de concevoir des solutions qui libèrent les équipes des tâches répétitives. Mon objectif est d'accompagner les entreprises dans leur prise de décision grâce à des analyses prédictives fiables et des processus optimisés.</p>
+              <p className="text-lg mb-6">{t('about.description1')}</p>
+              <p className="text-lg">{t('about.description2')}</p>
             </div>
           </div>
         </section>
@@ -29,9 +32,9 @@ const Index = () => {
         {/* CV Section */}
         <section className="py-16 px-4 bg-secondary/30">
           <div className="max-w-7xl mx-auto">
-            <h2 className="section-title text-center mb-4">Mon CV</h2>
+            <h2 className="section-title text-center mb-4">{t('cv.title')}</h2>
             <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-              Voici un aperçu de mon parcours professionnel et de mes compétences en analyse de données.
+              {t('cv.subtitle')}
             </p>
             
             <div className="mb-10">
@@ -40,7 +43,7 @@ const Index = () => {
             
             <div className="text-center">
               <Button asChild size="lg">
-                <Link to="/cv">Voir CV Complet</Link>
+                <Link to="/cv">{t('cv.cta')}</Link>
               </Button>
             </div>
           </div>
@@ -49,9 +52,9 @@ const Index = () => {
         {/* Projects Section */}
         <section className="py-16 px-4">
           <div className="max-w-7xl mx-auto">
-            <h2 className="section-title text-center mb-4">Mes Projets</h2>
+            <h2 className="section-title text-center mb-4">{t('projects.title')}</h2>
             <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-              Découvrez mes projets Power BI et autres réalisations en analyse de données.
+              {t('projects.subtitle')}
             </p>
             
             <div className="mb-10">
@@ -60,7 +63,7 @@ const Index = () => {
             
             <div className="text-center">
               <Button asChild variant="outline" size="lg">
-                <Link to="/projets">Voir Tous Les Projets</Link>
+                <Link to="/projets">{t('projects.cta')}</Link>
               </Button>
             </div>
           </div>
@@ -69,13 +72,12 @@ const Index = () => {
         {/* Contact CTA Section */}
         <section className="py-20 px-4 bg-primary text-white">
           <div className="max-w-7xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Intéressé par mes services?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">{t('contact.title')}</h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              N'hésitez pas à me contacter pour discuter de vos besoins en analyse de données 
-              ou pour toute opportunité de collaboration.
+              {t('contact.subtitle')}
             </p>
             <Button variant="secondary" size="lg" asChild>
-              <Link to="/contact">Me Contacter</Link>
+              <Link to="/contact">{t('contact.cta')}</Link>
             </Button>
           </div>
         </section>

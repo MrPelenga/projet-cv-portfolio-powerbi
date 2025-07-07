@@ -2,7 +2,10 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import { useTranslation } from '@/hooks/useTranslation';
 const HeroSection = () => {
+  const { t } = useTranslation();
+  
   return <div className="hero-gradient py-20 md:py-28 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center md:text-left md:flex md:items-center md:justify-between">
@@ -11,15 +14,15 @@ const HeroSection = () => {
         }}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
               <span className="block">Gabriel PELENGA MANGI</span>
-              <span className="block text-primary mt-1 text-left text-4xl">Business Data Analyst</span>
+              <span className="block text-primary mt-1 text-left text-4xl">{t('hero.title')}</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto md:mx-0">Je délivre des insights clairs et automatisés à partir de vos données, grâce à une maîtrise avancée de Power BI et de la visualisation, l'automatisation de process orienté données.</p>
+            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto md:mx-0">{t('hero.subtitle')}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <Button asChild size="lg" className="rounded-full px-8 shadow-md hover:shadow-xl transition-shadow">
-                <Link to="/cv">Mon CV</Link>
+                <Link to="/cv">{t('hero.cta.cv')}</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="rounded-full px-8 border-2 hover:bg-primary/10">
-                <Link to="/projets">Mes Projets</Link>
+                <Link to="/projets">{t('hero.cta.projects')}</Link>
               </Button>
             </div>
           </div>

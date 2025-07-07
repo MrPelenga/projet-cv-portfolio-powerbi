@@ -1,7 +1,10 @@
 
 import React from 'react';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const ProfileSection = () => {
+  const { t } = useTranslation();
+  
   return (
     <div className="md:w-1/3">
       <div className="bg-gray-100 rounded-full p-1 w-40 h-40 mx-auto mb-6 overflow-hidden">
@@ -12,30 +15,30 @@ const ProfileSection = () => {
       </div>
       
       <div className="text-center mb-6">
-        <h2 className="text-2xl font-bold">Gabriel PELENGA MANGI</h2>
-        <p className="text-primary font-medium">Business Analyst</p>
+        <h2 className="text-2xl font-bold">{t('profile.name')}</h2>
+        <p className="text-primary font-medium">{t('profile.title')}</p>
       </div>
       
       <div className="space-y-4">
         <div>
-          <h3 className="font-semibold mb-2">Contact</h3>
+          <h3 className="font-semibold mb-2">{t('profile.contact')}</h3>
           <div className="space-y-2 text-sm">
             <p className="flex items-center">
               <svg className="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
               </svg>
-              06.72.62.01.65
+              {t('profile.phone')}
             </p>
             <p className="flex items-center">
               <svg className="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
               </svg>
-              gabrielpelenga@gmail.com
+              {t('profile.email')}
             </p>
             <p className="flex items-center">
               <svg className="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>
-              En recherche d'alternance pour Septembre 2025
+              {t('profile.status')}
             </p>
             <a href="https://www.linkedin.com/in/gabriel-pelenga-mangi-820487182/" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-primary transition-colors">
               <svg className="mr-2 h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
@@ -47,27 +50,27 @@ const ProfileSection = () => {
         </div>
         
         <div>
-          <h3 className="font-semibold mb-2">Langues</h3>
+          <h3 className="font-semibold mb-2">{t('profile.languages')}</h3>
           <div className="space-y-1">
             <div>
-              <span className="font-medium">Français</span>
-              <span className="text-gray-500"> - Natif</span>
+              <span className="font-medium">{t('profile.french')}</span>
+              <span className="text-gray-500"> - {t('profile.french.level')}</span>
             </div>
             <div>
-              <span className="font-medium">Anglais</span>
-              <span className="text-gray-500"> - Professionnel</span>
+              <span className="font-medium">{t('profile.english')}</span>
+              <span className="text-gray-500"> - {t('profile.english.level')}</span>
             </div>
             <div>
-              <span className="font-medium">Espagnol</span>
-              <span className="text-gray-500"> - Intermédiaire</span>
+              <span className="font-medium">{t('profile.spanish')}</span>
+              <span className="text-gray-500"> - {t('profile.spanish.level')}</span>
             </div>
           </div>
         </div>
         
         <div>
-          <h3 className="font-semibold mb-2">Centres d'intérêt</h3>
+          <h3 className="font-semibold mb-2">{t('profile.interests')}</h3>
           <div className="space-y-1">
-            <p>Sports (Basketball, Football, Boxe Anglaise)</p>
+            <p>{t('profile.sports')}</p>
           </div>
         </div>
       </div>

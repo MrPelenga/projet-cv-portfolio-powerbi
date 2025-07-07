@@ -2,12 +2,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Languages } from 'lucide-react';
+import { useTranslation } from '@/hooks/useTranslation';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { language, setLanguage, t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,16 +49,28 @@ const Navbar = () => {
           
           <div className="hidden sm:flex sm:items-center sm:space-x-4">
             <Link to="/" className={`px-3 py-2 font-medium nav-link ${isActive('/') ? 'text-primary after:w-full' : 'text-gray-700 hover:text-primary'}`}>
-              Accueil
+              {t('nav.home')}
             </Link>
             <Link to="/cv" className={`px-3 py-2 font-medium nav-link ${isActive('/cv') ? 'text-primary after:w-full' : 'text-gray-700 hover:text-primary'}`}>
-              CV
+              {t('nav.cv')}
             </Link>
             <Link to="/projets" className={`px-3 py-2 font-medium nav-link ${isActive('/projets') ? 'text-primary after:w-full' : 'text-gray-700 hover:text-primary'}`}>
-              Projets
+              {t('nav.projects')}
             </Link>
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              onClick={() => setLanguage(language === 'fr' ? 'en' : 'fr')}
+              className="ml-2 hover:bg-primary/10"
+              title={language === 'fr' ? 'Switch to English' : 'Passer en français'}
+            >
+              <Languages size={20} />
+              <span className="ml-1 text-sm font-medium">
+                {language === 'fr' ? 'EN' : 'FR'}
+              </span>
+            </Button>
             <Button asChild variant="outline" className="ml-4 hover:bg-primary/10 border-2">
-              <Link to="/contact">Contact</Link>
+              <Link to="/contact">{t('nav.contact')}</Link>
             </Button>
           </div>
 
@@ -77,28 +91,35 @@ const Navbar = () => {
               className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/') ? 'text-primary bg-primary/10' : 'text-gray-700 hover:bg-gray-100'}`}
               onClick={toggleMenu}
             >
-              Accueil
+              {t('nav.home')}
             </Link>
             <Link 
               to="/cv" 
               className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/cv') ? 'text-primary bg-primary/10' : 'text-gray-700 hover:bg-gray-100'}`}
               onClick={toggleMenu}
             >
-              CV
+              {t('nav.cv')}
             </Link>
             <Link 
               to="/projets" 
               className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/projets') ? 'text-primary bg-primary/10' : 'text-gray-700 hover:bg-gray-100'}`}
               onClick={toggleMenu}
             >
-              Projets
+              {t('nav.projects')}
             </Link>
+            <button 
+              onClick={() => setLanguage(language === 'fr' ? 'en' : 'fr')}
+              className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100 w-full text-left"
+            >
+              <Languages size={20} className="mr-2" />
+              {language === 'fr' ? 'English' : 'Français'}
+            </button>
             <Link 
               to="/contact" 
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
               onClick={toggleMenu}
             >
-              Contact
+              {t('nav.contact')}
             </Link>
           </div>
         </div>

@@ -63,6 +63,45 @@ const translations = {
     'profile.spanish.level': 'Intermédiaire',
     'profile.interests': 'Centres d\'intérêt',
     'profile.sports': 'Sports (Basketball, Football, Boxe Anglaise)',
+    
+    // Projects Page
+    'projects.page.title': 'Mes Projets',
+    'projects.page.subtitle': 'Découvrez mon portfolio de projets Power BI et d\'analyses de données',
+    'projects.powerbi.title': 'Dashboards Power BI',
+    'projects.powerbi.description': 'Découvrez mes créations de dashboards interactifs avec des visualisations avancées et des analyses de données en temps réel.',
+    'projects.search.placeholder': 'Rechercher un projet...',
+    'projects.filter.button': 'Filtrer',
+    'projects.filter.title': 'Filtrer par catégorie',
+    'projects.filtered.title': 'Projets filtrés',
+    'projects.all.title': 'Tous les projets',
+    'projects.none.found': 'Aucun projet trouvé',
+    'projects.reset.filters': 'Réinitialiser les filtres',
+    'projects.no.results': 'Aucun projet ne correspond à votre recherche. Essayez d\'autres termes ou filtres.',
+    'projects.cta.title': 'Vous avez un projet en tête ?',
+    'projects.cta.description': 'Je suis disponible pour des missions freelance et des collaborations. N\'hésitez pas à me contacter pour discuter de votre projet.',
+    'projects.cta.button': 'Me Contacter',
+    
+    // Contact Page
+    'contact.page.title': 'Contact',
+    'contact.info.title': 'Mes Coordonnées',
+    'contact.email.label': 'Email',
+    'contact.linkedin.label': 'LinkedIn',
+    'contact.phone.label': 'Téléphone',
+    
+    // Project Detail Page
+    'project.detail.back': 'Retour aux projets',
+    'project.detail.not.found.title': 'Projet non trouvé',
+    'project.detail.not.found.description': 'Le projet que vous recherchez n\'existe pas.',
+    'project.detail.description.title': 'Description du projet',
+    'project.detail.objectives.title': 'Objectifs',
+    'project.detail.technologies.title': 'Technologies utilisées',
+    'project.detail.info.title': 'Informations',
+    'project.detail.client.label': 'Client',
+    'project.detail.period.label': 'Période',
+    'project.detail.category.label': 'Catégorie',
+    'project.detail.screenshots.title': 'Captures d\'écran',
+    'project.detail.related.title': 'Projets similaires',
+    'project.detail.view.button': 'Voir le projet',
   },
   en: {
     // Navigation
@@ -116,6 +155,45 @@ const translations = {
     'profile.spanish.level': 'Intermediate',
     'profile.interests': 'Interests',
     'profile.sports': 'Sports (Basketball, Football, Boxing)',
+    
+    // Projects Page
+    'projects.page.title': 'My Projects',
+    'projects.page.subtitle': 'Discover my portfolio of Power BI projects and data analysis',
+    'projects.powerbi.title': 'Power BI Dashboards',
+    'projects.powerbi.description': 'Discover my interactive dashboard creations with advanced visualizations and real-time data analysis.',
+    'projects.search.placeholder': 'Search for a project...',
+    'projects.filter.button': 'Filter',
+    'projects.filter.title': 'Filter by category',
+    'projects.filtered.title': 'Filtered projects',
+    'projects.all.title': 'All projects',
+    'projects.none.found': 'No projects found',
+    'projects.reset.filters': 'Reset filters',
+    'projects.no.results': 'No projects match your search. Try other terms or filters.',
+    'projects.cta.title': 'Have a project in mind?',
+    'projects.cta.description': 'I am available for freelance missions and collaborations. Feel free to contact me to discuss your project.',
+    'projects.cta.button': 'Contact Me',
+    
+    // Contact Page
+    'contact.page.title': 'Contact',
+    'contact.info.title': 'My Contact Information',
+    'contact.email.label': 'Email',
+    'contact.linkedin.label': 'LinkedIn',
+    'contact.phone.label': 'Phone',
+    
+    // Project Detail Page
+    'project.detail.back': 'Back to projects',
+    'project.detail.not.found.title': 'Project not found',
+    'project.detail.not.found.description': 'The project you are looking for does not exist.',
+    'project.detail.description.title': 'Project description',
+    'project.detail.objectives.title': 'Objectives',
+    'project.detail.technologies.title': 'Technologies used',
+    'project.detail.info.title': 'Information',
+    'project.detail.client.label': 'Client',
+    'project.detail.period.label': 'Period',
+    'project.detail.category.label': 'Category',
+    'project.detail.screenshots.title': 'Screenshots',
+    'project.detail.related.title': 'Similar projects',
+    'project.detail.view.button': 'View project',
   }
 };
 

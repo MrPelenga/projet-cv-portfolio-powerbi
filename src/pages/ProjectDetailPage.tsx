@@ -7,7 +7,9 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
+import { useTranslation } from '@/hooks/useTranslation';
 const ProjectDetailPage = () => {
+  const { t } = useTranslation();
   const {
     id
   } = useParams<{
@@ -21,10 +23,10 @@ const ProjectDetailPage = () => {
         <Navbar />
         <main className="flex-grow flex items-center justify-center">
           <div className="text-center">
-            <h1 className="text-3xl font-bold mb-4">Projet non trouvé</h1>
-            <p className="mb-6 text-gray-600">Le projet que vous recherchez n'existe pas.</p>
+            <h1 className="text-3xl font-bold mb-4">{t('project.detail.not.found.title')}</h1>
+            <p className="mb-6 text-gray-600">{t('project.detail.not.found.description')}</p>
             <Button asChild>
-              <Link to="/projets">Retour aux projets</Link>
+              <Link to="/projets">{t('project.detail.back')}</Link>
             </Button>
           </div>
         </main>
@@ -49,7 +51,7 @@ const ProjectDetailPage = () => {
                 </div>
               </div>
               <Button asChild variant="secondary">
-                <Link to="/projets">Retour aux projets</Link>
+                <Link to="/projets">{t('project.detail.back')}</Link>
               </Button>
             </div>
           </div>
@@ -68,19 +70,19 @@ const ProjectDetailPage = () => {
           {/* Project Info */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <div className="md:col-span-2">
-              <h2 className="text-2xl font-bold mb-4">Description du projet</h2>
+              <h2 className="text-2xl font-bold mb-4">{t('project.detail.description.title')}</h2>
               <div className="prose max-w-none">
                 <p className="mb-4">{project.description_extended}</p>
                 
                 {project.objectives && project.objectives.length > 0 && <>
-                    <h3 className="text-xl font-bold mt-6 mb-2">Objectifs</h3>
+                    <h3 className="text-xl font-bold mt-6 mb-2">{t('project.detail.objectives.title')}</h3>
                     <ul className="list-disc pl-6 mb-4 space-y-1">
                       {project.objectives.map((objective, index) => <li key={index}>{objective}</li>)}
                     </ul>
                   </>}
                 
                 {project.technologies && project.technologies.length > 0 && <>
-                    <h3 className="text-xl font-bold mt-6 mb-2">Technologies utilisées</h3>
+                    <h3 className="text-xl font-bold mt-6 mb-2">{t('project.detail.technologies.title')}</h3>
                     <ul className="list-disc pl-6 mb-4 space-y-1">
                       {project.technologies.map((tech, index) => <li key={index}>{tech}</li>)}
                     </ul>
@@ -91,18 +93,18 @@ const ProjectDetailPage = () => {
             <div>
               <Card>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-4">Informations</h3>
+                  <h3 className="text-xl font-bold mb-4">{t('project.detail.info.title')}</h3>
                   <div className="space-y-4">
                     <div>
-                      <h4 className="font-semibold text-gray-600">Client</h4>
+                      <h4 className="font-semibold text-gray-600">{t('project.detail.client.label')}</h4>
                       <p>{project.client || 'Freelance'}</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-600">Période</h4>
+                      <h4 className="font-semibold text-gray-600">{t('project.detail.period.label')}</h4>
                       <p>{project.period || 'N/A'}</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-600">Catégorie</h4>
+                      <h4 className="font-semibold text-gray-600">{t('project.detail.category.label')}</h4>
                       <p className="">{project.tags.join(', ')}</p>
                     </div>
                   </div>
@@ -113,7 +115,7 @@ const ProjectDetailPage = () => {
           
           {/* Gallery - Show screenshots if available */}
           {project.screenshots && project.screenshots.length > 0 && <div className="mb-12">
-              <h2 className="text-2xl font-bold mb-6">Captures d'écran</h2>
+              <h2 className="text-2xl font-bold mb-6">{t('project.detail.screenshots.title')}</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {project.screenshots.map((imgSrc, index) => <div key={index} className={`aspect-video rounded-md overflow-hidden shadow-lg border border-gray-200 ${project.id === '2' && index === 0 ? "flex items-center justify-center bg-white" : ""}`}>
                     <img src={imgSrc} alt={`${project.title} capture ${index + 1}`} className={project.id === '2' && index === 0 ? "w-3/4 h-auto object-contain" : "w-full h-full object-cover"} />
@@ -123,7 +125,7 @@ const ProjectDetailPage = () => {
           
           {/* Related Projects */}
           <div>
-            <h2 className="text-2xl font-bold mb-6">Projets similaires</h2>
+            <h2 className="text-2xl font-bold mb-6">{t('project.detail.related.title')}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {relatedProjects.map(relatedProject => <Card key={relatedProject.id} className="overflow-hidden card-hover">
                   <div className="h-48 overflow-hidden">
@@ -139,7 +141,7 @@ const ProjectDetailPage = () => {
                       {relatedProject.description.substring(0, 60)}...
                     </p>
                     <Button asChild variant="outline" size="sm" className="w-full">
-                      <Link to={relatedProject.link}>Voir le projet</Link>
+                      <Link to={relatedProject.link}>{t('project.detail.view.button')}</Link>
                     </Button>
                   </CardContent>
                 </Card>)}

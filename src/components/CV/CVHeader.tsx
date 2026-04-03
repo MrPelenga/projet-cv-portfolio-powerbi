@@ -36,14 +36,14 @@ const CVHeader = () => {
       <p className="text-xl text-muted-foreground max-w-2xl mx-auto">{t('cv.header.subtitle')}</p>
       <p className="text-lg text-primary font-semibold mt-2">{t('cv.header.current')}</p>
       <div className="mt-4 space-y-2">
-        <p className="text-lg text-foreground">📱 06.72.62.01.65 | 📧 gabrielpelenga@gmail.com</p>
+        <p className="text-lg text-foreground">📞 06.72.62.01.65 | 📧 gabrielpelenga@gmail.com</p>
       </div>
     </div>
     
     <div className="flex justify-end mb-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
       <Button onClick={handleDownloadCV} className="shadow-md hover:shadow-lg transition-all duration-300 bg-primary hover:bg-primary/90">
         <Download className="mr-2 h-4 w-4" />
-        {t('cv.header.download')}
+        📥 {t('cv.header.download')}
       </Button>
     </div>
   </>;

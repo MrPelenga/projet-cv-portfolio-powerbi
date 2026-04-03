@@ -19,15 +19,14 @@ const HeroSection = () => {
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto md:mx-0">{t('hero.subtitle')}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <Button asChild size="lg" className="rounded-full px-8 shadow-md hover:shadow-xl transition-shadow">
-                <Link to="/cv">{t('hero.cta.cv')}</Link>
+                <Link to="/cv">📥 {t('hero.cta.cv')}</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="rounded-full px-8 border-2 hover:bg-primary/10">
-                <Link to="/projets">{t('hero.cta.projects')}</Link>
+                <Link to="/projets">💼 {t('hero.cta.projects')}</Link>
               </Button>
               <Button asChild size="lg" variant="secondary" className="rounded-full px-8 shadow-md hover:shadow-xl transition-shadow gap-2">
                 <a href="https://calendly.com/gabrielpelenga/30min" target="_blank" rel="noopener noreferrer">
-                  <Calendar size={18} />
-                  {t('hero.cta.calendly')}
+                  🗓️ {t('hero.cta.calendly')}
                 </a>
               </Button>
             </div>

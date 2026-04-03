@@ -41,9 +41,9 @@ const CVHeader = () => {
     </div>
     
     <div className="flex justify-center sm:justify-end mb-6 px-2 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-      <Button onClick={handleDownloadCV} className="w-full sm:w-auto shadow-md hover:shadow-lg transition-all duration-300 bg-primary hover:bg-primary/90">
-        <Download className="mr-2 h-4 w-4" />
-        📥 {t('cv.header.download')}
+      <Button onClick={handleDownloadCV} className="w-full sm:w-auto shadow-md hover:shadow-lg transition-all duration-300 bg-primary hover:bg-primary/90 text-sm sm:text-base truncate">
+        <Download className="mr-2 h-4 w-4 shrink-0" />
+        <span className="truncate">📥 {t('cv.header.download')}</span>
       </Button>
     </div>
   </>;

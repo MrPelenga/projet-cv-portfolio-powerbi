@@ -62,6 +62,15 @@ const Navbar = () => {
             <Button 
               variant="ghost" 
               size="sm" 
+              onClick={toggleTheme}
+              className="ml-2 hover:bg-primary/10"
+              title={theme === 'light' ? 'Dark mode' : 'Light mode'}
+            >
+              {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+            </Button>
+            <Button 
+              variant="ghost" 
+              size="sm" 
               onClick={() => setLanguage(language === 'fr' ? 'en' : 'fr')}
               className="ml-2 hover:bg-primary/10"
               title={language === 'fr' ? 'Switch to English' : 'Passer en français'}

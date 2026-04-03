@@ -11,9 +11,15 @@ const CVPreview = () => {
   
   const experiences = [
     {
+      title: 'Business Analyst & Data Quality Analyst',
+      company: 'Partoo',
+      period: 'Septembre 2025 - Septembre 2026',
+      description: 'Gestion de portefeuille par marché, reportings KPI commerciaux, nettoyage CRM & création de dashboards Streamlit & SalesForce.'
+    },
+    {
       title: 'Analyst BI & Analyst Performance commerciales',
       company: 'Vérisure',
-      period: 'Septembre 2024 - Présent',
+      period: 'Septembre 2024 - Janvier 2025',
       description: 'Gestion de données commerciales et analyse des KPI commerciales.'
     },
     {
@@ -41,7 +47,8 @@ const CVPreview = () => {
     <Card className="p-6 shadow-md">
       <div className="mb-8">
         <h2 className="text-2xl font-bold mb-2">Gabriel PELENGA MANGI</h2>
-        <h3 className="text-xl text-primary mb-2">MSc Analytics for Business | Business Analyst</h3>
+        <h3 className="text-xl text-primary mb-2">Diplômé du Mastère Data Science in Business | En recherche d'un CDI/CDD pour Octobre 2026</h3>
+        <p className="text-primary font-semibold mb-2">Actuellement : Business Analyst & Data Quality Analyst chez Partoo</p>
         <p className="text-gray-600 mb-4">
           Spécialiste en analyse de données commerciales qui combine expertise technique, vision stratégique et automatisation de process pour transformer les données en décisions pertinentes.
         </p>
@@ -62,7 +69,7 @@ const CVPreview = () => {
             <p className="flex items-center text-sm text-gray-600 mt-1">
               <svg className="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>
-              En recherche d'alternance pour Septembre 2025
+              En recherche d'un CDI/CDD pour Octobre 2026
             </p>
           </div>
           <div>

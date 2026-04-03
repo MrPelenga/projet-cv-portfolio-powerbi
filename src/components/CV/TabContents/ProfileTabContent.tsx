@@ -36,8 +36,8 @@ const ProfileTabContent = () => {
               </svg>
             </div>
             <div>
-              <h4 className="font-medium">En recherche d'alternance</h4>
-              <p className="text-sm text-gray-600">Pour Septembre 2025 (3j entreprise, 2j école)</p>
+              <h4 className="font-medium">En recherche d'un CDI/CDD</h4>
+              <p className="text-sm text-gray-600">Pour Octobre 2026</p>
             </div>
           </div>
           

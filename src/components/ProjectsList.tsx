@@ -128,9 +128,9 @@ const ProjectsList = ({ limit, projects }: ProjectsListProps) => {
             </CardHeader>
             
             <CardContent>
-              <div className="flex flex-wrap gap-2 mb-4">
+              <div className="flex flex-wrap gap-1.5 mb-4">
                 {getTags(project).map((tag) => (
-                  <Badge key={tag} variant="secondary" className="bg-primary/10 text-primary hover:bg-primary/20">{tag}</Badge>
+                  <Badge key={tag} variant="secondary" className="bg-primary/10 text-primary hover:bg-primary/20 text-xs whitespace-nowrap">{tag}</Badge>
                 ))}
               </div>
             </CardContent>

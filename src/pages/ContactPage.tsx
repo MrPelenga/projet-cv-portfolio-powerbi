@@ -64,6 +64,15 @@ const ContactPage = () => {
                     </a>
                   </div>
                 </div>
+
+                <div className="mt-8 pt-6 border-t border-border">
+                  <Button asChild size="lg" className="w-full rounded-full gap-2">
+                    <a href="https://calendly.com/gabrielpelenga/30min" target="_blank" rel="noopener noreferrer">
+                      <Calendar size={18} />
+                      {t('hero.cta.calendly')}
+                    </a>
+                  </Button>
+                </div>
               </div>
             </div>
             

@@ -99,7 +99,7 @@ const Navbar = () => {
           <div className="px-2 pt-2 pb-3 space-y-1">
             <Link 
               to="/" 
-              className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/') ? 'text-primary bg-primary/10' : 'text-gray-700 hover:bg-gray-100'}`}
+              className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/') ? 'text-primary bg-primary/10' : 'text-foreground hover:bg-accent'}`}
               onClick={toggleMenu}
             >
               {t('nav.home')}

@@ -86,7 +86,7 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center sm:hidden">
-            <Button variant="ghost" size="sm" className="text-gray-700" onClick={toggleMenu}>
+            <Button variant="ghost" size="sm" className="text-foreground" onClick={toggleMenu}>
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </Button>
           </div>

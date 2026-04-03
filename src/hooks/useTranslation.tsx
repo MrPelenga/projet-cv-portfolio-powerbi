@@ -52,7 +52,7 @@ const translations = {
     'profile.title': 'Business Analyst',
     'profile.phone': '06.72.62.01.65',
     'profile.email': 'gabrielpelenga@gmail.com',
-    'profile.status': 'En recherche d\'alternance pour Septembre 2025',
+    'profile.status': 'En recherche d\'un CDI/CDD pour Octobre 2026',
     'profile.contact': 'Contact',
     'profile.languages': 'Langues',
     'profile.french': 'Français',

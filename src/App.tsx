@@ -33,6 +33,9 @@ const App = () => (
             <Route path="/projets" element={<ProjectsPage />} />
             <Route path="/projets/:id" element={<ProjectDetailPage />} />
             <Route path="/projets/4" element={<PowerBIDashboardPage />} />
+            <Route path="/projects/nba" element={<ProjectNBAPage />} />
+            <Route path="/projects/binko" element={<ProjectBinkoPage />} />
+            <Route path="/projects/gofusion" element={<ProjectGoFusionPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

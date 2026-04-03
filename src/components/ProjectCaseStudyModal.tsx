@@ -14,6 +14,13 @@ interface ProjectCaseStudyModalProps {
 
 const ProjectCaseStudyModal = ({ projectId, open, onClose }: ProjectCaseStudyModalProps) => {
   const { language } = useTranslation();
+  const navigate = useNavigate();
+
+  const fullPageRoutes: Record<string, string> = {
+    '1': '/projects/nba',
+    '3': '/projects/binko',
+    '2': '/projects/gofusion',
+  };
 
   if (!projectId) return null;
 

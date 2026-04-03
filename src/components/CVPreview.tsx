@@ -11,6 +11,12 @@ const CVPreview = () => {
   
   const experiences = [
     {
+      title: 'Business Analyst & Data Quality Analyst',
+      company: 'Partoo',
+      period: 'Septembre 2025 - Septembre 2026',
+      description: 'Gestion de portefeuille par marché, reportings KPI commerciaux, nettoyage CRM & création de dashboards Streamlit & SalesForce.'
+    },
+    {
       title: 'Analyst BI & Analyst Performance commerciales',
       company: 'Vérisure',
       period: 'Septembre 2024 - Janvier 2025',

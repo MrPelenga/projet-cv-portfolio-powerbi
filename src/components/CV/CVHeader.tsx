@@ -35,7 +35,8 @@ const CVHeader = () => {
           Curriculum Vitae - Gabriel PELENGA MANGI
           <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary/20 rounded-full"></span>
         </h1>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">Étudiant Mastère Data Science in Business - Alternance 3 jours en entreprise /2 jour en école</p>
+        <p className="text-xl text-gray-600 max-w-2xl mx-auto">Diplômé du Mastère Data Science in Business, en recherche d'un CDI/CDD pour Octobre 2026</p>
+        <p className="text-lg text-primary font-semibold mt-2">Actuellement : Business Analyst & Data Quality Analyst chez Partoo</p>
         <div className="mt-4 space-y-2">
           <p className="text-lg text-gray-700">📱 06.72.62.01.65 | 📧 gabrielpelenga@gmail.com</p>
           

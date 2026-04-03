@@ -3,6 +3,20 @@ const ExperienceTabContent = () => {
   return <div className="space-y-8">
       <div className="border-l-2 border-primary pl-6 relative">
         <div className="absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-1"></div>
+        <h3 className="text-xl font-bold">Business Analyst & Data Quality Analyst</h3>
+        <p className="text-primary font-medium">Partoo</p>
+        <p className="text-sm text-gray-500 mb-3">Septembre 2025 - Septembre 2026</p>
+        
+        <ul className="list-disc list-inside space-y-2 text-gray-700">
+          <li>Gestion de portefeuille par marché (Europe, Moyen-Orient, Amérique Latine)</li>
+          <li>Reportings de KPI commerciaux : CA généré par les équipes, Nombre de RDV fixés</li>
+          <li>Nettoyage du CRM & Portefeuille</li>
+          <li>Création de Dashboard Streamlit & SalesForce</li>
+        </ul>
+      </div>
+
+      <div className="border-l-2 border-primary pl-6 relative">
+        <div className="absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-1"></div>
         <h3 className="text-xl font-bold">Analyst BI & Analyst Performance commerciales</h3>
         <p className="text-primary font-medium">Vérisure</p>
         <p className="text-sm text-gray-500 mb-3">Septembre 2024 - Janvier 2025</p>

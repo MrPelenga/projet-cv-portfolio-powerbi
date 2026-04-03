@@ -106,7 +106,7 @@ const Navbar = () => {
             </Link>
             <Link 
               to="/cv" 
-              className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/cv') ? 'text-primary bg-primary/10' : 'text-gray-700 hover:bg-gray-100'}`}
+              className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/cv') ? 'text-primary bg-primary/10' : 'text-foreground hover:bg-accent'}`}
               onClick={toggleMenu}
             >
               {t('nav.cv')}

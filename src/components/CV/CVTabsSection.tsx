@@ -12,7 +12,7 @@ const CVTabsSection = () => {
   return (
     <div className="md:w-2/3">
       <Tabs defaultValue="profil">
-        <TabsList className="mb-6 grid w-full grid-cols-4">
+        <TabsList className="mb-6 flex flex-wrap justify-center gap-2 h-auto w-full">
           <TabsTrigger value="profil">{t('cv.tab.profile')}</TabsTrigger>
           <TabsTrigger value="experience">{t('cv.tab.experience')}</TabsTrigger>
           <TabsTrigger value="formation">{t('cv.tab.education')}</TabsTrigger>

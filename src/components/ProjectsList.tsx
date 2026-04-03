@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -6,25 +5,29 @@ import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
 import { ExternalLink, Eye } from 'lucide-react';
 import { allProjects } from '@/data/projects';
+import { useTranslation } from '@/hooks/useTranslation';
 
-// Types for our projects
 export interface Project {
   id: string;
   title: string;
   description: string;
+  description_en?: string;
   image: string;
   tags: string[];
+  tags_en?: string[];
   link: string;
   screenshots?: string[];
   logo?: string;
   description_extended?: string;
+  description_extended_en?: string;
   objectives?: string[];
+  objectives_en?: string[];
   technologies?: string[];
   client?: string;
   period?: string;
+  period_en?: string;
 }
 
-// Export the projects data from our organized files
 export const projectsData = allProjects;
 
 interface ProjectsListProps {
@@ -34,11 +37,9 @@ interface ProjectsListProps {
 
 const ProjectsList = ({ limit, projects }: ProjectsListProps) => {
   const listRef = useRef<HTMLDivElement>(null);
+  const { language, t } = useTranslation();
   
-  // If projects prop is provided, use it, otherwise use all projects
   const displayedProjects = projects || projectsData;
-  
-  // If limit is provided, only show that many projects
   const filteredProjects = limit ? displayedProjects.slice(0, limit) : displayedProjects;
   
   useEffect(() => {
@@ -57,7 +58,6 @@ const ProjectsList = ({ limit, projects }: ProjectsListProps) => {
     if (listRef.current) {
       const cards = listRef.current.querySelectorAll('.project-card-animated');
       cards.forEach((card, index) => {
-        // Set a delay based on the card's index
         card.setAttribute('style', `animation-delay: ${index * 100}ms`);
         observer.observe(card);
       });
@@ -71,23 +71,22 @@ const ProjectsList = ({ limit, projects }: ProjectsListProps) => {
     };
   }, [filteredProjects]);
   
+  const getDescription = (project: Project) => 
+    language === 'en' && project.description_en ? project.description_en : project.description;
+
+  const getTags = (project: Project) =>
+    language === 'en' && project.tags_en ? project.tags_en : project.tags;
+
   return (
-    <div 
-      ref={listRef} 
-      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-    >
+    <div ref={listRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {filteredProjects.map((project) => (
-        <Card 
-          key={project.id} 
-          className="overflow-hidden card-hover project-card-animated opacity-0 border-2 border-border"
-        >
-          <div className="h-48 bg-gray-100 relative overflow-hidden group">
+        <Card key={project.id} className="overflow-hidden card-hover project-card-animated opacity-0 border-2 border-border">
+          <div className="h-48 bg-muted relative overflow-hidden group">
             <img 
               src={project.image} 
               alt={project.title} 
               className={`w-full h-full ${project.id === '2' ? 'object-contain p-4' : 'object-cover'} transition-transform duration-500 group-hover:scale-105`}
               onError={(e) => {
-                // Fallback on error
                 const target = e.target as HTMLImageElement;
                 target.src = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71';
               }}
@@ -96,14 +95,14 @@ const ProjectsList = ({ limit, projects }: ProjectsListProps) => {
               <Button variant="secondary" size="sm" className="mr-2" asChild>
                 <Link to={project.link}>
                   <Eye className="mr-1" size={16} />
-                  Voir
+                  {t('projects.view.short')}
                 </Link>
               </Button>
               {project.link.startsWith('http') && (
                 <Button variant="secondary" size="sm" asChild>
                   <a href={project.link} target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="mr-1" size={16} />
-                    Ouvrir
+                    {t('projects.open')}
                   </a>
                 </Button>
               )}
@@ -112,12 +111,12 @@ const ProjectsList = ({ limit, projects }: ProjectsListProps) => {
           
           <CardHeader>
             <CardTitle className="text-xl font-bold line-clamp-1">{project.title}</CardTitle>
-            <CardDescription className="line-clamp-2">{project.description}</CardDescription>
+            <CardDescription className="line-clamp-2">{getDescription(project)}</CardDescription>
           </CardHeader>
           
           <CardContent>
             <div className="flex flex-wrap gap-2 mb-4">
-              {project.tags.map((tag) => (
+              {getTags(project).map((tag) => (
                 <Badge key={tag} variant="secondary" className="bg-primary/10 text-primary hover:bg-primary/20">{tag}</Badge>
               ))}
             </div>
@@ -125,7 +124,7 @@ const ProjectsList = ({ limit, projects }: ProjectsListProps) => {
           
           <CardFooter>
             <Button asChild className="w-full">
-              <Link to={project.link}>Voir le projet</Link>
+              <Link to={project.link}>{t('projects.view')}</Link>
             </Button>
           </CardFooter>
         </Card>

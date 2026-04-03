@@ -23,6 +23,7 @@ const translations = {
     'hero.subtitle': 'Passionné par la transformation des données en insights stratégiques pour optimiser les performances business et automatiser les processus.',
     'hero.cta.cv': 'Découvrir mon CV',
     'hero.cta.projects': 'Voir mes projets',
+    'hero.cta.calendly': 'Prendre un RDV de 30 min',
     
     // About Section
     'about.title': 'À Propos',

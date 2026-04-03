@@ -12,6 +12,9 @@ import ProjectsPage from "./pages/ProjectsPage";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
 import ContactPage from "./pages/ContactPage";
 import PowerBIDashboardPage from "./pages/PowerBIDashboardPage";
+import ProjectNBAPage from "./pages/ProjectNBAPage";
+import ProjectBinkoPage from "./pages/ProjectBinkoPage";
+import ProjectGoFusionPage from "./pages/ProjectGoFusionPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();

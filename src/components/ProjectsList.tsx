@@ -93,7 +93,7 @@ const ProjectsList = ({ limit, projects }: ProjectsListProps) => {
         {filteredProjects.map((project) => (
           <Card 
             key={project.id} 
-            className="overflow-hidden project-card-animated opacity-0 border-2 border-border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-primary/30 group"
+            className="overflow-hidden project-card-animated opacity-0 border-2 border-border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-primary/30 group min-w-0"
           >
             <div className="h-48 bg-muted relative overflow-hidden">
               <img 

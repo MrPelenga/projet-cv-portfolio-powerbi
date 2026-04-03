@@ -93,7 +93,11 @@
   }
 
   body {
-    @apply bg-background text-foreground font-inter;
+    @apply bg-background text-foreground font-inter overflow-x-hidden;
+  }
+
+  html {
+    overflow-x: hidden;
   }
 }
 

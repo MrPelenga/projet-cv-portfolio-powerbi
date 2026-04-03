@@ -2,14 +2,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Languages } from 'lucide-react';
+import { Menu, X, Languages, Sun, Moon } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
+import { useTheme } from '@/hooks/useTheme';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const { language, setLanguage, t } = useTranslation();
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,15 +50,24 @@ const Navbar = () => {
           </div>
           
           <div className="hidden sm:flex sm:items-center sm:space-x-4">
-            <Link to="/" className={`px-3 py-2 font-medium nav-link ${isActive('/') ? 'text-primary after:w-full' : 'text-gray-700 hover:text-primary'}`}>
+            <Link to="/" className={`px-3 py-2 font-medium nav-link ${isActive('/') ? 'text-primary after:w-full' : 'text-foreground hover:text-primary'}`}>
               {t('nav.home')}
             </Link>
-            <Link to="/cv" className={`px-3 py-2 font-medium nav-link ${isActive('/cv') ? 'text-primary after:w-full' : 'text-gray-700 hover:text-primary'}`}>
+            <Link to="/cv" className={`px-3 py-2 font-medium nav-link ${isActive('/cv') ? 'text-primary after:w-full' : 'text-foreground hover:text-primary'}`}>
               {t('nav.cv')}
             </Link>
-            <Link to="/projets" className={`px-3 py-2 font-medium nav-link ${isActive('/projets') ? 'text-primary after:w-full' : 'text-gray-700 hover:text-primary'}`}>
+            <Link to="/projets" className={`px-3 py-2 font-medium nav-link ${isActive('/projets') ? 'text-primary after:w-full' : 'text-foreground hover:text-primary'}`}>
               {t('nav.projects')}
             </Link>
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              onClick={toggleTheme}
+              className="ml-2 hover:bg-primary/10"
+              title={theme === 'light' ? 'Dark mode' : 'Light mode'}
+            >
+              {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
+            </Button>
             <Button 
               variant="ghost" 
               size="sm" 
@@ -75,7 +86,7 @@ const Navbar = () => {
           </div>
 
           <div className="flex items-center sm:hidden">
-            <Button variant="ghost" size="sm" className="text-gray-700" onClick={toggleMenu}>
+            <Button variant="ghost" size="sm" className="text-foreground" onClick={toggleMenu}>
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </Button>
           </div>
@@ -88,35 +99,42 @@ const Navbar = () => {
           <div className="px-2 pt-2 pb-3 space-y-1">
             <Link 
               to="/" 
-              className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/') ? 'text-primary bg-primary/10' : 'text-gray-700 hover:bg-gray-100'}`}
+              className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/') ? 'text-primary bg-primary/10' : 'text-foreground hover:bg-accent'}`}
               onClick={toggleMenu}
             >
               {t('nav.home')}
             </Link>
             <Link 
               to="/cv" 
-              className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/cv') ? 'text-primary bg-primary/10' : 'text-gray-700 hover:bg-gray-100'}`}
+              className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/cv') ? 'text-primary bg-primary/10' : 'text-foreground hover:bg-accent'}`}
               onClick={toggleMenu}
             >
               {t('nav.cv')}
             </Link>
             <Link 
               to="/projets" 
-              className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/projets') ? 'text-primary bg-primary/10' : 'text-gray-700 hover:bg-gray-100'}`}
+              className={`block px-3 py-2 rounded-md text-base font-medium ${isActive('/projets') ? 'text-primary bg-primary/10' : 'text-foreground hover:bg-accent'}`}
               onClick={toggleMenu}
             >
               {t('nav.projects')}
             </Link>
             <button 
+              onClick={toggleTheme}
+              className="flex items-center px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-accent w-full text-left"
+            >
+              {theme === 'light' ? <Moon size={20} className="mr-2" /> : <Sun size={20} className="mr-2" />}
+              {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+            </button>
+            <button 
               onClick={() => setLanguage(language === 'fr' ? 'en' : 'fr')}
-              className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100 w-full text-left"
+              className="flex items-center px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-accent w-full text-left"
             >
               <Languages size={20} className="mr-2" />
               {language === 'fr' ? 'English' : 'Français'}
             </button>
             <Link 
               to="/contact" 
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
+              className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-accent"
               onClick={toggleMenu}
             >
               {t('nav.contact')}

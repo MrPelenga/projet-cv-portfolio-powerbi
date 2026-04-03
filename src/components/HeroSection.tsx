@@ -1,22 +1,22 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import { Calendar } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
+
 const HeroSection = () => {
   const { t } = useTranslation();
   
-  return <div className="hero-gradient py-20 md:py-28 px-4">
+  return (
+    <div className="hero-gradient py-20 md:py-28 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center md:text-left md:flex md:items-center md:justify-between">
-          <div className="md:w-1/2 animate-fade-in" style={{
-          animationDelay: '0.1s'
-        }}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+          <div className="md:w-1/2 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
               <span className="block">Gabriel PELENGA MANGI</span>
               <span className="block text-primary mt-1 text-left text-4xl">{t('hero.title')}</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto md:mx-0">{t('hero.subtitle')}</p>
+            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto md:mx-0">{t('hero.subtitle')}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <Button asChild size="lg" className="rounded-full px-8 shadow-md hover:shadow-xl transition-shadow">
                 <Link to="/cv">{t('hero.cta.cv')}</Link>
@@ -24,15 +24,19 @@ const HeroSection = () => {
               <Button asChild variant="outline" size="lg" className="rounded-full px-8 border-2 hover:bg-primary/10">
                 <Link to="/projets">{t('hero.cta.projects')}</Link>
               </Button>
+              <Button asChild size="lg" variant="secondary" className="rounded-full px-8 shadow-md hover:shadow-xl transition-shadow gap-2">
+                <a href="https://calendly.com/gabrielpelenga/30min" target="_blank" rel="noopener noreferrer">
+                  <Calendar size={18} />
+                  {t('hero.cta.calendly')}
+                </a>
+              </Button>
             </div>
           </div>
-          <div className="md:w-1/2 mt-12 md:mt-0 flex justify-center animate-fade-in" style={{
-          animationDelay: '0.3s'
-        }}>
+          <div className="md:w-1/2 mt-12 md:mt-0 flex justify-center animate-fade-in" style={{ animationDelay: '0.3s' }}>
             <div className="relative">
               <div className="absolute inset-0 bg-primary/10 rounded-full blur-2xl animate-pulse-slow"></div>
               <div className="bg-card rounded-full p-1 shadow-xl relative z-10">
-                <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white/50">
+                <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-background/50">
                   <img src="/lovable-uploads/a800ede8-6357-4e94-b0f9-df456a52625c.png" alt="Gabriel PELENGA MANGI" className="w-full h-full object-cover" />
                 </div>
               </div>
@@ -40,6 +44,8 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </div>;
+    </div>
+  );
 };
+
 export default HeroSection;

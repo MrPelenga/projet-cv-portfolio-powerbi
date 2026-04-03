@@ -134,7 +134,7 @@ const Navbar = () => {
             </button>
             <Link 
               to="/contact" 
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100"
+              className="block px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-accent"
               onClick={toggleMenu}
             >
               {t('nav.contact')}

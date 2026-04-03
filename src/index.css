@@ -99,7 +99,7 @@
 
 @layer components {
   .hero-gradient {
-    @apply bg-gradient-to-br from-amber-50/80 via-stone-100/90 to-stone-200/80 relative overflow-hidden;
+    @apply bg-gradient-to-br from-amber-50/80 via-stone-100/90 to-stone-200/80 dark:from-background dark:via-background dark:to-card relative overflow-hidden;
   }
   
   .hero-gradient::before {

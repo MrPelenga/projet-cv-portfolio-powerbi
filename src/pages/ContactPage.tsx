@@ -20,7 +20,7 @@ const ContactPage = () => {
           
           <div className="grid md:grid-cols-2 gap-12">
             {/* Informations de contact */}
-            <div className="bg-white rounded-xl shadow-md p-8">
+            <div className="bg-card rounded-xl shadow-md p-8">
               <h2 className="text-2xl font-semibold mb-6">{t('contact.info.title')}</h2>
               
               <div className="space-y-6">

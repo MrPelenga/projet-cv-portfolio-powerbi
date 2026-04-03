@@ -13,7 +13,7 @@ const CVPreview = () => {
     {
       title: 'Analyst BI & Analyst Performance commerciales',
       company: 'Vérisure',
-      period: 'Septembre 2024 - Présent',
+      period: 'Septembre 2024 - Janvier 2025',
       description: 'Gestion de données commerciales et analyse des KPI commerciales.'
     },
     {

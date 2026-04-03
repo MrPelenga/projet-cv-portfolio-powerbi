@@ -7,37 +7,31 @@ const ProfileSection = () => {
   
   return (
     <div className="md:w-1/3">
-      <div className="bg-gray-100 rounded-full p-1 w-40 h-40 mx-auto mb-6 overflow-hidden">
-        {/* Placeholder pour photo de profil */}
-        <svg className="h-full w-full text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+      <div className="bg-muted rounded-full p-1 w-40 h-40 mx-auto mb-6 overflow-hidden">
+        <svg className="h-full w-full text-muted-foreground" fill="currentColor" viewBox="0 0 24 24">
           <path d="M12 14.25c-4.65 0-8.25 1.83-8.25 4.15V20h16.5v-1.6c0-2.32-3.6-4.15-8.25-4.15ZM12 13c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4Z" />
         </svg>
       </div>
       
       <div className="text-center mb-6">
-        <h2 className="text-2xl font-bold">{t('profile.name')}</h2>
+        <h2 className="text-2xl font-bold text-foreground">{t('profile.name')}</h2>
         <p className="text-primary font-medium">{t('profile.title')}</p>
       </div>
       
       <div className="space-y-4">
         <div>
-          <h3 className="font-semibold mb-2">{t('profile.contact')}</h3>
-          <div className="space-y-2 text-sm">
+          <h3 className="font-semibold mb-2 text-foreground">{t('profile.contact')}</h3>
+          <div className="space-y-2 text-sm text-foreground">
             <p className="flex items-center">
-              <svg className="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-              </svg>
+              <span className="mr-2">📞</span>
               {t('profile.phone')}
             </p>
             <p className="flex items-center">
-              <svg className="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-              </svg>
+              <span className="mr-2">📧</span>
               {t('profile.email')}
             </p>
             <p className="flex items-center">
-              <svg className="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>
+              <span className="mr-2">📍</span>
               {t('profile.status')}
             </p>
             <a href="https://www.linkedin.com/in/gabriel-pelenga-mangi-820487182/" target="_blank" rel="noopener noreferrer" className="flex items-center hover:text-primary transition-colors">
@@ -50,26 +44,26 @@ const ProfileSection = () => {
         </div>
         
         <div>
-          <h3 className="font-semibold mb-2">{t('profile.languages')}</h3>
-          <div className="space-y-1">
+          <h3 className="font-semibold mb-2 text-foreground">{t('profile.languages')}</h3>
+          <div className="space-y-1 text-foreground">
             <div>
               <span className="font-medium">{t('profile.french')}</span>
-              <span className="text-gray-500"> - {t('profile.french.level')}</span>
+              <span className="text-muted-foreground"> - {t('profile.french.level')}</span>
             </div>
             <div>
               <span className="font-medium">{t('profile.english')}</span>
-              <span className="text-gray-500"> - {t('profile.english.level')}</span>
+              <span className="text-muted-foreground"> - {t('profile.english.level')}</span>
             </div>
             <div>
               <span className="font-medium">{t('profile.spanish')}</span>
-              <span className="text-gray-500"> - {t('profile.spanish.level')}</span>
+              <span className="text-muted-foreground"> - {t('profile.spanish.level')}</span>
             </div>
           </div>
         </div>
         
         <div>
-          <h3 className="font-semibold mb-2">{t('profile.interests')}</h3>
-          <div className="space-y-1">
+          <h3 className="font-semibold mb-2 text-foreground">{t('profile.interests')}</h3>
+          <div className="space-y-1 text-foreground">
             <p>{t('profile.sports')}</p>
           </div>
         </div>

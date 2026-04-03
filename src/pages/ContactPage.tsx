@@ -14,7 +14,7 @@ const ContactPage = () => {
     <div className="flex flex-col min-h-screen">
       <Navbar />
       
-      <main className="flex-grow py-16 px-4 bg-gray-50">
+      <main className="flex-grow py-16 px-4 bg-secondary/30">
         <div className="max-w-5xl mx-auto">
           <h1 className="text-4xl font-bold text-center mb-12">{t('contact.page.title')}</h1>
           

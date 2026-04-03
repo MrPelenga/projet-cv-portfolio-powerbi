@@ -50,13 +50,13 @@ const Navbar = () => {
           </div>
           
           <div className="hidden sm:flex sm:items-center sm:space-x-4">
-            <Link to="/" className={`px-3 py-2 font-medium nav-link ${isActive('/') ? 'text-primary after:w-full' : 'text-gray-700 hover:text-primary'}`}>
+            <Link to="/" className={`px-3 py-2 font-medium nav-link ${isActive('/') ? 'text-primary after:w-full' : 'text-foreground hover:text-primary'}`}>
               {t('nav.home')}
             </Link>
-            <Link to="/cv" className={`px-3 py-2 font-medium nav-link ${isActive('/cv') ? 'text-primary after:w-full' : 'text-gray-700 hover:text-primary'}`}>
+            <Link to="/cv" className={`px-3 py-2 font-medium nav-link ${isActive('/cv') ? 'text-primary after:w-full' : 'text-foreground hover:text-primary'}`}>
               {t('nav.cv')}
             </Link>
-            <Link to="/projets" className={`px-3 py-2 font-medium nav-link ${isActive('/projets') ? 'text-primary after:w-full' : 'text-gray-700 hover:text-primary'}`}>
+            <Link to="/projets" className={`px-3 py-2 font-medium nav-link ${isActive('/projets') ? 'text-primary after:w-full' : 'text-foreground hover:text-primary'}`}>
               {t('nav.projects')}
             </Link>
             <Button 

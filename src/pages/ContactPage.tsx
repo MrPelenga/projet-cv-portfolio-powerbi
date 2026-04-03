@@ -29,7 +29,7 @@ const ContactPage = () => {
                     <Mail className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500">{t('contact.email.label')}</p>
+                    <p className="text-sm text-muted-foreground">{t('contact.email.label')}</p>
                     <a href="mailto:gabrielpelenga@gmail.com" className="font-medium hover:text-primary transition-colors">
                       gabrielpelenga@gmail.com
                     </a>
@@ -41,7 +41,7 @@ const ContactPage = () => {
                     <Linkedin className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500">{t('contact.linkedin.label')}</p>
+                    <p className="text-sm text-muted-foreground">{t('contact.linkedin.label')}</p>
                     <a 
                       href="https://www.linkedin.com/in/gabriel-pelenga-mangi-820487182/" 
                       target="_blank" 
@@ -58,7 +58,7 @@ const ContactPage = () => {
                     <Phone className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500">{t('contact.phone.label')}</p>
+                    <p className="text-sm text-muted-foreground">{t('contact.phone.label')}</p>
                     <a href="tel:+33672620165" className="font-medium hover:text-primary transition-colors">
                       06 72 62 01 65
                     </a>

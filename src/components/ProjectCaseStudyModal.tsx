@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { ExternalLink } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
 
 interface ProjectCaseStudyModalProps {
@@ -11,6 +14,13 @@ interface ProjectCaseStudyModalProps {
 
 const ProjectCaseStudyModal = ({ projectId, open, onClose }: ProjectCaseStudyModalProps) => {
   const { language } = useTranslation();
+  const navigate = useNavigate();
+
+  const fullPageRoutes: Record<string, string> = {
+    '1': '/projects/nba',
+    '3': '/projects/binko',
+    '2': '/projects/gofusion',
+  };
 
   if (!projectId) return null;
 
@@ -157,14 +167,77 @@ const ProjectCaseStudyModal = ({ projectId, open, onClose }: ProjectCaseStudyMod
         </div>
       ),
     },
+    '1': {
+      fr: (
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-lg font-bold text-foreground mb-2">🎯 Contexte métier</h3>
+            <p className="text-foreground/90">
+              Ce tableau de bord Power BI présente les statistiques des stars de la NBA pour la saison 2023-2024.
+              Il offre une visualisation interactive des performances des joueurs, permettant aux utilisateurs d'explorer et d'analyser les données de manière intuitive.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-lg font-bold text-foreground mb-2">🛠️ Outils utilisés</h3>
+            <div className="flex flex-wrap gap-2">
+              {['Power BI', 'DAX', 'Power Query'].map(t => (
+                <Badge key={t} variant="secondary" className="bg-primary/10 text-primary">{t}</Badge>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3 className="text-lg font-bold text-foreground mb-2">📊 Impact</h3>
+            <ul className="space-y-3 text-foreground/90">
+              <li>📈 <strong className="text-foreground">Visualisation :</strong> Statistiques clés (points, rebonds, passes décisives, % de tir).</li>
+              <li>🔍 <strong className="text-foreground">Filtres dynamiques :</strong> Comparaison entre joueurs en temps réel.</li>
+              <li>🎨 <strong className="text-foreground">Design :</strong> Présentation claire et visuellement attrayante.</li>
+            </ul>
+          </div>
+        </div>
+      ),
+      en: (
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-lg font-bold text-foreground mb-2">🎯 Business Context</h3>
+            <p className="text-foreground/90">
+              This Power BI dashboard presents NBA star statistics for the 2023-2024 season.
+              It offers an interactive visualization of player performance, allowing users to explore and analyze data intuitively.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-lg font-bold text-foreground mb-2">🛠️ Tools Used</h3>
+            <div className="flex flex-wrap gap-2">
+              {['Power BI', 'DAX', 'Power Query'].map(t => (
+                <Badge key={t} variant="secondary" className="bg-primary/10 text-primary">{t}</Badge>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3 className="text-lg font-bold text-foreground mb-2">📊 Impact</h3>
+            <ul className="space-y-3 text-foreground/90">
+              <li>📈 <strong className="text-foreground">Visualization:</strong> Key stats (points, rebounds, assists, shooting %).</li>
+              <li>🔍 <strong className="text-foreground">Dynamic filters:</strong> Real-time player comparisons.</li>
+              <li>🎨 <strong className="text-foreground">Design:</strong> Clear and visually appealing presentation.</li>
+            </ul>
+          </div>
+        </div>
+      ),
+    },
   };
 
   const study = caseStudies[projectId];
   if (!study) return null;
 
   const titles: Record<string, { fr: string; en: string }> = {
+    '1': { fr: 'Dashboard NBA Stats', en: 'NBA Stats Dashboard' },
     '3': { fr: 'Binko - Génération Automatisée pour l\'IA', en: 'Binko - Automated AI Generation' },
     '2': { fr: 'Go Fusion - EcoVeille Automatisée', en: 'Go Fusion - Automated EcoWatch' },
+  };
+
+  const handleViewFullPage = () => {
+    onClose();
+    const route = fullPageRoutes[projectId];
+    if (route) navigate(route);
   };
 
   return (
@@ -172,13 +245,21 @@ const ProjectCaseStudyModal = ({ projectId, open, onClose }: ProjectCaseStudyMod
       <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-2xl text-foreground">
-            {language === 'en' ? titles[projectId].en : titles[projectId].fr}
+            {language === 'en' ? titles[projectId]?.en : titles[projectId]?.fr}
           </DialogTitle>
           <DialogDescription>
             {language === 'en' ? 'Case Study' : 'Étude de cas'}
           </DialogDescription>
         </DialogHeader>
         {language === 'en' ? study.en : study.fr}
+        {fullPageRoutes[projectId] && (
+          <div className="pt-4 border-t border-border">
+            <Button onClick={handleViewFullPage} className="w-full gap-2">
+              <ExternalLink className="w-4 h-4" />
+              {language === 'en' ? 'View full page' : 'Voir la page du projet'}
+            </Button>
+          </div>
+        )}
       </DialogContent>
     </Dialog>
   );

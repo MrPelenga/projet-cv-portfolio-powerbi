@@ -79,7 +79,7 @@ const ProjectsList = ({ limit, projects }: ProjectsListProps) => {
   const getTags = (project: Project) =>
     language === 'en' && project.tags_en ? project.tags_en : project.tags;
 
-  const hasCaseStudy = (projectId: string) => projectId === '2' || projectId === '3';
+  const hasCaseStudy = (projectId: string) => projectId === '1' || projectId === '2' || projectId === '3';
 
   const handleViewProject = (project: Project) => {
     if (hasCaseStudy(project.id)) {

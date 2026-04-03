@@ -119,8 +119,15 @@ const Navbar = () => {
               {t('nav.projects')}
             </Link>
             <button 
+              onClick={toggleTheme}
+              className="flex items-center px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-accent w-full text-left"
+            >
+              {theme === 'light' ? <Moon size={20} className="mr-2" /> : <Sun size={20} className="mr-2" />}
+              {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+            </button>
+            <button 
               onClick={() => setLanguage(language === 'fr' ? 'en' : 'fr')}
-              className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100 w-full text-left"
+              className="flex items-center px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-accent w-full text-left"
             >
               <Languages size={20} className="mr-2" />
               {language === 'fr' ? 'English' : 'Français'}

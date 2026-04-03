@@ -2,8 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Languages } from 'lucide-react';
+import { Menu, X, Languages, Sun, Moon } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
+import { useTheme } from '@/hooks/useTheme';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

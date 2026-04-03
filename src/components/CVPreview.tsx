@@ -41,7 +41,8 @@ const CVPreview = () => {
     <Card className="p-6 shadow-md">
       <div className="mb-8">
         <h2 className="text-2xl font-bold mb-2">Gabriel PELENGA MANGI</h2>
-        <h3 className="text-xl text-primary mb-2">MSc Analytics for Business | Business Analyst</h3>
+        <h3 className="text-xl text-primary mb-2">Diplômé du Mastère Data Science in Business | En recherche d'un CDI/CDD pour Octobre 2026</h3>
+        <p className="text-primary font-semibold mb-2">Actuellement : Business Analyst & Data Quality Analyst chez Partoo</p>
         <p className="text-gray-600 mb-4">
           Spécialiste en analyse de données commerciales qui combine expertise technique, vision stratégique et automatisation de process pour transformer les données en décisions pertinentes.
         </p>

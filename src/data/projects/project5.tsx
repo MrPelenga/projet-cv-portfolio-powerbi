@@ -16,7 +16,7 @@ export const project5: Project = {
   tags: ['Python', 'Streamlit', 'Lead Scoring', 'RevOps', 'SQLite', 'Data Viz'],
   tags_en: ['Python', 'Streamlit', 'Lead Scoring', 'RevOps', 'SQLite', 'Data Viz'],
   link: '/projets/5',
-  screenshots: [shot1.url, shot2.url, shot3.url, shot4.url],
+  screenshots: [shot1, shot2, shot3, shot4],
   screenshotCaptions: [
     'Accueil et circuit du lead',
     'Simulateur de scoring et décision de routage',

@@ -1,4 +1,8 @@
 import { Project } from '@/components/ProjectsList';
+import shot1 from '@/assets/lead-engine-1.webp';
+import shot2 from '@/assets/lead-engine-2.webp';
+import shot3 from '@/assets/lead-engine-3.webp';
+import shot4 from '@/assets/lead-engine-4.webp';
 
 const cover = '/projects/lead-engine-cover.svg';
 
@@ -8,11 +12,23 @@ export const project5: Project = {
   title_en: 'Lead Engine: Lead Scoring & Routing',
   description: "Application RevOps qui score chaque lead entrant, l'assigne automatiquement au bon commercial et pilote le funnel : speed-to-lead, taux d'acceptation et conversion par grade.",
   description_en: 'RevOps app that scores every inbound lead, automatically routes it to the right rep, and tracks the funnel: speed-to-lead, acceptance rate and conversion by grade.',
-  image: cover,
+  image: shot3,
   tags: ['Python', 'Streamlit', 'Lead Scoring', 'RevOps', 'SQLite', 'Data Viz'],
   tags_en: ['Python', 'Streamlit', 'Lead Scoring', 'RevOps', 'SQLite', 'Data Viz'],
   link: '/projets/5',
-  screenshots: [cover],
+  screenshots: [shot1, shot2, shot3, shot4],
+  screenshotCaptions: [
+    'Accueil et circuit du lead',
+    'Simulateur de scoring et décision de routage',
+    'Tableau de pilotage avant / après',
+    'Test sur un fichier de 200 leads',
+  ],
+  screenshotCaptions_en: [
+    'Home and lead journey',
+    'Scoring simulator and routing decision',
+    'Before / after performance dashboard',
+    'Test on a 200-lead file',
+  ],
   description_extended: `Les leads entrants étaient répartis à la main depuis un tableur marketing. Les leads chauds étaient contactés le lendemain, deux commerciaux recevaient la moitié du volume, et des leads hors cible encombraient les files de travail. Résultat : des deals qualifiés perdus dès l'entrée du pipeline.
 
 Lead Engine est une application en 7 modules : BDR Targeter, scoring explicable (fit firmographique /50 + engagement /50, grades A à D), moteur d'assignation (sourcing, compte, segment, territoire, Round Robin pondéré), files de travail avec SLA, tableau de pilotage, documentation SLA générée automatiquement et import/diagnostic d'exports CRM.`,

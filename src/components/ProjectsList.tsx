@@ -19,6 +19,8 @@ export interface Project {
   tags_en?: string[];
   link: string;
   screenshots?: string[];
+  screenshotCaptions?: string[];
+  screenshotCaptions_en?: string[];
   logo?: string;
   description_extended?: string;
   description_extended_en?: string;

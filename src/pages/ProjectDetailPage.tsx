@@ -37,6 +37,7 @@ const ProjectDetailPage = () => {
   const description = language === 'en' && project.description_extended_en ? project.description_extended_en : project.description_extended;
   const objectives = language === 'en' && project.objectives_en ? project.objectives_en : project.objectives;
   const tags = language === 'en' && project.tags_en ? project.tags_en : project.tags;
+  const captions = language === 'en' && project.screenshotCaptions_en ? project.screenshotCaptions_en : project.screenshotCaptions;
   const period = language === 'en' && project.period_en ? project.period_en : project.period;
   const relatedDescription = (p: typeof project) => 
     language === 'en' && p.description_en ? p.description_en : p.description;
@@ -125,11 +126,16 @@ const ProjectDetailPage = () => {
           {project.screenshots && project.screenshots.length > 0 && (
             <div className="mb-12">
               <h2 className="text-2xl font-bold mb-6">{t('project.detail.screenshots.title')}</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className={`grid grid-cols-1 gap-6 ${project.id === '5' ? 'md:grid-cols-2' : 'md:grid-cols-3'}`}>
                 {project.screenshots.map((imgSrc, index) => (
-                  <div key={index} className={`aspect-video rounded-md overflow-hidden shadow-lg border border-border ${project.id === '2' && index === 0 ? "flex items-center justify-center bg-card" : ""}`}>
-                    <img src={imgSrc} alt={`${project.title} capture ${index + 1}`} className={project.id === '2' && index === 0 ? "w-3/4 h-auto object-contain" : "w-full h-full object-cover"} />
-                  </div>
+                  <figure key={index} className="min-w-0">
+                    <div className={`aspect-video rounded-md overflow-hidden shadow-lg border border-border ${project.id === '2' && index === 0 ? "flex items-center justify-center bg-card" : ""}`}>
+                      <img src={imgSrc} alt={`${project.title} capture ${index + 1}`} className={project.id === '2' && index === 0 ? "w-3/4 h-auto object-contain" : "w-full h-full object-cover"} />
+                    </div>
+                    {captions && captions[index] && (
+                      <figcaption className="mt-2 text-sm text-muted-foreground text-center">{captions[index]}</figcaption>
+                    )}
+                  </figure>
                 ))}
               </div>
             </div>

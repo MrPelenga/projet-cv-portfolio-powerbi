@@ -1,11 +1,10 @@
 import { Project } from '@/components/ProjectsList';
-import shot1 from '@/assets/lead-engine-1.png.asset.json';
-import shot2 from '@/assets/lead-engine-2.png.asset.json';
-import shot3 from '@/assets/lead-engine-3.png.asset.json';
-import shot4 from '@/assets/lead-engine-4.png.asset.json';
+import shot1 from '@/assets/lead-engine-1.webp';
+import shot2 from '@/assets/lead-engine-2.webp';
+import shot3 from '@/assets/lead-engine-3.webp';
+import shot4 from '@/assets/lead-engine-4.webp';
 
 const cover = '/projects/lead-engine-cover.svg';
-const pilotage = shot3.url;
 
 export const project5: Project = {
   id: '5',

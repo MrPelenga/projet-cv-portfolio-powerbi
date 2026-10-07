@@ -4,12 +4,13 @@ import { project1 } from './project1';
 import { project2 } from './project2';
 import { project3 } from './project3';
 import { project4 } from './project4';
+import { project5 } from './project5';
 
 // Combine all projects in one array for easy access
-export const allProjects: Project[] = [project1, project2, project3, project4];
+export const allProjects: Project[] = [project5, project1, project2, project3, project4];
 
 // Export individual projects for direct access
-export { project1, project2, project3, project4 };
+export { project1, project2, project3, project4, project5 };
 
 // Helper function to get a project by ID
 export const getProjectById = (id: string): Project | undefined => {

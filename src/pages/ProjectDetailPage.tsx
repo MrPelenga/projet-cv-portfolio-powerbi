@@ -50,7 +50,7 @@ const ProjectDetailPage = () => {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-wrap items-center justify-between">
               <div>
-                <h1 className="text-4xl font-bold mb-2">{project.title}</h1>
+                <h1 className="text-4xl font-bold mb-2">{language === 'en' && project.title_en ? project.title_en : project.title}</h1>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
                 </div>

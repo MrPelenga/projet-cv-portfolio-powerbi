@@ -126,7 +126,7 @@ const ProjectDetailPage = () => {
           {project.screenshots && project.screenshots.length > 0 && (
             <div className="mb-12">
               <h2 className="text-2xl font-bold mb-6">{t('project.detail.screenshots.title')}</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className={`grid grid-cols-1 gap-6 ${project.id === '5' ? 'md:grid-cols-2' : 'md:grid-cols-3'}`}>
                 {project.screenshots.map((imgSrc, index) => (
                   <figure key={index} className="min-w-0">
                     <div className={`aspect-video rounded-md overflow-hidden shadow-lg border border-border ${project.id === '2' && index === 0 ? "flex items-center justify-center bg-card" : ""}`}>

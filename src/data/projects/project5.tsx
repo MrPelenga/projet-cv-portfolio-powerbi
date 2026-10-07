@@ -12,7 +12,7 @@ export const project5: Project = {
   title_en: 'Lead Engine: Lead Scoring & Routing',
   description: "Application RevOps qui score chaque lead entrant, l'assigne automatiquement au bon commercial et pilote le funnel : speed-to-lead, taux d'acceptation et conversion par grade.",
   description_en: 'RevOps app that scores every inbound lead, automatically routes it to the right rep, and tracks the funnel: speed-to-lead, acceptance rate and conversion by grade.',
-  image: pilotage,
+  image: shot3,
   tags: ['Python', 'Streamlit', 'Lead Scoring', 'RevOps', 'SQLite', 'Data Viz'],
   tags_en: ['Python', 'Streamlit', 'Lead Scoring', 'RevOps', 'SQLite', 'Data Viz'],
   link: '/projets/5',

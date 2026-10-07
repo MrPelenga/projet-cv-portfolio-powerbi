@@ -11,6 +11,7 @@ import ProjectCaseStudyModal from '@/components/ProjectCaseStudyModal';
 export interface Project {
   id: string;
   title: string;
+  title_en?: string;
   description: string;
   description_en?: string;
   image: string;
@@ -79,7 +80,7 @@ const ProjectsList = ({ limit, projects }: ProjectsListProps) => {
   const getTags = (project: Project) =>
     language === 'en' && project.tags_en ? project.tags_en : project.tags;
 
-  const hasCaseStudy = (projectId: string) => projectId === '1' || projectId === '2' || projectId === '3';
+  const hasCaseStudy = (projectId: string) => projectId === '1' || projectId === '2' || projectId === '3' || projectId === '5';
 
   const handleViewProject = (project: Project) => {
     if (hasCaseStudy(project.id)) {
@@ -123,7 +124,7 @@ const ProjectsList = ({ limit, projects }: ProjectsListProps) => {
             </div>
             
             <CardHeader>
-              <CardTitle className="text-xl font-bold line-clamp-1 text-foreground">{project.title}</CardTitle>
+              <CardTitle className="text-xl font-bold line-clamp-1 text-foreground">{language === 'en' && project.title_en ? project.title_en : project.title}</CardTitle>
               <CardDescription className="line-clamp-2">{getDescription(project)}</CardDescription>
             </CardHeader>
             

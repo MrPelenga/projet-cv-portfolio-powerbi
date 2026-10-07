@@ -1,84 +1,62 @@
-
-import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
-import { Mail, Linkedin, Phone, Calendar } from 'lucide-react';
+import { Mail, Linkedin, Phone, Calendar, MapPin, ArrowUpRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/hooks/useTranslation';
+import { profile, localized } from '@/data/profile';
+import { Availability } from '@/components/ProfileSections';
 
 const ContactPage = () => {
-  const { t } = useTranslation();
-  
-  return (
-    <div className="flex flex-col min-h-screen bg-background">
-      <Navbar />
-      
-      <main className="flex-grow py-16 px-4 bg-secondary/30">
-        <div className="max-w-5xl mx-auto">
-          <h1 className="text-4xl font-bold text-center mb-12 text-foreground">{t('contact.page.title')}</h1>
-          
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-card rounded-xl shadow-md p-8">
-              <h2 className="text-2xl font-semibold mb-6 text-foreground">{t('contact.info.title')}</h2>
-              
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="bg-primary/10 p-3 rounded-full">
-                    <Mail className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">📧 {t('contact.email.label')}</p>
-                    <a href="mailto:gabrielpelenga@gmail.com" className="font-medium text-foreground hover:text-primary transition-colors">
-                      gabrielpelenga@gmail.com
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-4">
-                  <div className="bg-primary/10 p-3 rounded-full">
-                    <Linkedin className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">{t('contact.linkedin.label')}</p>
-                    <a 
-                      href="https://www.linkedin.com/in/gabriel-pelenga-mangi-820487182/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="font-medium text-foreground hover:text-primary transition-colors"
-                    >
-                      Gabriel PELENGA MANGI
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-4">
-                  <div className="bg-primary/10 p-3 rounded-full">
-                    <Phone className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">📞 {t('contact.phone.label')}</p>
-                    <a href="tel:+33672620165" className="font-medium text-foreground hover:text-primary transition-colors">
-                      06 72 62 01 65
-                    </a>
-                  </div>
-                </div>
+  const { t, language } = useTranslation();
+  const rows = [
+    { icon: Mail, label: t('contact.email.label'), value: profile.email, href: `mailto:${profile.email}`, external: false },
+    { icon: Phone, label: t('contact.phone.label'), value: profile.phone, href: profile.phoneHref, external: false },
+    { icon: Linkedin, label: t('contact.linkedin.label'), value: profile.name, href: profile.links.linkedin, external: true },
+  ];
 
-                <div className="mt-8 pt-6 border-t border-border">
-                  <Button asChild size="lg" className="w-full rounded-full gap-2">
-                    <a href="https://calendly.com/gabrielpelenga/30min" target="_blank" rel="noopener noreferrer">
-                      🗓️ {t('hero.cta.calendly')}
-                    </a>
-                  </Button>
-                </div>
+  return (
+    <div id="top" className="flex flex-col min-h-screen">
+      <Navbar />
+      <main className="flex-grow">
+        <header className="hero-gradient border-b border-border">
+          <div className="page-shell py-14 md:py-20">
+            <Availability />
+            <p className="eyebrow mt-7">Contact</p>
+            <h1 className="text-4xl sm:text-5xl font-semibold">{language === 'fr' ? 'Échangeons' : "Let's talk"}</h1>
+            <p className="mt-4 max-w-2xl text-muted-foreground leading-relaxed">{t('contact.subtitle')}</p>
+          </div>
+        </header>
+        <div className="page-shell grid gap-8 py-14 md:grid-cols-2 md:gap-12">
+          <section className="surface p-6 sm:p-8 h-fit">
+            <h2 className="text-2xl font-semibold mb-6">{t('contact.info.title')}</h2>
+            <div className="space-y-5">
+              {rows.map(({ icon: Icon, label, value, href, external }) => (
+                <a key={label} href={href} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})} className="group flex items-center gap-4">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-primary/20 bg-primary/5"><Icon className="h-5 w-5 text-primary" /></span>
+                  <span className="min-w-0">
+                    <span className="block text-xs text-muted-foreground">{label}</span>
+                    <span className="flex items-center gap-1 font-medium break-all group-hover:text-primary">{value}{external && <ArrowUpRight className="h-4 w-4 shrink-0" />}</span>
+                  </span>
+                </a>
+              ))}
+              <div className="flex items-center gap-4">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-primary/20 bg-primary/5"><MapPin className="h-5 w-5 text-primary" /></span>
+                <span>
+                  <span className="block text-xs text-muted-foreground">{language === 'fr' ? 'Localisation' : 'Location'}</span>
+                  <span className="font-medium">{localized(profile.location, language)}</span>
+                </span>
               </div>
             </div>
-            
-            <ContactForm />
-          </div>
+            <div className="mt-8 border-t border-border pt-6">
+              <Button asChild size="lg" className="w-full">
+                <a href={profile.links.calendly} target="_blank" rel="noopener noreferrer"><Calendar />{t('hero.cta.calendly')}</a>
+              </Button>
+            </div>
+          </section>
+          <ContactForm />
         </div>
       </main>
-      
       <Footer />
     </div>
   );

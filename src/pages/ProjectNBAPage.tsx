@@ -29,7 +29,7 @@ const ProjectNBAPage = () => {
           </Button>
         </Link>
 
-        <h1 className="text-3xl md:text-4xl font-bold mb-2">🏀 Dashboard NBA Stats</h1>
+        <h1 className="text-3xl md:text-4xl font-bold mb-2">Dashboard NBA Stats</h1>
         <p className="text-muted-foreground mb-6 text-lg">
           {language === 'en'
             ? 'Power BI dashboard presenting NBA star statistics for the 2023-2024 season with interactive visualizations.'
@@ -45,7 +45,7 @@ const ProjectNBAPage = () => {
         {/* Case Study */}
         <section className="mb-10 space-y-6">
           <div>
-            <h2 className="text-xl font-bold mb-2">🎯 {language === 'en' ? 'Business Context' : 'Contexte métier'}</h2>
+            <h2 className="text-xl font-bold mb-2">{language === 'en' ? 'Business Context' : 'Contexte métier'}</h2>
             <p className="text-foreground/90">
               {language === 'en'
                 ? 'This Power BI dashboard presents NBA star statistics for the 2023-2024 season. It offers an interactive visualization of player performance, allowing users to explore and analyze data intuitively.'
@@ -53,7 +53,7 @@ const ProjectNBAPage = () => {
             </p>
           </div>
           <div>
-            <h2 className="text-xl font-bold mb-2">🛠️ {language === 'en' ? 'Tools Used' : 'Outils utilisés'}</h2>
+            <h2 className="text-xl font-bold mb-2">{language === 'en' ? 'Tools Used' : 'Outils utilisés'}</h2>
             <div className="flex flex-wrap gap-2">
               {['Power BI', 'DAX', 'Power Query', 'NBA Stats API'].map(t => (
                 <Badge key={t} variant="secondary" className="bg-primary/10 text-primary">{t}</Badge>
@@ -61,7 +61,7 @@ const ProjectNBAPage = () => {
             </div>
           </div>
           <div>
-            <h2 className="text-xl font-bold mb-2">📊 {language === 'en' ? 'Key Objectives' : 'Objectifs clés'}</h2>
+            <h2 className="text-xl font-bold mb-2">{language === 'en' ? 'Key Objectives' : 'Objectifs clés'}</h2>
             <ul className="space-y-2 text-foreground/90 list-disc list-inside">
               {(language === 'en'
                 ? [
@@ -85,7 +85,7 @@ const ProjectNBAPage = () => {
 
         {/* Power BI Embed */}
         <section className="mb-10">
-          <h2 className="text-xl font-bold mb-4">📈 {language === 'en' ? 'Interactive Dashboard' : 'Tableau de bord interactif'}</h2>
+          <h2 className="text-xl font-bold mb-4">{language === 'en' ? 'Interactive Dashboard' : 'Tableau de bord interactif'}</h2>
           <iframe
             title="Dasbord_NBA"
             src="https://app.powerbi.com/reportEmbed?reportId=95e8e56b-8a0a-4f68-9083-679aac8f2ac6&autoAuth=true&ctid=e065ecf4-22b4-4599-9daf-24c5cb5e12d3"
@@ -98,7 +98,7 @@ const ProjectNBAPage = () => {
         {/* Static Fallback */}
         <section className="mb-10">
           <h2 className="text-xl font-bold mb-2">
-            🖼️ {language === 'en' ? 'Static Overview (Fallback)' : 'Aperçu statique (Alternative)'}
+            {language === 'en' ? 'Static Overview (Fallback)' : 'Aperçu statique (Alternative)'}
           </h2>
           <p className="text-muted-foreground mb-6 text-sm">
             {language === 'en'

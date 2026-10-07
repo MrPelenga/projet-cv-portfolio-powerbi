@@ -30,7 +30,7 @@ const ProjectBinkoPage = () => {
         </Link>
 
         <h1 className="text-3xl md:text-4xl font-bold mb-2">
-          🤖 Binko - {language === 'en' ? 'Automated AI Generation' : 'Génération Automatisée pour l\'IA'}
+          Binko - {language === 'en' ? 'Automated AI Generation' : 'Génération Automatisée pour l\'IA'}
         </h1>
         <p className="text-muted-foreground mb-6 text-lg">
           {language === 'en'
@@ -47,7 +47,7 @@ const ProjectBinkoPage = () => {
         {/* Case Study */}
         <section className="mb-10 space-y-6">
           <div>
-            <h2 className="text-xl font-bold mb-2">🎯 {language === 'en' ? 'Business Context' : 'Contexte métier'}</h2>
+            <h2 className="text-xl font-bold mb-2">{language === 'en' ? 'Business Context' : 'Contexte métier'}</h2>
             <p className="text-foreground/90">
               {language === 'en'
                 ? 'Training Binko\'s AI model required a massive volume of visual data. Manual collection and classification of these images was too time-consuming and limited the model\'s learning capacity.'
@@ -55,7 +55,7 @@ const ProjectBinkoPage = () => {
             </p>
           </div>
           <div>
-            <h2 className="text-xl font-bold mb-2">💡 {language === 'en' ? 'The Solution' : 'La Solution'}</h2>
+            <h2 className="text-xl font-bold mb-2">{language === 'en' ? 'The Solution' : 'La Solution'}</h2>
             <p className="text-foreground/90">
               {language === 'en'
                 ? 'Development of an automated generation pipeline via API. The script dynamically queries AI models to generate targeted synthetic images, formats them, and injects them directly into the training database.'
@@ -63,18 +63,18 @@ const ProjectBinkoPage = () => {
             </p>
           </div>
           <div>
-            <h2 className="text-xl font-bold mb-2">📊 {language === 'en' ? 'Impact (ROI)' : 'Impact (ROI)'}</h2>
+            <h2 className="text-xl font-bold mb-2">{language === 'en' ? 'Impact (ROI)' : 'Impact (ROI)'}</h2>
             <ul className="space-y-3 text-foreground/90">
               <li>⏱️ <strong className="text-foreground">{language === 'en' ? 'Time saved:' : 'Gain de temps :'}</strong> {language === 'en' ? 'Automation of a task that took several hours per week.' : 'Automatisation d\'une tâche qui prenait plusieurs heures par semaine.'}</li>
-              <li>📈 <strong className="text-foreground">{language === 'en' ? 'Volume:' : 'Volume :'}</strong> {language === 'en' ? 'Generation of over 1,000 images per month.' : 'Génération de plus de 1 000 images par mois.'}</li>
-              <li>🎯 <strong className="text-foreground">{language === 'en' ? 'Quality:' : 'Qualité :'}</strong> {language === 'en' ? 'Improved Binko\'s AI accuracy through dataset diversity.' : 'Amélioration de la précision de l\'IA de Binko grâce à la diversité du dataset.'}</li>
+              <li><strong className="text-foreground">{language === 'en' ? 'Volume:' : 'Volume :'}</strong> {language === 'en' ? 'Generation of over 1,000 images per month.' : 'Génération de plus de 1 000 images par mois.'}</li>
+              <li><strong className="text-foreground">{language === 'en' ? 'Quality:' : 'Qualité :'}</strong> {language === 'en' ? 'Improved Binko\'s AI accuracy through dataset diversity.' : 'Amélioration de la précision de l\'IA de Binko grâce à la diversité du dataset.'}</li>
             </ul>
           </div>
         </section>
 
         {/* Gallery */}
         <section className="mb-10">
-          <h2 className="text-xl font-bold mb-4">🖼️ {language === 'en' ? 'Gallery / Screenshots' : 'Galerie / Captures d\'écran'}</h2>
+          <h2 className="text-xl font-bold mb-4">{language === 'en' ? 'Gallery / Screenshots' : 'Galerie / Captures d\'écran'}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {screenshots.map((src, i) => (
               <div key={i} className="rounded-xl overflow-hidden border border-border shadow-md">

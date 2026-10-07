@@ -47,23 +47,23 @@ const ProjectDetailPage = () => {
       <Navbar />
       
       <main className="flex-grow">
-        <div className="bg-primary text-primary-foreground py-12 px-4">
-          <div className="max-w-7xl mx-auto">
+        <div className="hero-gradient border-b border-border py-12 md:py-16">
+          <div className="page-shell">
             <div className="flex flex-wrap items-center justify-between">
               <div>
-                <h1 className="text-4xl font-bold mb-2">{language === 'en' && project.title_en ? project.title_en : project.title}</h1>
+                <h1 className="text-3xl sm:text-4xl font-semibold mb-4">{language === 'en' && project.title_en ? project.title_en : project.title}</h1>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
                 </div>
               </div>
-              <Button asChild variant="secondary">
+              <Button asChild variant="outline">
                 <Link to="/projets">{t('project.detail.back')}</Link>
               </Button>
             </div>
           </div>
         </div>
         
-        <div className="max-w-7xl mx-auto px-4 py-12">
+        <div className="page-shell py-12">
           {project.logo && (
             <div className="mb-10 flex justify-center">
               <div className="max-w-2xl w-full">

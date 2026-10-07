@@ -31,7 +31,7 @@ const ProjectGoFusionPage = () => {
         </Link>
 
         <h1 className="text-3xl md:text-4xl font-bold mb-2">
-          🌍 Go Fusion - {language === 'en' ? 'Automated EcoWatch' : 'EcoVeille Automatisée'}
+          Go Fusion - {language === 'en' ? 'Automated EcoWatch' : 'EcoVeille Automatisée'}
         </h1>
         <p className="text-muted-foreground mb-6 text-lg">
           {language === 'en'
@@ -48,7 +48,7 @@ const ProjectGoFusionPage = () => {
         {/* Case Study */}
         <section className="mb-10 space-y-6">
           <div>
-            <h2 className="text-xl font-bold mb-2">🎯 {language === 'en' ? 'Business Context' : 'Contexte métier'}</h2>
+            <h2 className="text-xl font-bold mb-2">{language === 'en' ? 'Business Context' : 'Contexte métier'}</h2>
             <p className="text-foreground/90">
               {language === 'en'
                 ? 'Gofusion needed to continuously monitor environmental news (EcoWatch) for its SEO strategy and positioning, but manual monitoring and article writing were too time-consuming for the teams.'
@@ -56,7 +56,7 @@ const ProjectGoFusionPage = () => {
             </p>
           </div>
           <div>
-            <h2 className="text-xl font-bold mb-2">💡 {language === 'en' ? 'The Solution' : 'La Solution'}</h2>
+            <h2 className="text-xl font-bold mb-2">{language === 'en' ? 'The Solution' : 'La Solution'}</h2>
             <p className="text-foreground/90">
               {language === 'en'
                 ? 'Creation of a complete automation scenario on Make. The system collects information daily via various news APIs, filters relevant data, and pre-generates SEO-optimized content ready to be published.'
@@ -64,18 +64,18 @@ const ProjectGoFusionPage = () => {
             </p>
           </div>
           <div>
-            <h2 className="text-xl font-bold mb-2">📊 {language === 'en' ? 'Impact (ROI)' : 'Impact (ROI)'}</h2>
+            <h2 className="text-xl font-bold mb-2">{language === 'en' ? 'Impact (ROI)' : 'Impact (ROI)'}</h2>
             <ul className="space-y-3 text-foreground/90">
               <li>⏱️ <strong className="text-foreground">{language === 'en' ? 'Productivity:' : 'Productivité :'}</strong> {language === 'en' ? 'Saved 4 hours of research and structuring per week for the team.' : 'Économie de 4 heures de recherche et de structuration par semaine pour l\'équipe.'}</li>
-              <li>🌍 <strong className="text-foreground">{language === 'en' ? 'Data volume:' : 'Volume de données :'}</strong> {language === 'en' ? 'Automated processing of 20 sources of information per day.' : 'Traitement automatisé de 20 sources d\'informations par jour.'}</li>
-              <li>🚀 <strong className="text-foreground">{language === 'en' ? 'Performance:' : 'Performance :'}</strong> {language === 'en' ? '17% increase in organic SEO traffic on environmental topics.' : 'Augmentation du trafic organique SEO de 17% sur les thématiques environnementales.'}</li>
+              <li><strong className="text-foreground">{language === 'en' ? 'Data volume:' : 'Volume de données :'}</strong> {language === 'en' ? 'Automated processing of 20 sources of information per day.' : 'Traitement automatisé de 20 sources d\'informations par jour.'}</li>
+              <li><strong className="text-foreground">{language === 'en' ? 'Performance:' : 'Performance :'}</strong> {language === 'en' ? '17% increase in organic SEO traffic on environmental topics.' : 'Augmentation du trafic organique SEO de 17% sur les thématiques environnementales.'}</li>
             </ul>
           </div>
         </section>
 
         {/* Gallery */}
         <section className="mb-10">
-          <h2 className="text-xl font-bold mb-4">🖼️ {language === 'en' ? 'Gallery / Screenshots' : 'Galerie / Captures d\'écran'}</h2>
+          <h2 className="text-xl font-bold mb-4">{language === 'en' ? 'Gallery / Screenshots' : 'Galerie / Captures d\'écran'}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {screenshots.map((src, i) => (
               <div key={i} className="rounded-xl overflow-hidden border border-border shadow-md">

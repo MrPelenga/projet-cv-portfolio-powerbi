@@ -1,29 +1,30 @@
-// This file must reflect the LinkedIn profile. Update all bilingual profile facts here.
+// This file must reflect the LinkedIn profile (last aligned with the LinkedIn export of 7 Oct 2026). Update all bilingual profile facts here.
 import type { Language } from "@/hooks/useTranslation";
 export type Localized = { fr: string; en: string };
+export type Education = { school: string; degree: Localized; period: Localized; courses?: Localized; tools?: string };
 export const profile = {
   "name": "Gabriel Pelenga Mangi",
   "title": {
-    "fr": "Business Analyst & Spécialiste Power BI",
-    "en": "Business Analyst & Power BI Specialist"
+    "fr": "Business Analyst Ops · Sales Ops & BI",
+    "en": "Business Analyst Ops · Sales Ops & BI"
   },
   "tagline": {
-    "fr": "Passionné par la transformation des données en insights stratégiques pour optimiser les performances business et automatiser les processus.",
-    "en": "Passionate about transforming data into strategic insights to optimize business performance and automate processes."
+    "fr": "Je fiabilise les données commerciales, construis des tableaux de bord utiles aux équipes et automatise les processus de vente.",
+    "en": "I make sales data reliable, build dashboards teams actually use, and automate sales processes."
   },
   "availability": {
-    "fr": "En recherche d'un CDI/CDD pour Octobre 2026",
-    "en": "Seeking a permanent (CDI) or fixed-term (CDD) contract for October 2026"
+    "fr": "En recherche d'un CDI · à partir d'octobre 2026",
+    "en": "Open to permanent roles · from October 2026"
   },
   "qualification": {
-    "fr": "Diplômé du Mastère Data Science in Business, en recherche d'un CDI/CDD pour Octobre 2026",
-    "en": "cv.header.subtitle"
+    "fr": "Master Data à Eugenia School (oct. 2025 – oct. 2026), après un M1 MSc Analytics for Business à l'Albert School.",
+    "en": "Master's in Data at Eugenia School (Oct 2025 – Oct 2026), after a first year of the MSc Analytics for Business at Albert School."
   },
   "current": {
-    "fr": "Actuellement : Analyste métier & Analyste qualité des données chez Partoo",
-    "en": "Currently: Business Analyst & Data Quality Analyst at Partoo"
+    "fr": "Dernier poste : Business Analyst Ops chez Partoo (sept. 2025 – sept. 2026)",
+    "en": "Latest role: Business Analyst Ops at Partoo (Sep 2025 – Sep 2026)"
   },
-  "photo": "/lovable-uploads/a800ede8-6357-4e94-b0f9-df456a52625c.png",
+  "photo": "/photo-gabriel-pelenga-mangi.jpg",
   "email": "gabrielpelenga@gmail.com",
   "phone": "06.72.62.01.65",
   "phoneHref": "tel:+33672620165",
@@ -35,33 +36,37 @@ export const profile = {
   },
   "about": [
     {
-      "fr": "Spécialiste en analyse de données commerciales qui combine expertise technique et vision stratégique pour transformer les données en décisions pertinentes.",
-      "en": "Commercial data analysis specialist combining technical expertise and strategic vision to transform data into relevant decisions."
+      "fr": "Business Analyst spécialisé en opérations commerciales et en data, je recherche un CDI à partir d'octobre 2026, à Paris ou en périphérie.",
+      "en": "Business Analyst specialising in sales operations and data, I am looking for a permanent position from October 2026, in Paris or the surrounding area."
     },
     {
-      "fr": "Professionnel polyvalent avec une solide expérience en gestion de projets, analyse commerciale et automatisation de process et de données, cherchant à déployer ses compétences en data science et business intelligence dans un environnement stimulant.",
-      "en": "Versatile professional with solid experience in project management, business analysis and process & data automation, seeking to deploy data science and business intelligence skills in a stimulating environment."
+      "fr": "Pendant un an chez Partoo, j'ai géré et réparti les portefeuilles de leads des équipes commerciales, analysé les appels et les rendez-vous des Account Executives, cartographié les territoires clients et fiabilisé les données du CRM. J'y ai automatisé l'attribution des leads (round robin) et créé des web apps pour repérer les leads chauds : ces actions ont contribué à 9 % du pipeline commercial généré.",
+      "en": "During a year at Partoo, I managed and allocated lead portfolios across the sales teams, analysed Account Executives' calls and meetings, mapped client territories and cleaned up CRM data. I automated lead assignment (round robin) and built web apps to spot hot leads: these actions contributed to 9% of the sales pipeline generated."
+    },
+    {
+      "fr": "Avant cela, j'ai piloté la performance commerciale chez Verisure comme Analyste BI, mené des projets de suivi de consommation énergétique chez GreenFlex, et commencé par la vente chez Koesio : je connais le terrain que j'analyse aujourd'hui.",
+      "en": "Before that, I tracked sales performance at Verisure as a BI Analyst, ran energy-consumption monitoring projects at GreenFlex, and started out in sales at Koesio, so I know first-hand the field I now analyse."
     }
   ],
   "brief": [
     {
       "title": {
-        "fr": "Business Analyst avec expertise BI",
-        "en": "Business Analyst with BI expertise"
+        "fr": "Business Analyst Ops",
+        "en": "Business Analyst Ops"
       },
       "description": {
-        "fr": "Analyse de données, visualisation et automatisation",
-        "en": "Data analysis, visualization and automation"
+        "fr": "Sales Ops, analyse BI et automatisation des processus commerciaux",
+        "en": "Sales Ops, BI analysis and sales process automation"
       }
     },
     {
       "title": {
-        "fr": "En recherche d'un CDI/CDD",
-        "en": "Seeking a permanent/fixed-term contract"
+        "fr": "En recherche d'un CDI",
+        "en": "Open to permanent roles"
       },
       "description": {
-        "fr": "Pour Octobre 2026",
-        "en": "For October 2026"
+        "fr": "À partir d'octobre 2026 · Paris et périphérie",
+        "en": "From October 2026 · Paris area"
       }
     },
     {
@@ -81,6 +86,7 @@ export const profile = {
     "Python",
     "Salesforce",
     "Streamlit",
+    "Microsoft Azure",
     "Databricks",
     "Tableau",
     "Excel"
@@ -90,123 +96,165 @@ export const profile = {
       "id": "partoo",
       "company": "Partoo",
       "title": {
-        "fr": "Analyste métier & Analyste qualité des données",
-        "en": "Business Analyst & Data Quality Analyst"
+        "fr": "Business Analyst Ops",
+        "en": "Business Analyst Ops"
       },
       "start": "2025-09",
       "end": "2026-09",
       "missions": [
         {
-          "fr": "Gestion de portefeuille par marché (Europe, Moyen-Orient, Amérique Latine)",
-          "en": "Portfolio management by market (Europe, Middle East, Latin America)"
+          "fr": "Gestion et répartition des portefeuilles de leads des équipes commerciales.",
+          "en": "Managed and allocated lead portfolios across the sales teams."
         },
         {
-          "fr": "Reportings de KPI commerciaux : CA généré par les équipes, Nombre de RDV fixés",
-          "en": "Commercial KPI reporting: revenue generated by teams, number of meetings scheduled"
+          "fr": "Analyse des appels des Account Executives pour identifier les bonnes pratiques et les axes d'amélioration.",
+          "en": "Analysed Account Executives' calls to identify best practices and areas for improvement."
         },
         {
-          "fr": "Nettoyage du CRM & Portefeuille",
-          "en": "CRM & Portfolio cleanup"
+          "fr": "Analyse des rendez-vous afin d'optimiser les processus de vente et la conversion.",
+          "en": "Analysed meetings to optimise sales processes and conversion."
         },
         {
-          "fr": "Création de Dashboard Streamlit & SalesForce",
-          "en": "Streamlit & SalesForce Dashboard creation"
+          "fr": "Cartographie et analyse des territoires clients pour appuyer l'organisation commerciale.",
+          "en": "Mapped and analysed client territories to support the sales organisation."
+        },
+        {
+          "fr": "Nettoyage et fiabilisation des données CRM.",
+          "en": "Cleaned up and consolidated CRM data."
+        },
+        {
+          "fr": "Création de tableaux de bord de suivi de l'activité et de la performance commerciale.",
+          "en": "Built dashboards tracking sales activity and performance."
+        },
+        {
+          "fr": "Automatisation de l'attribution des leads (round robin) et création de web apps pour identifier les leads chauds.",
+          "en": "Automated lead assignment (round robin) and built web apps to identify hot leads."
+        },
+        {
+          "fr": "Contribution directe au pipeline commercial : 9 % du pipe généré grâce aux actions mises en place.",
+          "en": "Direct contribution to the sales pipeline: 9% of pipeline generated through these actions."
         }
       ]
     },
     {
       "id": "verisure",
-      "company": "Vérisure",
+      "company": "Verisure",
       "title": {
-        "fr": "Analyste BI & Analyste performance commerciale",
-        "en": "BI Analyst & Commercial Performance Analyst"
+        "fr": "Analyste BI",
+        "en": "BI Analyst"
       },
       "start": "2024-09",
-      "end": "2025-01",
+      "end": "2025-03",
       "missions": [
         {
-          "fr": "Gestion de données commerciales",
-          "en": "Commercial data management"
+          "fr": "Préparation, nettoyage et analyse des données via Microsoft Azure pour fiabiliser le suivi de la performance commerciale.",
+          "en": "Prepared, cleaned and analysed data on Microsoft Azure to make sales performance tracking reliable."
         },
         {
-          "fr": "Rapport d'analyse (performance commerciales)",
-          "en": "Analysis reports (commercial performance)"
+          "fr": "Analyse de la performance des commerciaux terrain et des managers d'agence.",
+          "en": "Analysed the performance of field sales reps and branch managers."
         },
         {
-          "fr": "Analyses des KPI commerciales",
-          "en": "Commercial KPI analysis"
+          "fr": "Création de tableaux de bord dynamiques et intuitifs pour piloter l'activité commerciale.",
+          "en": "Built dynamic, intuitive dashboards to steer sales activity."
         },
         {
-          "fr": "Récupération de données commerciales",
-          "en": "Commercial data retrieval"
+          "fr": "Animation de réunions d'équipe avec les commerciaux terrain et les managers d'agence.",
+          "en": "Led team meetings with field sales reps and branch managers."
+        },
+        {
+          "fr": "Participation aux réunions de direction et de stratégie.",
+          "en": "Took part in management and strategy meetings."
         }
       ]
     },
     {
       "id": "greenflex",
-      "company": "Greenflex / Total Energie",
+      "company": "GreenFlex",
       "title": {
-        "fr": "Chef de projet & Analyste métier",
-        "en": "Project Manager & Business Analyst"
+        "fr": "Chef de projet",
+        "en": "Project Manager"
       },
       "start": "2024-04",
       "end": "2024-09",
       "missions": [
         {
-          "fr": "Gestion de paramétrage de données clients",
-          "en": "Client data configuration management"
+          "fr": "Gestion de projets de suivi de consommation énergétique pour des clients grands comptes et PME.",
+          "en": "Managed energy-consumption monitoring projects for key accounts and SMEs."
         },
         {
-          "fr": "Gestion et Pilotage de projet en agilité",
-          "en": "Agile project management and steering"
+          "fr": "Collecte, gestion et analyse des données de consommation d'énergie.",
+          "en": "Collected, managed and analysed energy consumption data."
         },
         {
-          "fr": "Animation de réunion commerciale",
-          "en": "Commercial meeting facilitation"
+          "fr": "Création de tableaux de bord pour suivre les consommations et piloter les actions.",
+          "en": "Built dashboards to track consumption and steer actions."
         },
         {
-          "fr": "Animation de Webinaire clients",
-          "en": "Client webinar facilitation"
+          "fr": "Analyse des points de vente à forte consommation afin de cibler les actions prioritaires.",
+          "en": "Analysed high-consumption sites to target priority actions."
+        },
+        {
+          "fr": "Économies générées : environ 10 000 € en moyenne pour les grandes entreprises et 4 000 € pour les PME.",
+          "en": "Savings generated: around €10,000 on average for large companies and €4,000 for SMEs."
+        },
+        {
+          "fr": "Animation commerciale auprès des clients.",
+          "en": "Client-facing commercial engagement."
         }
       ]
     },
     {
       "id": "koesio",
-      "company": "Koésio Corporate IT",
+      "company": "Koesio",
       "title": {
-        "fr": "Analyste métier & Développeur commercial",
-        "en": "Business Analyst & Business Developer"
+        "fr": "Chargé d'affaires",
+        "en": "Account Manager"
       },
       "start": "2022-11",
-      "end": "2023-10",
+      "end": "2023-09",
       "missions": [
         {
-          "fr": "Gestion de la clientèle (65 clients dont 3 grands comptes)",
-          "en": "Client management (65 clients including 3 key accounts)"
+          "fr": "Prospection multicanale : téléphonique, en ligne et sur le terrain.",
+          "en": "Multichannel prospecting: phone, online and in the field."
         },
         {
-          "fr": "Reportings de KPI commerciaux : taux de clic, retour sur investissement, CA généré",
-          "en": "Commercial KPI reporting: click rate, ROI, revenue generated"
+          "fr": "Développement commercial auprès de grands et moyens comptes.",
+          "en": "Business development with large and mid-sized accounts."
         },
         {
-          "fr": "Prospection Téléphonique (30 appels par jours)",
-          "en": "Phone prospecting (30 calls per day)"
+          "fr": "Rédaction et suivi de réponses à des appels d'offres, dont un remporté.",
+          "en": "Wrote and followed up tender responses, including one won."
         },
         {
-          "fr": "Rendez-vous en clientèle (présentation des solutions)",
-          "en": "Client meetings (solution presentations)"
+          "fr": "19 000 € de chiffre d'affaires généré.",
+          "en": "€19,000 in revenue generated."
         }
       ]
     }
   ],
   "education": [
     {
-      "school": "Eugenia School (Paris 10)",
+      "school": "Eugenia School · Paris School of Technology & Business",
       "degree": {
-        "fr": "MSc Analytics for Business",
-        "en": "MSc Analytics for Business"
+        "fr": "Master Data",
+        "en": "Master's in Data"
       },
-      "period": "2024 – 2026",
+      "period": {
+        "fr": "Oct. 2025 – Oct. 2026",
+        "en": "Oct 2025 – Oct 2026"
+      }
+    },
+    {
+      "school": "Albert School",
+      "degree": {
+        "fr": "Master 1 · MSc Analytics for Business",
+        "en": "Master 1 · MSc Analytics for Business"
+      },
+      "period": {
+        "fr": "Janv. 2024 – 2025",
+        "en": "Jan 2024 – 2025"
+      },
       "courses": {
         "fr": "Collecte, visualisation et analyse de données, Programmation, Stratégie, Finance, Marketing",
         "en": "Data collection, visualization and analysis, Programming, Strategy, Finance, Marketing"
@@ -214,12 +262,15 @@ export const profile = {
       "tools": "Python, SQL, PowerBI, Agile Methodology, Databricks, Tableau, Target Process"
     },
     {
-      "school": "CFA Codis (Paris 10)",
+      "school": "ICD Business School",
       "degree": {
-        "fr": "Bachelor en management commercial et marketing",
-        "en": "Bachelor in Commercial Marketing Management"
+        "fr": "Bachelor Responsable Commercial Marketing",
+        "en": "Bachelor in Sales & Marketing Management"
       },
-      "period": "2022 – 2023",
+      "period": {
+        "fr": "",
+        "en": ""
+      },
       "courses": {
         "fr": "Marketing, Statistiques, Communication, Négociation, Management, E-commerce",
         "en": "Marketing, Statistics, Communication, Negotiation, Management, E-commerce"
@@ -227,12 +278,15 @@ export const profile = {
       "tools": "Python, Excel, PowerPoint, Canva, SEO/SEA, SQL"
     },
     {
-      "school": "Lycée Van Gogh (Paris 10)",
+      "school": "Lycée Van Gogh, Ermont",
       "degree": {
-        "fr": "BTS Négociation et digitalisation de la relation client",
-        "en": "BTS in Digital Client Relationship & Negotiation"
+        "fr": "BTS NDRC (Négociation et digitalisation de la relation client)",
+        "en": "BTS NDRC (Negotiation & Digital Client Relationship)"
       },
-      "period": "2020 – 2022",
+      "period": {
+        "fr": "2018 – 2020",
+        "en": "2018 – 2020"
+      },
       "courses": {
         "fr": "Marketing, Négociation, Communication, E-commerce",
         "en": "Marketing, Negotiation, Communication, E-commerce"
@@ -258,6 +312,10 @@ export const profile = {
         {
           "fr": "Power BI",
           "en": "Power BI"
+        },
+        {
+          "fr": "Microsoft Azure",
+          "en": "Microsoft Azure"
         },
         {
           "fr": "Databricks",
@@ -298,6 +356,14 @@ export const profile = {
         {
           "fr": "Visualisation de données",
           "en": "Data Visualization"
+        },
+        {
+          "fr": "CRM (Salesforce)",
+          "en": "CRM (Salesforce)"
+        },
+        {
+          "fr": "Attribution des leads",
+          "en": "Lead routing"
         }
       ]
     },
@@ -351,8 +417,8 @@ export const profile = {
         "en": "English"
       },
       "level": {
-        "fr": "Professionnel",
-        "en": "Professional"
+        "fr": "Professionnel complet",
+        "en": "Full professional"
       }
     },
     {
@@ -361,8 +427,8 @@ export const profile = {
         "en": "Spanish"
       },
       "level": {
-        "fr": "Intermédiaire",
-        "en": "Intermediate"
+        "fr": "Professionnel limité",
+        "en": "Limited working"
       }
     }
   ],
@@ -400,6 +466,15 @@ export const profile = {
         }
       ]
     }
+  ],
+  "location": {
+    "fr": "Paris et périphérie",
+    "en": "Paris area"
+  },
+  "certifications": [
+    "Microsoft Certified: Azure Data Scientist Associate",
+    "AWS Academy Graduate – Cloud Foundations",
+    "PMI Project Management Ready™"
   ]
 };
 export const localized = (value: Localized, language: Language) => value[language];

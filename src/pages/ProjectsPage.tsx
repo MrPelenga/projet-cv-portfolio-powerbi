@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from '@/hooks/useTranslation';
 
 const ProjectsPage = () => {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [showFilters, setShowFilters] = useState(false);
@@ -57,24 +57,20 @@ const ProjectsPage = () => {
       <Navbar />
       
       <main className="flex-grow">
-        <div className="bg-primary text-primary-foreground py-12 px-4 relative overflow-hidden">
-          <div className="absolute inset-0 opacity-50" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E")`
-          }}></div>
-          <div className="max-w-7xl mx-auto relative z-10">
-            <h1 className="text-4xl font-bold mb-4 animate-fade-in" style={{animationDelay: '0.1s'}}>{t('projects.page.title')}</h1>
-            <p className="max-w-2xl text-xl text-center font-normal mx-auto animate-fade-in" style={{animationDelay: '0.2s'}}>
-              {t('projects.page.subtitle')}
-            </p>
+        <header className="hero-gradient border-b border-border">
+          <div className="page-shell py-14 md:py-20">
+            <p className="eyebrow">{language === 'fr' ? 'Réalisations' : 'Work'}</p>
+            <h1 className="text-4xl sm:text-5xl font-semibold">{t('projects.page.title')}</h1>
+            <p className="mt-4 max-w-2xl text-muted-foreground leading-relaxed">{t('projects.page.subtitle')}</p>
           </div>
-        </div>
-        
-        <div className="max-w-7xl mx-auto px-4 py-12">
+        </header>
+
+        <div className="page-shell py-14">
           {powerBIProjects.length > 0 && (
             <div className="mb-12">
               <div className="flex items-center gap-3 mb-6">
-                <BarChart3 className="text-primary" size={32} />
-                <h2 className="text-3xl font-bold text-primary">{t('projects.powerbi.title')}</h2>
+                <BarChart3 className="text-primary" size={26} />
+                <h2 className="text-2xl md:text-3xl font-semibold text-foreground">{t('projects.powerbi.title')}</h2>
               </div>
               <p className="text-muted-foreground mb-6 max-w-3xl">
                 {t('projects.powerbi.description')}
@@ -92,13 +88,13 @@ const ProjectsPage = () => {
                   placeholder={t('projects.search.placeholder')} 
                   value={searchTerm} 
                   onChange={handleSearchChange} 
-                  className="w-full pl-10 border-2 focus:border-primary"
+                  className="w-full pl-10"
                 />
               </div>
               <div className="w-full md:w-1/3">
                 <Button 
                   variant="outline" 
-                  className="w-full border-2 hover:bg-primary/10 flex items-center justify-center gap-2"
+                  className="w-full flex items-center justify-center gap-2"
                   onClick={() => setShowFilters(!showFilters)}
                 >
                   <Filter size={18} />
@@ -132,7 +128,7 @@ const ProjectsPage = () => {
           
           <div className="mb-6">
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-2xl font-bold text-foreground">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
                 {filteredProjects.length > 0 
                   ? selectedTags.length > 0 
                     ? `${t('projects.filtered.title')} (${filteredProjects.length})` 
@@ -157,17 +153,18 @@ const ProjectsPage = () => {
           </div>
         </div>
         
-        <div className="bg-primary/10 py-16 px-4 relative overflow-hidden">
-          <div className="max-w-7xl mx-auto text-center relative z-10">
-            <h2 className="text-3xl font-bold mb-6 text-foreground">{t('projects.cta.title')}</h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              {t('projects.cta.description')}
-            </p>
-            <Button size="lg" className="shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-lg" asChild>
+        <section className="border-t border-border bg-accent/40">
+          <div className="page-shell py-16 flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <p className="eyebrow">Contact</p>
+              <h2 className="section-title mb-3">{language === 'fr' ? 'Un poste à pourvoir ?' : 'Hiring?'}</h2>
+              <p className="text-muted-foreground max-w-xl leading-relaxed">{language === 'fr' ? "Je suis en recherche d'un CDI : parlons de vos besoins en analyse et en opérations commerciales." : 'I am looking for a permanent role: let us talk about your analytics and sales operations needs.'}</p>
+            </div>
+            <Button size="lg" asChild>
               <Link to="/contact">{t('projects.cta.button')}</Link>
             </Button>
           </div>
-        </div>
+        </section>
       </main>
       
       <Footer />

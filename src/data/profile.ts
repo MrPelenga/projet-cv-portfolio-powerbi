@@ -17,8 +17,8 @@ export const profile = {
     "en": "Open to permanent roles · from October 2026"
   },
   "qualification": {
-    "fr": "Master Data à Eugenia School (oct. 2025 – oct. 2026), après un M1 MSc Analytics for Business à l'Albert School.",
-    "en": "Master's in Data at Eugenia School (Oct 2025 – Oct 2026), after a first year of the MSc Analytics for Business at Albert School."
+    "fr": "Diplômé d'un Master Data obtenu à Paris School of Technology & Business et Eugenia School (2026), après un M1 MSc Analytics for Business à l'Albert School.",
+    "en": "Master's in Data graduate from Paris School of Technology & Business and Eugenia School (2026), after a first year of the MSc Analytics for Business at Albert School."
   },
   "current": {
     "fr": "Dernier poste : Business Analyst Ops chez Partoo (sept. 2025 – sept. 2026)",
@@ -235,10 +235,10 @@ export const profile = {
   ],
   "education": [
     {
-      "school": "Eugenia School · Paris School of Technology & Business",
+      "school": "Paris School of Technology & Business · Eugenia School",
       "degree": {
-        "fr": "Master Data",
-        "en": "Master's in Data"
+        "fr": "Master Data · diplômé",
+        "en": "Master's in Data · graduated"
       },
       "period": {
         "fr": "Oct. 2025 – Oct. 2026",

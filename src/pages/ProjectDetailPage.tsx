@@ -37,6 +37,7 @@ const ProjectDetailPage = () => {
   const description = language === 'en' && project.description_extended_en ? project.description_extended_en : project.description_extended;
   const objectives = language === 'en' && project.objectives_en ? project.objectives_en : project.objectives;
   const tags = language === 'en' && project.tags_en ? project.tags_en : project.tags;
+  const captions = language === 'en' && project.screenshotCaptions_en ? project.screenshotCaptions_en : project.screenshotCaptions;
   const period = language === 'en' && project.period_en ? project.period_en : project.period;
   const relatedDescription = (p: typeof project) => 
     language === 'en' && p.description_en ? p.description_en : p.description;

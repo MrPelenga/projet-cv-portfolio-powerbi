@@ -36,7 +36,7 @@ const ProjectCaseStudyModal = ({ projectId, open, onClose }: ProjectCaseStudyMod
           <div>
             <h3 className="text-lg font-bold text-foreground mb-2">🛠️ Outils utilisés</h3>
             <div className="flex flex-wrap gap-2">
-              {['Python', 'Streamlit', 'SQLite', 'Pandas', 'API d'enrichissement', ].map(t => (
+              {['Python', 'Streamlit', 'SQLite', 'Pandas', "API d'enrichissement", ].map(t => (
                 <Badge key={t} variant="secondary" className="bg-primary/10 text-primary">{t}</Badge>
               ))}
             </div>

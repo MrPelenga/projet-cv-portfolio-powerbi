@@ -1,50 +1,8 @@
-import React from 'react';
-import { Button } from '@/components/ui/button';
+import { ArrowUpRight, Linkedin, Mail, Calendar, ArrowDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Calendar } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/hooks/useTranslation';
-
-const HeroSection = () => {
-  const { t } = useTranslation();
-  
-  return (
-    <div className="hero-gradient py-20 md:py-28 px-4">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center md:text-left md:flex md:items-center md:justify-between">
-          <div className="md:w-1/2 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
-              <span className="block">Gabriel PELENGA MANGI</span>
-              <span className="block text-primary mt-1 text-left text-4xl">{t('hero.title')}</span>
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto md:mx-0">{t('hero.subtitle')}</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <Button asChild size="lg" className="rounded-full px-8 shadow-md hover:shadow-xl transition-shadow">
-                <Link to="/cv">📥 {t('hero.cta.cv')}</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-full px-8 border-2 hover:bg-primary/10">
-                <Link to="/projets">💼 {t('hero.cta.projects')}</Link>
-              </Button>
-              <Button asChild size="lg" variant="secondary" className="rounded-full px-8 shadow-md hover:shadow-xl transition-shadow gap-2">
-                <a href="https://calendly.com/gabrielpelenga/30min" target="_blank" rel="noopener noreferrer">
-                  🗓️ {t('hero.cta.calendly')}
-                </a>
-              </Button>
-            </div>
-          </div>
-          <div className="md:w-1/2 mt-12 md:mt-0 flex justify-center animate-fade-in" style={{ animationDelay: '0.3s' }}>
-            <div className="relative">
-              <div className="absolute inset-0 bg-primary/10 rounded-full blur-2xl animate-pulse-slow"></div>
-              <div className="bg-card rounded-full p-1 shadow-xl relative z-10">
-                <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-background/50">
-                  <img src="/lovable-uploads/a800ede8-6357-4e94-b0f9-df456a52625c.png" alt="Gabriel PELENGA MANGI" className="w-full h-full object-cover" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
+import { profile, localized } from '@/data/profile';
+import { Availability, DownloadCV } from './ProfileSections';
+const HeroSection = () => { const { language, t } = useTranslation(); return <section className="hero-gradient"><div className="page-shell grid gap-10 py-14 md:py-20 lg:grid-cols-[1.5fr_1fr] lg:items-center lg:gap-16"><div className="animate-fade-in"><Availability /><h1 className="mt-7 text-4xl sm:text-5xl lg:text-6xl leading-[1.08] font-semibold">Gabriel<br />Pelenga Mangi<span className="text-primary">.</span></h1><p className="font-heading text-xl sm:text-2xl text-primary mt-5">{localized(profile.title, language)}</p><p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground">{localized(profile.tagline, language)}</p><div className="flex flex-col sm:flex-row gap-3 mt-8"><DownloadCV /><Button asChild variant="outline"><Link to="/projets">{t('hero.cta.projects')}<ArrowUpRight /></Link></Button></div><div className="mt-7 flex flex-wrap gap-6 text-sm text-muted-foreground"><a href={profile.links.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary"><Linkedin size={16} />LinkedIn</a><a href={profile.links.calendly} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary"><Calendar size={16} />Calendly</a><a href={`mailto:${profile.email}`} className="flex items-center gap-2 hover:text-primary"><Mail size={16} />Email</a></div></div><div className="relative mx-auto w-full max-w-[340px] lg:max-w-none"><div className="aspect-[4/5] overflow-hidden rounded-2xl border border-border bg-secondary"><img src={profile.photo} alt={profile.name} className="h-full w-full object-cover object-bottom" fetchPriority="high" /></div><div className="mt-4 border-l-2 border-primary pl-4"><p className="text-sm font-medium">{localized(profile.current, language)}</p></div></div></div><div className="page-shell pb-6 hidden md:block"><a href="#a-propos" className="inline-flex items-center gap-2 text-xs text-muted-foreground"><ArrowDown size={14} />{language === 'fr' ? 'Parcours & réalisations' : 'Experience & projects'}</a></div></section>; };
 export default HeroSection;

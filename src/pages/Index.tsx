@@ -1,129 +1,17 @@
-
-import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import HeroSection from '@/components/HeroSection';
 import ProjectsList from '@/components/ProjectsList';
 import CVPreview from '@/components/CVPreview';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import { BriefCards, SkillGroups, SectionHeading, ContactBlock } from '@/components/ProfileSections';
+import { LinkedInNews } from '@/components/LinkedInPosts';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-
-const ScrollSection = ({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) => {
-  const { ref, isVisible } = useScrollAnimation();
-  return (
-    <div
-      ref={ref}
-      className="transition-all duration-700 ease-out"
-      style={{
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(40px)',
-        transitionDelay: `${delay}ms`,
-      }}
-    >
-      {children}
-    </div>
-  );
-};
-
-const Index = () => {
-  const { t } = useTranslation();
-  
-  return <div className="flex flex-col min-h-screen bg-background">
-      <Navbar />
-      
-      <main className="flex-grow">
-        <HeroSection />
-        
-        {/* About Section */}
-        <section className="py-16 px-4">
-          <div className="max-w-7xl mx-auto">
-            <ScrollSection>
-              <h2 className="section-title text-center mb-12">{t('about.title')}</h2>
-            </ScrollSection>
-            <ScrollSection delay={150}>
-              <div className="bg-card rounded-xl shadow-md p-8 max-w-3xl mx-auto">
-                <p className="text-lg mb-6">{t('about.description1')}</p>
-                <p className="text-lg">{t('about.description2')}</p>
-              </div>
-            </ScrollSection>
-          </div>
-        </section>
-        
-        {/* CV Section */}
-        <section className="py-16 px-4 bg-secondary/30">
-          <div className="max-w-7xl mx-auto">
-            <ScrollSection>
-              <h2 className="section-title text-center mb-4">{t('cv.title')}</h2>
-              <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-                {t('cv.subtitle')}
-              </p>
-            </ScrollSection>
-            
-            <ScrollSection delay={200}>
-              <div className="mb-10">
-                <CVPreview />
-              </div>
-            </ScrollSection>
-            
-            <ScrollSection delay={300}>
-              <div className="text-center">
-                <Button asChild size="lg">
-                  <Link to="/cv">{t('cv.cta')}</Link>
-                </Button>
-              </div>
-            </ScrollSection>
-          </div>
-        </section>
-        
-        {/* Projects Section */}
-        <section className="py-16 px-4">
-          <div className="max-w-7xl mx-auto">
-            <ScrollSection>
-              <h2 className="section-title text-center mb-4">{t('projects.title')}</h2>
-              <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-                {t('projects.subtitle')}
-              </p>
-            </ScrollSection>
-            
-            <ScrollSection delay={200}>
-              <div className="mb-10">
-                <ProjectsList limit={3} />
-              </div>
-            </ScrollSection>
-            
-            <ScrollSection delay={300}>
-              <div className="text-center">
-                <Button asChild variant="outline" size="lg">
-                  <Link to="/projets">{t('projects.cta')}</Link>
-                </Button>
-              </div>
-            </ScrollSection>
-          </div>
-        </section>
-        
-        {/* Contact CTA Section */}
-        <section className="py-20 px-4 bg-primary text-primary-foreground">
-          <div className="max-w-7xl mx-auto text-center">
-            <ScrollSection>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">{t('contact.title')}</h2>
-            </ScrollSection>
-            <ScrollSection delay={150}>
-              <p className="text-xl mb-8 max-w-2xl mx-auto">
-                {t('contact.subtitle')}
-              </p>
-            </ScrollSection>
-            <ScrollSection delay={300}>
-              <Button variant="secondary" size="lg" asChild>
-                <Link to="/contact">{t('contact.cta')}</Link>
-              </Button>
-            </ScrollSection>
-          </div>
-        </section>
-      </main>
-      
-      <Footer />
-    </div>;
-};
+import { profile, localized } from '@/data/profile';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
+import { ArrowUpRight } from 'lucide-react';
+import type { ReactNode } from 'react';
+const Reveal = ({ children }: { children: ReactNode }) => { const { ref, isVisible } = useScrollAnimation(.05); return <div ref={ref} className={isVisible ? 'animate-fade-in' : ''}>{children}</div>; };
+const Index = () => { const { language } = useTranslation(); return <div id="top" className="min-h-screen flex flex-col"><Navbar /><main><HeroSection /><div className="border-y border-border py-5"><div className="page-shell flex flex-wrap items-center justify-between gap-3">{profile.tools.map(tool => <span className="text-xs sm:text-sm font-medium rounded-md px-3 py-2 border border-border bg-card" key={tool}>{tool}</span>)}</div></div><section id="a-propos" className="section-band border-t-0"><Reveal><div className="page-shell grid gap-10 md:grid-cols-2 md:gap-16"><div><SectionHeading number="01" title={language === 'fr' ? 'À propos' : 'About'} /><div className="space-y-5 text-muted-foreground leading-relaxed">{profile.about.map(p => <p key={p.fr}>{localized(p, language)}</p>)}</div></div><div><p className="eyebrow">{language === 'fr' ? 'En bref' : 'At a glance'}</p><BriefCards /></div></div></Reveal></section><section id="parcours" className="section-band bg-secondary/40"><Reveal><div className="page-shell"><SectionHeading number="02" title={language === 'fr' ? 'Parcours' : 'Experience'} /><CVPreview /></div></Reveal></section><section id="competences" className="section-band"><Reveal><div className="page-shell"><SectionHeading number="03" title={language === 'fr' ? 'Compétences' : 'Skills'} /><SkillGroups /></div></Reveal></section><section id="projets" className="section-band bg-secondary/40"><Reveal><div className="page-shell"><div className="flex flex-wrap items-end justify-between gap-5 mb-8"><div><p className="eyebrow">04 — {language === 'fr' ? 'Projets' : 'Projects'}</p><h2 className="section-title mb-0">{language === 'fr' ? 'Projets sélectionnés' : 'Selected projects'}</h2></div><Button asChild variant="link" className="p-0"><Link to="/projets">{language === 'fr' ? 'Tous les projets' : 'All projects'}<ArrowUpRight /></Link></Button></div><ProjectsList limit={3} /></div></Reveal></section><section id="actualites" className="section-band"><Reveal><div className="page-shell"><LinkedInNews /></div></Reveal></section><section id="contact" className="section-band bg-accent/40"><Reveal><div className="page-shell"><ContactBlock /></div></Reveal></section></main><Footer /></div>; };
 export default Index;

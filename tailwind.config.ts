@@ -21,9 +21,12 @@ export default {
 		extend: {
 			fontFamily: {
 				'inter': ['Inter', 'sans-serif'],
+        'heading': ['Space Grotesk', 'sans-serif'],
 			},
 			colors: {
-				border: 'hsl(var(--border))',
+				overlay: 'hsl(var(--overlay))',
+        'overlay-foreground': 'hsl(var(--overlay-foreground))',
+        border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',

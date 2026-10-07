@@ -1,33 +1,9 @@
-
-import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Card } from '@/components/ui/card';
-import CVHeader from '@/components/CV/CVHeader';
-import ProfileSection from '@/components/CV/ProfileSection';
-import CVTabsSection from '@/components/CV/CVTabsSection';
-
-const CVPage = () => {
-  return (
-    <div className="flex flex-col min-h-screen bg-background">
-      <Navbar />
-      
-      <main className="flex-grow">
-        <div className="max-w-7xl mx-auto px-4 py-12">
-          <CVHeader />
-          
-          <Card className="p-4 sm:p-8 mb-10 overflow-hidden">
-            <div className="flex flex-col md:flex-row gap-8">
-              <ProfileSection />
-              <CVTabsSection />
-            </div>
-          </Card>
-        </div>
-      </main>
-      
-      <Footer />
-    </div>
-  );
-};
-
+import { Availability, DownloadCV, ExperienceTimeline, EducationCards, SkillGroups, BriefCards } from '@/components/ProfileSections';
+import { profile, localized } from '@/data/profile';
+import { useTranslation } from '@/hooks/useTranslation';
+import { Button } from '@/components/ui/button';
+import { Linkedin, ArrowUpRight } from 'lucide-react';
+const CVPage = () => { const { language } = useTranslation(); const contents = language === 'fr' ? [['profil','Profil'],['experiences','Expériences'],['formations','Formations'],['competences','Compétences'],['associatif','Associatif']] : [['profil','Profile'],['experiences','Experience'],['formations','Education'],['competences','Skills'],['associatif','Community']]; return <div id="top" className="min-h-screen flex flex-col"><Navbar /><main><header className="hero-gradient border-b border-border"><div className="page-shell py-14 md:py-20"><Availability /><p className="eyebrow mt-7">Curriculum vitae</p><h1 className="text-4xl sm:text-5xl font-semibold">{profile.name}</h1><p className="mt-4 text-xl text-primary">{localized(profile.title, language)}</p><p className="mt-4 text-muted-foreground max-w-2xl">{localized(profile.qualification, language)}</p><p className="mt-2 text-sm font-medium">{localized(profile.current, language)}</p><div className="flex flex-col sm:flex-row gap-3 mt-7"><DownloadCV /><Button asChild variant="outline"><a href={profile.links.linkedin} target="_blank" rel="noopener noreferrer"><Linkedin />{language === 'fr' ? 'Voir mon profil LinkedIn' : 'View my LinkedIn profile'}<ArrowUpRight /></a></Button></div></div></header><div className="page-shell grid gap-10 lg:grid-cols-[180px_1fr] py-14"><aside className="hidden lg:block"><nav aria-label={language === 'fr' ? 'Sommaire du CV' : 'CV contents'} className="sticky top-28 border-l border-border"><p className="eyebrow pl-5">{language === 'fr' ? 'Sommaire' : 'Contents'}</p>{contents.map(([id,label],i) => <a className="flex gap-3 py-3 pl-5 text-sm text-muted-foreground hover:text-primary" href={`#${id}`} key={id}><span className="text-xs text-primary">0{i+1}</span>{label}</a>)}</nav></aside><div className="min-w-0 space-y-14"><section id="profil"><h2 className="section-title">{contents[0][1]}</h2><div className="space-y-4 mb-7 text-muted-foreground leading-relaxed">{profile.about.map(p => <p key={p.fr}>{localized(p, language)}</p>)}</div><BriefCards /></section><section id="experiences" className="border-t border-border pt-12"><p className="eyebrow">02 — {contents[1][1]}</p><h2 className="section-title">{contents[1][1]}</h2><ExperienceTimeline /></section><section id="formations" className="border-t border-border pt-12"><p className="eyebrow">03 — {contents[2][1]}</p><h2 className="section-title">{contents[2][1]}</h2><EducationCards full /></section><section id="competences" className="border-t border-border pt-12"><p className="eyebrow">04 — {contents[3][1]}</p><h2 className="section-title">{contents[3][1]}</h2><SkillGroups /></section><section id="associatif" className="border-t border-border pt-12"><p className="eyebrow">05 — {contents[4][1]}</p><h2 className="section-title">{language === 'fr' ? 'Expérience associative' : 'Community experience'}</h2><div className="grid gap-5 md:grid-cols-2">{profile.associations.map(a => <article key={a.name} className="surface p-6"><h3 className="font-semibold text-lg">{a.name}</h3><p className="text-sm text-muted-foreground mt-2">{localized(a.period, language)}</p>{'title' in a && a.title && <p className="text-primary mt-3">{localized(a.title, language)}</p>}<ul className="text-sm text-muted-foreground mt-3 space-y-2">{a.missions.map(m => <li key={m.fr}>{localized(m, language)}</li>)}</ul></article>)}</div><h3 className="font-semibold mt-8 mb-3">{language === 'fr' ? "Centres d'intérêt" : 'Interests'}</h3><p className="text-muted-foreground">{localized(profile.interests, language)}</p></section><div className="border-t border-border pt-8 flex flex-wrap gap-5 text-sm"><a className="hover:text-primary" href={`mailto:${profile.email}`}>{profile.email}</a><a className="hover:text-primary" href={profile.phoneHref}>{profile.phone}</a></div></div></div></main><Footer /></div>; };
 export default CVPage;

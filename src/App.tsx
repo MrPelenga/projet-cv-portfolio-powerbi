@@ -16,6 +16,7 @@ import ProjectNBAPage from "./pages/ProjectNBAPage";
 import ProjectBinkoPage from "./pages/ProjectBinkoPage";
 import ProjectGoFusionPage from "./pages/ProjectGoFusionPage";
 import NotFound from "./pages/NotFound";
+import NewsPage from "./pages/NewsPage";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +38,7 @@ const App = () => (
             <Route path="/projects/binko" element={<ProjectBinkoPage />} />
             <Route path="/projects/gofusion" element={<ProjectGoFusionPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/actualites" element={<NewsPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

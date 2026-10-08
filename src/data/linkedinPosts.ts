@@ -12,6 +12,18 @@ export interface LinkedInPost {
 // One entry = one real post. Keep dates in ISO format, newest first.
 export const linkedinPosts: LinkedInPost[] = [
   {
+      
+    id: "reporting-du-lundi-2026-10",
+    url: "https://www.linkedin.com/feed/update/urn:li:share:7513614753588543490",
+    embedUrn: "urn:li:share:7513614753588543490",
+    date: "2026-10-07",
+    title: "Et si personne ne lisait votre reporting du lundi ?",
+    excerpt: "Avant de chercher à l'automatiser, il y a une question plus simple à poser aux destinataires : « Quelle est la dernière décision que vous avez prise grâce à ce document ? » Automatiser un reporting que personne n'utilise, c'est produire de l'inutile plus efficacement.",
+    tags: ["Data", "Reporting", "Automatisation", "Business Intelligence"],
+    title_en: "What if nobody read your Monday report?",
+    excerpt_en: "Before trying to automate it, there is a simpler question to ask the recipients: \"What is the last decision you made thanks to this document?\" Automating a report that nobody uses means producing something useless more efficiently.",
+  },
+   {     
     id: "partoo-fin-de-chapitre-2026-09",
     url: "https://www.linkedin.com/feed/update/urn:li:activity:7508053996058632192/",
     embedUrn: "urn:li:activity:7508053996058632192",

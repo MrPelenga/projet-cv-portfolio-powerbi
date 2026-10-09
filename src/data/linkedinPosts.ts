@@ -12,6 +12,17 @@ export interface LinkedInPost {
 // One entry = one real post. Keep dates in ISO format, newest first.
 export const linkedinPosts: LinkedInPost[] = [
   {
+    id: "30-minutes-par-jour-2026-10",
+    url: "https://www.linkedin.com/feed/update/urn:li:share:7514210567641989120",
+    embedUrn: "urn:li:share:7514210567641989120",
+    date: "2026-10-09",
+    title: "30 minutes par jour, ça ne ressemble à rien",
+    excerpt: "30 minutes × 220 jours travaillés = 110 heures par an, soit près de 3 semaines de travail. Avant de parler d'IA ou d'outils, un exercice tout bête change déjà le regard : pendant une semaine, noter chaque tâche qu'on fait pour la deuxième fois exactement de la même manière.",
+    tags: ["Automatisation", "Productivité", "Data", "Process"],
+    title_en: "30 minutes a day looks like nothing",
+    excerpt_en: "30 minutes × 220 working days = 110 hours a year, or nearly 3 weeks of work. Before talking about AI or tools, a very simple exercise already changes the way you look at things: for a week, note down every task you do for the second time in exactly the same way.",
+  },
+  {
       
     id: "reporting-du-lundi-2026-10",
     url: "https://www.linkedin.com/feed/update/urn:li:share:7513614753588543490",

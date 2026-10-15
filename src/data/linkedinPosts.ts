@@ -12,6 +12,17 @@ export interface LinkedInPost {
 // One entry = one real post. Keep dates in ISO format, newest first.
 export const linkedinPosts: LinkedInPost[] = [
   {
+    id: "reporting-v7-final-ok-2-2026-10",
+    url: "https://www.linkedin.com/feed/update/urn:li:share:7516041370545836032",
+    embedUrn: "urn:li:share:7516041370545836032",
+    date: "2026-10-14",
+    title: "Le fichier s'appelle « Reporting_V7_final_OK_2.xlsx »",
+    excerpt: "Je n'ai rien contre Excel, je m'en sers tous les jours. Le problème commence quand un même fichier sert à la fois de base de données, d'outil de reporting et de source de vérité.",
+    tags: ["Excel", "Power BI", "Data", "Business Intelligence"],
+    title_en: "The file is called \"Reporting_V7_final_OK_2.xlsx\"",
+    excerpt_en: "I have nothing against Excel, I use it every day. The problem starts when a single file serves as a database, a reporting tool and a source of truth all at once.",
+  },
+  {
     id: "30-minutes-par-jour-2026-10",
     url: "https://www.linkedin.com/feed/update/urn:li:share:7514210567641989120",
     embedUrn: "urn:li:share:7514210567641989120",

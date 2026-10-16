@@ -12,6 +12,17 @@ export interface LinkedInPost {
 // One entry = one real post. Keep dates in ISO format, newest first.
 export const linkedinPosts: LinkedInPost[] = [
   {
+    id: "enrichissement-leads-2026-10",
+    url: "https://www.linkedin.com/feed/update/urn:li:share:7516758595875651584",
+    embedUrn: "urn:li:share:7516758595875651584",
+    date: "2026-10-16",
+    title: "Un commercial ne devrait jamais chercher un email à la main",
+    excerpt: "Un workflow avec Make complète automatiquement la fiche d'un nouveau lead Salesforce via l'API d'Apollo ou de Hunter. Si l'API ne trouve rien, le lead part dans une liste « à vérifier » au lieu de rester à moitié vide.",
+    tags: ["Automatisation", "SalesOps", "Make", "CRM"],
+    title_en: "A salesperson should never have to look up an email by hand",
+    excerpt_en: "A Make workflow automatically completes the record of a new Salesforce lead through the Apollo or Hunter API. If the API finds nothing, the lead goes into a \"to verify\" list instead of staying half empty.",
+  },
+  {
     id: "reporting-v7-final-ok-2-2026-10",
     url: "https://www.linkedin.com/feed/update/urn:li:share:7516041370545836032",
     embedUrn: "urn:li:share:7516041370545836032",

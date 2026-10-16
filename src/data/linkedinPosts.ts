@@ -45,6 +45,17 @@ export const linkedinPosts: LinkedInPost[] = [
     excerpt_en: "30 minutes × 220 working days = 110 hours a year, or nearly 3 weeks of work. Before talking about AI or tools, a very simple exercise already changes the way you look at things: for a week, note down every task you do for the second time in exactly the same way.",
   },
   {
+    id: "big-bpifrance-accor-arena-2026-10",
+    url: "https://www.linkedin.com/feed/update/urn:li:activity:7513997972746137600/",
+    embedUrn: "urn:li:activity:7513997972746137600",
+    date: "2026-10-08",
+    title: "À BIG, l'événement de Bpifrance : rendre les chiffres clairs pour mieux décider",
+    excerpt: "J'étais à BIG, l'événement de Bpifrance, avec une idée simple : écouter des gens qui dirigent des entreprises parler de leurs vrais problèmes. Derrière chaque décision d'investissement, il y a des chiffres à lire et à expliquer simplement, et c'est là que je me reconnais.",
+    tags: ["Bpifrance", "Data", "IA", "Entrepreneuriat"],
+    title_en: "At BIG, Bpifrance's event: making numbers clear to make better decisions",
+    excerpt_en: "I was at BIG, Bpifrance's event, with a simple idea: listen to people who run companies talk about their real problems. Behind every investment decision, there are numbers to read and explain simply, and that is where I see myself.",
+  },
+  {
       
     id: "reporting-du-lundi-2026-10",
     url: "https://www.linkedin.com/feed/update/urn:li:share:7513614753588543490",

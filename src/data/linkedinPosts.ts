@@ -12,6 +12,17 @@ export interface LinkedInPost {
 // One entry = one real post. Keep dates in ISO format, newest first.
 export const linkedinPosts: LinkedInPost[] = [
   {
+    id: "make-ou-zapier-2026-10",
+    url: "https://www.linkedin.com/feed/update/urn:li:share:7517974107049771008",
+    embedUrn: "urn:li:share:7517974107049771008",
+    date: "2026-10-19",
+    title: "Make ou Zapier ? On me pose souvent la question comme s'il y avait un gagnant",
+    excerpt: "J'utilise les deux, et je ne choisis pas sur les fonctionnalités. Je choisis sur la forme du workflow : une ligne droite pour Zapier, des branches, des boucles et des cas d'erreur pour Make.",
+    tags: ["Automatisation", "NoCode", "Make", "Zapier"],
+    title_en: "Make or Zapier? I'm often asked as if there were a winner",
+    excerpt_en: "I use both, and I don't choose based on features. I choose based on the shape of the workflow: a straight line for Zapier, branches, loops and error cases for Make.",
+  },
+  {
     id: "enrichissement-leads-2026-10",
     url: "https://www.linkedin.com/feed/update/urn:li:share:7516758595875651584",
     embedUrn: "urn:li:share:7516758595875651584",

@@ -12,6 +12,17 @@ export interface LinkedInPost {
 // One entry = one real post. Keep dates in ISO format, newest first.
 export const linkedinPosts: LinkedInPost[] = [
   {
+    id: "dashboard-25-kpi-2026-10",
+    url: "https://www.linkedin.com/feed/update/urn:li:share:7518695109606014978",
+    embedUrn: "urn:li:share:7518695109606014978",
+    date: "2026-10-21",
+    title: "Un dashboard à 25 KPI, c'est un dashboard à 0 KPI",
+    excerpt: "Le test que j'applique à chaque indicateur : « Si ce chiffre change demain, qui fait quoi ? » Si la réponse est « personne, rien », il sort de la page principale. Un bon dashboard ne montre pas tout ce qu'on sait, il montre ce sur quoi on doit agir.",
+    tags: ["Data", "Power BI", "DataViz", "Business Intelligence"],
+    title_en: "A 25-KPI dashboard is a 0-KPI dashboard",
+    excerpt_en: "The test I apply to every indicator: \"If this number changes tomorrow, who does what?\" If the answer is \"nobody, nothing\", it leaves the main page. A good dashboard doesn't show everything we know, it shows what we need to act on.",
+  },
+  {
     id: "make-ou-zapier-2026-10",
     url: "https://www.linkedin.com/feed/update/urn:li:share:7517974107049771008",
     embedUrn: "urn:li:share:7517974107049771008",

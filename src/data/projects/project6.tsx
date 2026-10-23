@@ -24,6 +24,8 @@ export const project6: Project = {
   link: '/projets/6',
   appUrl: 'https://projet-r-novation-nerg-tique-dv4jewyjntnejthixcmblb.streamlit.app/',
   sourceUrl: 'https://github.com/MrPelenga/Projet-r-novation-nerg-tique',
+  loadingNote: 'Premier chargement : environ 30 secondes',
+  loadingNote_en: 'First load: about 30 seconds',
   description_extended: "Application qui cartographie les passoires thermiques à partir de 3,4 millions de DPE de l'ADEME, et simule les économies et le retour sur investissement d'une rénovation.",
   description_extended_en: 'App that maps energy-inefficient housing from 3.4 million ADEME energy performance certificates (DPE), and simulates the savings and payback period of a renovation.',
   objectives: [

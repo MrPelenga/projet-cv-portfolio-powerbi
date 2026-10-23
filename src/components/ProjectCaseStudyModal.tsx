@@ -5,6 +5,9 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ExternalLink } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
+import EnergyCaseStudy from '@/components/EnergyCaseStudy';
+import ProjectExternalLinks from '@/components/ProjectExternalLinks';
+import { project6 } from '@/data/projects/project6';
 
 interface ProjectCaseStudyModalProps {
   projectId: string | null;
@@ -21,11 +24,13 @@ const ProjectCaseStudyModal = ({ projectId, open, onClose }: ProjectCaseStudyMod
     '3': '/projects/binko',
     '2': '/projects/gofusion',
     '5': '/projets/5',
+    '6': '/projets/6',
   };
 
   if (!projectId) return null;
 
   const caseStudies: Record<string, { fr: React.ReactNode; en: React.ReactNode }> = {
+    '6': { fr: <EnergyCaseStudy language="fr" />, en: <EnergyCaseStudy language="en" /> },
     '5': {
       fr: (
         <div className="space-y-6">
@@ -318,6 +323,7 @@ const ProjectCaseStudyModal = ({ projectId, open, onClose }: ProjectCaseStudyMod
     '3': { fr: 'Binko - Génération Automatisée pour l\'IA', en: 'Binko - Automated AI Generation' },
     '2': { fr: 'Go Fusion - EcoVeille Automatisée', en: 'Go Fusion - Automated EcoWatch' },
     '5': { fr: 'Lead Engine : scoring et routage des leads', en: 'Lead Engine: Lead Scoring & Routing' },
+    '6': { fr: project6.title, en: project6.title_en || project6.title },
   };
 
   const handleViewFullPage = () => {
@@ -338,6 +344,7 @@ const ProjectCaseStudyModal = ({ projectId, open, onClose }: ProjectCaseStudyMod
           </DialogDescription>
         </DialogHeader>
         {language === 'en' ? study.en : study.fr}
+        {projectId === '6' && <ProjectExternalLinks appUrl={project6.appUrl} sourceUrl={project6.sourceUrl} />}
         {fullPageRoutes[projectId] && (
           <div className="pt-4 border-t border-border">
             <Button onClick={handleViewFullPage} className="w-full gap-2">

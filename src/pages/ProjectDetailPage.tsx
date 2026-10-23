@@ -8,6 +8,8 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { useTranslation } from '@/hooks/useTranslation';
+import EnergyCaseStudy from '@/components/EnergyCaseStudy';
+import ProjectExternalLinks from '@/components/ProjectExternalLinks';
 
 const ProjectDetailPage = () => {
   const { t, language } = useTranslation();
@@ -39,6 +41,8 @@ const ProjectDetailPage = () => {
   const tags = language === 'en' && project.tags_en ? project.tags_en : project.tags;
   const captions = language === 'en' && project.screenshotCaptions_en ? project.screenshotCaptions_en : project.screenshotCaptions;
   const period = language === 'en' && project.period_en ? project.period_en : project.period;
+  const technologies = language === 'en' && project.technologies_en ? project.technologies_en : project.technologies;
+  const client = language === 'en' && project.client_en ? project.client_en : project.client;
   const relatedDescription = (p: typeof project) => 
     language === 'en' && p.description_en ? p.description_en : p.description;
 
@@ -64,6 +68,7 @@ const ProjectDetailPage = () => {
         </div>
         
         <div className="page-shell py-12">
+          {project.id === '6' && <div className="mb-10"><ProjectExternalLinks appUrl={project.appUrl} sourceUrl={project.sourceUrl} /></div>}
           {project.logo && (
             <div className="mb-10 flex justify-center">
               <div className="max-w-2xl w-full">
@@ -77,7 +82,7 @@ const ProjectDetailPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <div className="md:col-span-2">
               <h2 className="text-2xl font-bold mb-4">{t('project.detail.description.title')}</h2>
-              <div className="prose max-w-none">
+              <div className={project.id === '6' ? 'max-w-none text-foreground' : 'prose max-w-none'}>
                 <p className="mb-4">{description}</p>
                 
                 {objectives && objectives.length > 0 && (
@@ -89,11 +94,11 @@ const ProjectDetailPage = () => {
                   </>
                 )}
                 
-                {project.technologies && project.technologies.length > 0 && (
+                {technologies && technologies.length > 0 && (
                   <>
                     <h3 className="text-xl font-bold mt-6 mb-2">{t('project.detail.technologies.title')}</h3>
                     <ul className="list-disc pl-6 mb-4 space-y-1">
-                      {project.technologies.map((tech, index) => <li key={index}>{tech}</li>)}
+                      {technologies.map((tech, index) => <li key={index}>{tech}</li>)}
                     </ul>
                   </>
                 )}
@@ -107,7 +112,7 @@ const ProjectDetailPage = () => {
                   <div className="space-y-4">
                     <div>
                       <h4 className="font-semibold text-muted-foreground">{t('project.detail.client.label')}</h4>
-                      <p>{project.client || 'Freelance'}</p>
+                      <p>{client || 'Freelance'}</p>
                     </div>
                     <div>
                       <h4 className="font-semibold text-muted-foreground">{t('project.detail.period.label')}</h4>
@@ -123,14 +128,16 @@ const ProjectDetailPage = () => {
             </div>
           </div>
           
+          {project.id === '6' && <div className="mb-12"><EnergyCaseStudy language={language} /></div>}
+
           {project.screenshots && project.screenshots.length > 0 && (
             <div className="mb-12">
               <h2 className="text-2xl font-bold mb-6">{t('project.detail.screenshots.title')}</h2>
-              <div className={`grid grid-cols-1 gap-6 ${project.id === '5' ? 'md:grid-cols-2' : 'md:grid-cols-3'}`}>
+              <div className={`grid grid-cols-1 gap-6 ${project.id === '6' ? 'md:grid-cols-2' : project.id === '5' ? 'md:grid-cols-2' : 'md:grid-cols-3'}`}>
                 {project.screenshots.map((imgSrc, index) => (
                   <figure key={index} className="min-w-0">
-                    <div className={`aspect-video rounded-md overflow-hidden shadow-lg border border-border ${project.id === '2' && index === 0 ? "flex items-center justify-center bg-card" : ""}`}>
-                      <img src={imgSrc} alt={`${project.title} capture ${index + 1}`} className={project.id === '2' && index === 0 ? "w-3/4 h-auto object-contain" : "w-full h-full object-cover"} />
+                    <div className={`${project.id === '6' ? '' : 'aspect-video'} rounded-md overflow-hidden shadow-lg border border-border ${project.id === '2' && index === 0 ? "flex items-center justify-center bg-card" : ""}`}>
+                      <img src={imgSrc} alt={captions?.[index] || `${project.title} capture ${index + 1}`} className={project.id === '6' ? 'w-full h-auto object-contain' : project.id === '2' && index === 0 ? "w-3/4 h-auto object-contain" : "w-full h-full object-cover"} />
                     </div>
                     {captions && captions[index] && (
                       <figcaption className="mt-2 text-sm text-muted-foreground text-center">{captions[index]}</figcaption>

@@ -1,4 +1,5 @@
 # Portfolio redesign
+- [x] Add energy renovation project first, bilingual case study/detail, uploaded screenshots and external links; verify desktop/mobile and both themes.
 - [ ] Unify profile data and localized dates without changing facts.
 - [ ] Redesign shared styling, navigation, footer and homepage.
 - [ ] Replace CV tabs with a complete scrollable CV.

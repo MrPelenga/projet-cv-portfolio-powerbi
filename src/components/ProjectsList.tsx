@@ -27,7 +27,11 @@ export interface Project {
   objectives?: string[];
   objectives_en?: string[];
   technologies?: string[];
+  technologies_en?: string[];
   client?: string;
+  client_en?: string;
+  appUrl?: string;
+  sourceUrl?: string;
   period?: string;
   period_en?: string;
 }
@@ -82,7 +86,7 @@ const ProjectsList = ({ limit, projects }: ProjectsListProps) => {
   const getTags = (project: Project) =>
     language === 'en' && project.tags_en ? project.tags_en : project.tags;
 
-  const hasCaseStudy = (projectId: string) => projectId === '1' || projectId === '2' || projectId === '3' || projectId === '5';
+  const hasCaseStudy = (projectId: string) => projectId === '1' || projectId === '2' || projectId === '3' || projectId === '5' || projectId === '6';
 
   const handleViewProject = (project: Project) => {
     if (hasCaseStudy(project.id)) {
@@ -102,7 +106,7 @@ const ProjectsList = ({ limit, projects }: ProjectsListProps) => {
               <img 
                 src={project.image} 
                 alt={project.title} 
-                className={`w-full h-full ${project.id === '2' ? 'object-contain p-4' : 'object-cover'} transition-transform duration-500 group-hover:scale-105`}
+                className={`w-full h-full ${project.id === '2' ? 'object-contain p-4' : project.id === '6' ? 'object-contain' : 'object-cover'} transition-transform duration-500 group-hover:scale-105`}
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.src = 'https://images.unsplash.com/photo-1551288049-bebda4e38f71';
@@ -126,7 +130,7 @@ const ProjectsList = ({ limit, projects }: ProjectsListProps) => {
             </div>
             
             <CardHeader>
-              <CardTitle className="text-xl font-bold line-clamp-1 text-foreground">{language === 'en' && project.title_en ? project.title_en : project.title}</CardTitle>
+              <CardTitle className={`text-xl font-bold text-foreground ${project.id === '6' ? 'break-words' : 'line-clamp-1'}`}>{language === 'en' && project.title_en ? project.title_en : project.title}</CardTitle>
               <CardDescription className="line-clamp-2">{getDescription(project)}</CardDescription>
             </CardHeader>
             

@@ -16,6 +16,12 @@ export const project5: Project = {
   tags: ['Python', 'Streamlit', 'Lead Scoring', 'RevOps', 'SQLite', 'Data Viz'],
   tags_en: ['Python', 'Streamlit', 'Lead Scoring', 'RevOps', 'SQLite', 'Data Viz'],
   link: '/projets/5',
+  appUrl: 'https://leadengine-gabriel.streamlit.app/',
+  sourceUrl: 'https://github.com/MrPelenga/Lead_Engine',
+  appLabel: "Voir l'application en ligne",
+  appLabel_en: 'Open the live app',
+  sourceLabel: 'Voir le code sur GitHub',
+  sourceLabel_en: 'View the code on GitHub',
   screenshots: [shot1, shot2, shot3, shot4],
   screenshotCaptions: [
     'Accueil et circuit du lead',

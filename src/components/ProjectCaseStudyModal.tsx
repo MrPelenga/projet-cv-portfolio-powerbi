@@ -7,7 +7,9 @@ import { ExternalLink } from 'lucide-react';
 import { useTranslation } from '@/hooks/useTranslation';
 import EnergyCaseStudy from '@/components/EnergyCaseStudy';
 import ProjectExternalLinks from '@/components/ProjectExternalLinks';
+import { project5 } from '@/data/projects/project5';
 import { project6 } from '@/data/projects/project6';
+import type { Project } from '@/components/ProjectsList';
 
 interface ProjectCaseStudyModalProps {
   projectId: string | null;
@@ -25,6 +27,11 @@ const ProjectCaseStudyModal = ({ projectId, open, onClose }: ProjectCaseStudyMod
     '2': '/projects/gofusion',
     '5': '/projets/5',
     '6': '/projets/6',
+  };
+
+  const externalLinkProjects: Record<string, Project> = {
+    '5': project5,
+    '6': project6,
   };
 
   if (!projectId) return null;
@@ -344,7 +351,7 @@ const ProjectCaseStudyModal = ({ projectId, open, onClose }: ProjectCaseStudyMod
           </DialogDescription>
         </DialogHeader>
         {language === 'en' ? study.en : study.fr}
-        {projectId === '6' && <ProjectExternalLinks appUrl={project6.appUrl} sourceUrl={project6.sourceUrl} />}
+        {externalLinkProjects[projectId] && <ProjectExternalLinks project={externalLinkProjects[projectId]} />}
         {fullPageRoutes[projectId] && (
           <div className="pt-4 border-t border-border">
             <Button onClick={handleViewFullPage} className="w-full gap-2">

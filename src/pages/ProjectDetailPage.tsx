@@ -68,7 +68,7 @@ const ProjectDetailPage = () => {
         </div>
         
         <div className="page-shell py-12">
-          {project.id === '6' && <div className="mb-10"><ProjectExternalLinks appUrl={project.appUrl} sourceUrl={project.sourceUrl} /></div>}
+          {(project.appUrl || project.sourceUrl) && <div className="mb-10"><ProjectExternalLinks project={project} /></div>}
           {project.logo && (
             <div className="mb-10 flex justify-center">
               <div className="max-w-2xl w-full">

@@ -32,6 +32,12 @@ export interface Project {
   client_en?: string;
   appUrl?: string;
   sourceUrl?: string;
+  appLabel?: string;
+  appLabel_en?: string;
+  sourceLabel?: string;
+  sourceLabel_en?: string;
+  loadingNote?: string;
+  loadingNote_en?: string;
   period?: string;
   period_en?: string;
 }

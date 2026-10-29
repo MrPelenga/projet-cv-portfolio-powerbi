@@ -12,6 +12,17 @@ export interface LinkedInPost {
 // One entry = one real post. Keep dates in ISO format, newest first.
 export const linkedinPosts: LinkedInPost[] = [
   {
+    id: "panier-moyen-vs-mediane-2026-10",
+    url: "https://www.linkedin.com/feed/update/urn:li:share:7521163935643938817",
+    embedUrn: "urn:li:share:7521163935643938817",
+    date: "2026-10-28",
+    title: "Le panier moyen de cette équipe est de 14 000 €. Aucun de ses clients n'a payé ce prix",
+    excerpt: "Sur 10 contrats, 9 à 5 000 € et 1 gros compte à 95 000 € donnent un panier « moyen » de 14 000 €, alors que la médiane est à 5 000 €. Avant de présenter une moyenne, je regarde la médiane juste à côté, le minimum et le maximum, et la moyenne recalculée sans la plus grosse valeur.",
+    tags: ["Data", "Analytics", "Power BI", "SalesOps"],
+    title_en: "This team's average basket is €14,000. None of its clients paid that price",
+    excerpt_en: "Out of 10 contracts, 9 at €5,000 and 1 large account at €95,000 give an \"average\" basket of €14,000, while the median is €5,000. Before presenting an average, I look at the median right next to it, the minimum and maximum, and the average recalculated without the largest value.",
+  },
+  {
     id: "dashboard-25-kpi-2026-10",
     url: "https://www.linkedin.com/feed/update/urn:li:share:7518695109606014978",
     embedUrn: "urn:li:share:7518695109606014978",

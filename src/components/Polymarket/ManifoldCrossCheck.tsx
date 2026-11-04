@@ -98,7 +98,7 @@ export default function ManifoldCrossCheck() {
     <section className="mt-4 rounded-lg border border-border bg-card p-4 min-w-0" aria-labelledby="manifold-title">
       <h3 id="manifold-title" className="text-base font-semibold text-foreground">{t.title}</h3>
       {data.statut === 'echec' && data.message && <p className="mt-1 text-xs text-destructive">{data.message}</p>}
-      {(isError || (!live && isError)) && <p className="mt-1 text-xs text-muted-foreground">{t.fallback}</p>}
+      {isError && !live && <p className="mt-1 text-xs text-muted-foreground">{t.fallback}</p>}
       <p className="mt-2 text-sm text-foreground/90">{t.intro}</p>
 
       <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">

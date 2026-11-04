@@ -7,6 +7,7 @@ import {
 import { ArrowLeft, Github } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ManifoldCrossCheck from '@/components/Polymarket/ManifoldCrossCheck';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/hooks/useTranslation';
@@ -283,6 +284,7 @@ export default function PolymarketDashboard() {
                   <div className="space-y-3 text-sm text-foreground/90">{copy.calRead.map(p => <p key={p}>{p}</p>)}</div>
                 </Panel>
               </div>}
+              {tab === 2 && <ManifoldCrossCheck />}
 
               {tab === 3 && <div className="grid gap-4 lg:grid-cols-3">
                 <div className="grid grid-cols-2 gap-3 lg:col-span-3 lg:grid-cols-4">

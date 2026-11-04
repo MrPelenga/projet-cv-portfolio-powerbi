@@ -12,6 +12,7 @@ import ProjectsPage from "./pages/ProjectsPage";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
 import ContactPage from "./pages/ContactPage";
 import PowerBIDashboardPage from "./pages/PowerBIDashboardPage";
+import PolymarketDashboardPage from "./pages/PolymarketDashboardPage";
 import ProjectNBAPage from "./pages/ProjectNBAPage";
 import ProjectBinkoPage from "./pages/ProjectBinkoPage";
 import ProjectGoFusionPage from "./pages/ProjectGoFusionPage";
@@ -34,6 +35,7 @@ const App = () => (
             <Route path="/projets" element={<ProjectsPage />} />
             <Route path="/projets/:id" element={<ProjectDetailPage />} />
             <Route path="/projets/4" element={<PowerBIDashboardPage />} />
+            <Route path="/projets/7" element={<PolymarketDashboardPage />} />
             <Route path="/projects/nba" element={<ProjectNBAPage />} />
             <Route path="/projects/binko" element={<ProjectBinkoPage />} />
             <Route path="/projects/gofusion" element={<ProjectGoFusionPage />} />

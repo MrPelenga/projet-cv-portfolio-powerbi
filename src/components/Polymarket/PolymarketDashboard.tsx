@@ -10,24 +10,24 @@ import Footer from '@/components/Footer';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/hooks/useTranslation';
-import summary from '@/data/polymarket/summary.json';
+import { summary } from '@/data/polymarket/summary';
 import { project7, project7Copy } from '@/data/projects/project7';
 
-type StrategyKey = 'calibration' | 'calibration_kelly_plein' | 'momentum' | 'aleatoire';
+type StrategyKey = 'calibration' | 'momentum' | 'momentum_kelly_plein' | 'aleatoire';
 type Lang = 'fr' | 'en';
 
-const STRATEGIES: StrategyKey[] = ['calibration', 'momentum', 'aleatoire', 'calibration_kelly_plein'];
+const STRATEGIES: StrategyKey[] = ['calibration', 'momentum', 'momentum_kelly_plein', 'aleatoire'];
 const COLORS: Record<StrategyKey, string> = {
   calibration: '#2563EB',
   momentum: '#0EA5A4',
   aleatoire: '#94A3B8',
-  calibration_kelly_plein: '#F59E0B',
+  momentum_kelly_plein: '#F59E0B',
 };
 const NAMES: Record<StrategyKey, Record<Lang, string>> = {
   calibration: { fr: 'Calibration', en: 'Calibration' },
   momentum: { fr: 'Momentum', en: 'Momentum' },
   aleatoire: { fr: 'Aléatoire (médiane)', en: 'Random (median)' },
-  calibration_kelly_plein: { fr: 'Calibration, Kelly plein', en: 'Calibration, full Kelly' },
+  momentum_kelly_plein: { fr: 'Momentum sans garde-fous', en: 'Momentum, no safeguards' },
 };
 const CATEGORY_EN: Record<string, string> = {
   'Météo': 'Weather', Crypto: 'Crypto', 'Économie': 'Economy', Politique: 'Politics', Sport: 'Sports',
@@ -89,13 +89,14 @@ export default function PolymarketDashboard() {
   }, []);
 
   const categories = useMemo(() => {
-    const perf = Object.fromEntries((summary.calibration_par_categorie as { categorie: string; nb_paris: number; gain: number; mise: number; reussite: number }[])
-      .map(c => [c.categorie, c]));
+    const bets = Object.fromEntries(summary.paris_par_categorie.filter(c => c.strategie === 'momentum').map(c => [c.categorie, c]));
+    const gaps = Object.fromEntries(summary.ecarts_calibration_test.map(g => [g.categorie, g.ecart_max_points]));
     return summary.categories.map(c => ({
       ...c,
       label: lang === 'en' ? CATEGORY_EN[c.categorie] ?? c.categorie : c.categorie,
-      nb_paris: perf[c.categorie]?.nb_paris ?? 0,
-      roi: perf[c.categorie] && perf[c.categorie].mise > 0 ? (perf[c.categorie].gain / perf[c.categorie].mise) * 100 : null,
+      gap: gaps[c.categorie] ?? null,
+      nb_paris: bets[c.categorie]?.nb_paris ?? 0,
+      roi: bets[c.categorie] && bets[c.categorie].mise > 0 ? (bets[c.categorie].gain / bets[c.categorie].mise) * 100 : null,
     }));
   }, [lang]);
 
@@ -214,17 +215,20 @@ export default function PolymarketDashboard() {
                     </ResponsiveContainer>
                   </div>
                 </Panel>
-                <Panel title={copy.catRoiTitle} subtitle={copy.catRoiSubtitle}>
+                <Panel title={copy.gapTitle} subtitle={copy.gapSubtitle}>
                   <div className="h-72">
                     <ResponsiveContainer width="100%" height="100%">
-                      <BarChart data={categories.filter(c => c.roi !== null)} layout="vertical" margin={{ top: 4, right: 16, left: 8, bottom: 0 }}>
+                      <BarChart data={categories.filter(c => c.gap !== null)} layout="vertical" margin={{ top: 4, right: 16, left: 8, bottom: 0 }}>
                         <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" horizontal={false} />
-                        <XAxis type="number" tick={axis} tickFormatter={v => `${v} %`} />
+                        <XAxis type="number" tick={axis} domain={[0, 10]} tickFormatter={v => `${v} pts`} />
                         <YAxis type="category" dataKey="label" tick={axis} width={78} />
-                        <ReferenceLine x={0} stroke="hsl(var(--muted-foreground))" />
-                        <Tooltip {...tooltipStyle} formatter={(v: number, _k, p) => [`${pct(v, lang)} · ${p.payload.nb_paris} ${lang === 'en' ? 'bets' : 'paris'}`, copy.catRoiLabel]} />
-                        <Bar dataKey="roi" radius={4} isAnimationActive={false}>
-                          {categories.filter(c => c.roi !== null).map(c => <Cell key={c.categorie} fill={(c.roi ?? 0) >= 0 ? '#16A34A' : '#DC2626'} />)}
+                        <ReferenceLine x={summary.regles.ecart_min_points} stroke="#DC2626" strokeDasharray="4 4"
+                          label={{ value: '8 pts', position: 'top', fill: '#DC2626', fontSize: 11 }} />
+                        <Tooltip {...tooltipStyle} formatter={(v: number) => [`${num(v, lang, 1)} pts`, copy.gapLabel]} />
+                        <Bar dataKey="gap" radius={[0, 4, 4, 0]} isAnimationActive={false}>
+                          {categories.filter(c => c.gap !== null).map(c => (
+                            <Cell key={c.categorie} fill={c.categorie === 'Météo' ? '#0EA5A4' : (c.gap ?? 0) >= summary.regles.ecart_min_points ? '#F59E0B' : '#94A3B8'} />
+                          ))}
                         </Bar>
                       </BarChart>
                     </ResponsiveContainer>

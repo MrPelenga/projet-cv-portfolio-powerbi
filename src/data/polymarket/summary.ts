@@ -1,0 +1,1265 @@
+// Généré à partir de data/summary.json du repo MrPelenga/polymarket-backtest (ne pas modifier à la main).
+export const summary = {
+  "collecte": {
+    "marches_recus": 292322,
+    "marches_binaires_resolus": 290783,
+    "marches_eligibles_duree": 115764,
+    "marches_echantillon": 10000,
+    "marches_par_categorie": {
+      "Crypto": 143526,
+      "Sport": 89237,
+      "Météo": 21123,
+      "Politique": 12569,
+      "Autre": 9641,
+      "Tech & IA": 8137,
+      "Culture": 3901,
+      "Économie": 2649
+    },
+    "eligibles_par_categorie": {
+      "Sport": 54426,
+      "Crypto": 23288,
+      "Politique": 9987,
+      "Autre": 8137,
+      "Météo": 7094,
+      "Tech & IA": 7068,
+      "Culture": 3561,
+      "Économie": 2203
+    },
+    "historiques_en_echec": 0,
+    "historiques_avec_prix_j1": 9986,
+    "date_extraction": "2026-11-04"
+  },
+  "periodes": {
+    "apprentissage": "2025-01-01 → 2026-01-01",
+    "test": "2026-01-01 → 2026-10-31"
+  },
+  "volumes": {
+    "marches_avec_prix": 9986,
+    "apprentissage": 7498,
+    "test": 2488
+  },
+  "brier_marche": 0.1247,
+  "resultats": [
+    {
+      "strategie": "calibration",
+      "cagnotte_finale": 50.0,
+      "roi_pct": 0.0,
+      "nb_paris": 0,
+      "taux_reussite_pct": null,
+      "drawdown_max_pct": 0.0,
+      "plus_haut": 50.0,
+      "arret_date": null,
+      "ignores_ecart_insuffisant": 2488,
+      "ignores_limite_paris_ouverts": 0,
+      "ignores_mise_trop_faible": 0
+    },
+    {
+      "strategie": "momentum",
+      "cagnotte_finale": 43.62,
+      "roi_pct": -12.8,
+      "nb_paris": 132,
+      "taux_reussite_pct": 67.4,
+      "drawdown_max_pct": 40.2,
+      "plus_haut": 72.88,
+      "arret_date": "2026-03-04",
+      "ignores_ecart_insuffisant": 1282,
+      "ignores_limite_paris_ouverts": 13,
+      "ignores_mise_trop_faible": 0
+    },
+    {
+      "strategie": "momentum_kelly_plein",
+      "cagnotte_finale": 0.23,
+      "roi_pct": -99.5,
+      "nb_paris": 97,
+      "taux_reussite_pct": 67.0,
+      "drawdown_max_pct": 99.7,
+      "plus_haut": 78.25,
+      "arret_date": null,
+      "ignores_ecart_insuffisant": 2260,
+      "ignores_limite_paris_ouverts": 0,
+      "ignores_mise_trop_faible": 131
+    },
+    {
+      "strategie": "aleatoire",
+      "cagnotte_finale": 26.54,
+      "roi_pct": -46.9,
+      "nb_paris": 28,
+      "taux_reussite_pct": 35.7,
+      "drawdown_max_pct": 48.4,
+      "plus_haut": 51.41,
+      "arret_date": "2026-01-06",
+      "ignores_ecart_insuffisant": 25,
+      "ignores_limite_paris_ouverts": 54,
+      "ignores_mise_trop_faible": 0
+    }
+  ],
+  "courbes": {
+    "calibration": [
+      {
+        "date": "2026-01-01",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-01-04",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-01-11",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-01-18",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-01-25",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-02-01",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-02-08",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-02-15",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-02-22",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-03-01",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-03-08",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-03-15",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-03-22",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-03-29",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-04-05",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-04-12",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-04-19",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-04-26",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-05-03",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-05-10",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-05-17",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-05-24",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-05-31",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-06-07",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-06-14",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-06-21",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-06-28",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-07-05",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-07-12",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-07-19",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-07-26",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-08-02",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-08-09",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-08-16",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-08-23",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-08-30",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-09-06",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-09-13",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-09-20",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-09-27",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-10-04",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-10-11",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-10-18",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-10-25",
+        "cagnotte": 50.0
+      }
+    ],
+    "momentum": [
+      {
+        "date": "2026-01-01",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-01-04",
+        "cagnotte": 50.43
+      },
+      {
+        "date": "2026-01-11",
+        "cagnotte": 58.45
+      },
+      {
+        "date": "2026-01-18",
+        "cagnotte": 54.66
+      },
+      {
+        "date": "2026-01-25",
+        "cagnotte": 53.95
+      },
+      {
+        "date": "2026-02-01",
+        "cagnotte": 58.55
+      },
+      {
+        "date": "2026-02-08",
+        "cagnotte": 64.95
+      },
+      {
+        "date": "2026-02-15",
+        "cagnotte": 61.32
+      },
+      {
+        "date": "2026-02-22",
+        "cagnotte": 53.73
+      },
+      {
+        "date": "2026-03-01",
+        "cagnotte": 52.77
+      },
+      {
+        "date": "2026-03-08",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-03-15",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-03-22",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-03-29",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-04-05",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-04-12",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-04-19",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-04-26",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-05-03",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-05-10",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-05-17",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-05-24",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-05-31",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-06-07",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-06-14",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-06-21",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-06-28",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-07-05",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-07-12",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-07-19",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-07-26",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-08-02",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-08-09",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-08-16",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-08-23",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-08-30",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-09-06",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-09-13",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-09-20",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-09-27",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-10-04",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-10-11",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-10-18",
+        "cagnotte": 43.62
+      },
+      {
+        "date": "2026-10-25",
+        "cagnotte": 43.62
+      }
+    ],
+    "momentum_kelly_plein": [
+      {
+        "date": "2026-01-01",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-01-04",
+        "cagnotte": 56.57
+      },
+      {
+        "date": "2026-01-11",
+        "cagnotte": 5.12
+      },
+      {
+        "date": "2026-01-18",
+        "cagnotte": 2.55
+      },
+      {
+        "date": "2026-01-25",
+        "cagnotte": 7.87
+      },
+      {
+        "date": "2026-02-01",
+        "cagnotte": 7.98
+      },
+      {
+        "date": "2026-02-08",
+        "cagnotte": 3.17
+      },
+      {
+        "date": "2026-02-15",
+        "cagnotte": 3.32
+      },
+      {
+        "date": "2026-02-22",
+        "cagnotte": 5.59
+      },
+      {
+        "date": "2026-03-01",
+        "cagnotte": 8.32
+      },
+      {
+        "date": "2026-03-08",
+        "cagnotte": 3.55
+      },
+      {
+        "date": "2026-03-15",
+        "cagnotte": 5.08
+      },
+      {
+        "date": "2026-03-22",
+        "cagnotte": 6.64
+      },
+      {
+        "date": "2026-03-29",
+        "cagnotte": 8.86
+      },
+      {
+        "date": "2026-04-05",
+        "cagnotte": 0.23
+      },
+      {
+        "date": "2026-04-12",
+        "cagnotte": 0.23
+      },
+      {
+        "date": "2026-04-19",
+        "cagnotte": 0.23
+      },
+      {
+        "date": "2026-04-26",
+        "cagnotte": 0.23
+      },
+      {
+        "date": "2026-05-03",
+        "cagnotte": 0.23
+      },
+      {
+        "date": "2026-05-10",
+        "cagnotte": 0.23
+      },
+      {
+        "date": "2026-05-17",
+        "cagnotte": 0.23
+      },
+      {
+        "date": "2026-05-24",
+        "cagnotte": 0.23
+      },
+      {
+        "date": "2026-05-31",
+        "cagnotte": 0.23
+      },
+      {
+        "date": "2026-06-07",
+        "cagnotte": 0.23
+      },
+      {
+        "date": "2026-06-14",
+        "cagnotte": 0.23
+      },
+      {
+        "date": "2026-06-21",
+        "cagnotte": 0.23
+      },
+      {
+        "date": "2026-06-28",
+        "cagnotte": 0.23
+      },
+      {
+        "date": "2026-07-05",
+        "cagnotte": 0.23
+      },
+      {
+        "date": "2026-07-12",
+        "cagnotte": 0.23
+      },
+      {
+        "date": "2026-07-19",
+        "cagnotte": 0.23
+      },
+      {
+        "date": "2026-07-26",
+        "cagnotte": 0.23
+      },
+      {
+        "date": "2026-08-02",
+        "cagnotte": 0.23
+      },
+      {
+        "date": "2026-08-09",
+        "cagnotte": 0.23
+      },
+      {
+        "date": "2026-08-16",
+        "cagnotte": 0.23
+      },
+      {
+        "date": "2026-08-23",
+        "cagnotte": 0.23
+      },
+      {
+        "date": "2026-08-30",
+        "cagnotte": 0.23
+      },
+      {
+        "date": "2026-09-06",
+        "cagnotte": 0.23
+      },
+      {
+        "date": "2026-09-13",
+        "cagnotte": 0.23
+      },
+      {
+        "date": "2026-09-20",
+        "cagnotte": 0.23
+      },
+      {
+        "date": "2026-09-27",
+        "cagnotte": 0.23
+      },
+      {
+        "date": "2026-10-04",
+        "cagnotte": 0.23
+      },
+      {
+        "date": "2026-10-11",
+        "cagnotte": 0.23
+      },
+      {
+        "date": "2026-10-18",
+        "cagnotte": 0.23
+      },
+      {
+        "date": "2026-10-25",
+        "cagnotte": 0.23
+      }
+    ],
+    "aleatoire": [
+      {
+        "date": "2026-01-01",
+        "cagnotte": 50.0
+      },
+      {
+        "date": "2026-01-04",
+        "cagnotte": 42.96
+      },
+      {
+        "date": "2026-01-11",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-01-18",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-01-25",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-02-01",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-02-08",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-02-15",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-02-22",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-03-01",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-03-08",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-03-15",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-03-22",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-03-29",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-04-05",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-04-12",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-04-19",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-04-26",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-05-03",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-05-10",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-05-17",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-05-24",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-05-31",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-06-07",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-06-14",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-06-21",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-06-28",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-07-05",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-07-12",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-07-19",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-07-26",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-08-02",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-08-09",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-08-16",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-08-23",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-08-30",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-09-06",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-09-13",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-09-20",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-09-27",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-10-04",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-10-11",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-10-18",
+        "cagnotte": 26.54
+      },
+      {
+        "date": "2026-10-25",
+        "cagnotte": 26.54
+      }
+    ]
+  },
+  "calibration_test": [
+    {
+      "tranche": "0-10 %",
+      "n": 791,
+      "prix_moyen": 0.0197,
+      "freq_reelle": 0.019
+    },
+    {
+      "tranche": "10-20 %",
+      "n": 213,
+      "prix_moyen": 0.1521,
+      "freq_reelle": 0.1549
+    },
+    {
+      "tranche": "20-30 %",
+      "n": 276,
+      "prix_moyen": 0.2551,
+      "freq_reelle": 0.2935
+    },
+    {
+      "tranche": "30-40 %",
+      "n": 228,
+      "prix_moyen": 0.3491,
+      "freq_reelle": 0.3026
+    },
+    {
+      "tranche": "40-50 %",
+      "n": 268,
+      "prix_moyen": 0.4576,
+      "freq_reelle": 0.459
+    },
+    {
+      "tranche": "50-60 %",
+      "n": 248,
+      "prix_moyen": 0.5482,
+      "freq_reelle": 0.5484
+    },
+    {
+      "tranche": "60-70 %",
+      "n": 132,
+      "prix_moyen": 0.6476,
+      "freq_reelle": 0.7045
+    },
+    {
+      "tranche": "70-80 %",
+      "n": 125,
+      "prix_moyen": 0.7495,
+      "freq_reelle": 0.792
+    },
+    {
+      "tranche": "80-90 %",
+      "n": 70,
+      "prix_moyen": 0.847,
+      "freq_reelle": 0.8286
+    },
+    {
+      "tranche": "90-100 %",
+      "n": 137,
+      "prix_moyen": 0.9735,
+      "freq_reelle": 0.9854
+    }
+  ],
+  "calibration_apprentissage": [
+    {
+      "tranche": "0-10 %",
+      "n": 3038,
+      "prix_moyen": 0.0166,
+      "freq_reelle": 0.0112,
+      "ecart": -0.0054
+    },
+    {
+      "tranche": "10-20 %",
+      "n": 499,
+      "prix_moyen": 0.1507,
+      "freq_reelle": 0.1523,
+      "ecart": 0.0015
+    },
+    {
+      "tranche": "20-30 %",
+      "n": 642,
+      "prix_moyen": 0.252,
+      "freq_reelle": 0.2804,
+      "ecart": 0.0271
+    },
+    {
+      "tranche": "30-40 %",
+      "n": 498,
+      "prix_moyen": 0.351,
+      "freq_reelle": 0.3835,
+      "ecart": 0.0307
+    },
+    {
+      "tranche": "40-50 %",
+      "n": 1252,
+      "prix_moyen": 0.4797,
+      "freq_reelle": 0.5024,
+      "ecart": 0.0222
+    },
+    {
+      "tranche": "50-60 %",
+      "n": 463,
+      "prix_moyen": 0.544,
+      "freq_reelle": 0.5508,
+      "ecart": 0.0063
+    },
+    {
+      "tranche": "60-70 %",
+      "n": 308,
+      "prix_moyen": 0.6477,
+      "freq_reelle": 0.6851,
+      "ecart": 0.034
+    },
+    {
+      "tranche": "70-80 %",
+      "n": 225,
+      "prix_moyen": 0.7476,
+      "freq_reelle": 0.7511,
+      "ecart": 0.0031
+    },
+    {
+      "tranche": "80-90 %",
+      "n": 171,
+      "prix_moyen": 0.848,
+      "freq_reelle": 0.8421,
+      "ecart": -0.005
+    },
+    {
+      "tranche": "90-100 %",
+      "n": 402,
+      "prix_moyen": 0.9743,
+      "freq_reelle": 0.9776,
+      "ecart": 0.0031
+    }
+  ],
+  "categories": [
+    {
+      "categorie": "Sport",
+      "n": 4070.0,
+      "brier": 0.1743,
+      "part_yes": 0.372
+    },
+    {
+      "categorie": "Crypto",
+      "n": 2167.0,
+      "brier": 0.1254,
+      "part_yes": 0.363
+    },
+    {
+      "categorie": "Politique",
+      "n": 1190.0,
+      "brier": 0.0788,
+      "part_yes": 0.249
+    },
+    {
+      "categorie": "Autre",
+      "n": 873.0,
+      "brier": 0.0535,
+      "part_yes": 0.21
+    },
+    {
+      "categorie": "Tech & IA",
+      "n": 549.0,
+      "brier": 0.0405,
+      "part_yes": 0.157
+    },
+    {
+      "categorie": "Météo",
+      "n": 535.0,
+      "brier": 0.0943,
+      "part_yes": 0.159
+    },
+    {
+      "categorie": "Culture",
+      "n": 374.0,
+      "brier": 0.0645,
+      "part_yes": 0.222
+    },
+    {
+      "categorie": "Économie",
+      "n": 228.0,
+      "brier": 0.1166,
+      "part_yes": 0.399
+    }
+  ],
+  "paris_par_categorie": [
+    {
+      "strategie": "aleatoire",
+      "categorie": "Autre",
+      "nb_paris": 3,
+      "gain": -5.4895,
+      "mise": 8.918099999999999,
+      "reussite": 0.3333333333333333
+    },
+    {
+      "strategie": "aleatoire",
+      "categorie": "Crypto",
+      "nb_paris": 5,
+      "gain": -12.7757,
+      "mise": 12.7757,
+      "reussite": 0.0
+    },
+    {
+      "strategie": "aleatoire",
+      "categorie": "Culture",
+      "nb_paris": 1,
+      "gain": 2.4763,
+      "mise": 2.5774,
+      "reussite": 1.0
+    },
+    {
+      "strategie": "aleatoire",
+      "categorie": "Politique",
+      "nb_paris": 1,
+      "gain": 0.6556,
+      "mise": 2.5426,
+      "reussite": 1.0
+    },
+    {
+      "strategie": "aleatoire",
+      "categorie": "Sport",
+      "nb_paris": 15,
+      "gain": -0.5914999999999986,
+      "mise": 39.167500000000004,
+      "reussite": 0.4666666666666667
+    },
+    {
+      "strategie": "aleatoire",
+      "categorie": "Tech & IA",
+      "nb_paris": 3,
+      "gain": -7.7352,
+      "mise": 7.7352,
+      "reussite": 0.0
+    },
+    {
+      "strategie": "momentum",
+      "categorie": "Autre",
+      "nb_paris": 6,
+      "gain": 6.542700000000001,
+      "mise": 21.3075,
+      "reussite": 0.8333333333333334
+    },
+    {
+      "strategie": "momentum",
+      "categorie": "Crypto",
+      "nb_paris": 26,
+      "gain": -3.0623999999999993,
+      "mise": 89.4749,
+      "reussite": 0.6538461538461539
+    },
+    {
+      "strategie": "momentum",
+      "categorie": "Culture",
+      "nb_paris": 8,
+      "gain": -6.9252,
+      "mise": 26.8036,
+      "reussite": 0.5
+    },
+    {
+      "strategie": "momentum",
+      "categorie": "Météo",
+      "nb_paris": 2,
+      "gain": -2.5214,
+      "mise": 6.9702,
+      "reussite": 0.5
+    },
+    {
+      "strategie": "momentum",
+      "categorie": "Politique",
+      "nb_paris": 5,
+      "gain": -9.529399999999999,
+      "mise": 17.473399999999998,
+      "reussite": 0.4
+    },
+    {
+      "strategie": "momentum",
+      "categorie": "Sport",
+      "nb_paris": 71,
+      "gain": -3.463600000000001,
+      "mise": 239.18470000000008,
+      "reussite": 0.704225352112676
+    },
+    {
+      "strategie": "momentum",
+      "categorie": "Tech & IA",
+      "nb_paris": 11,
+      "gain": 0.8872000000000004,
+      "mise": 36.9001,
+      "reussite": 0.6363636363636364
+    },
+    {
+      "strategie": "momentum",
+      "categorie": "Économie",
+      "nb_paris": 3,
+      "gain": 11.6874,
+      "mise": 9.7325,
+      "reussite": 1.0
+    },
+    {
+      "strategie": "momentum_kelly_plein",
+      "categorie": "Autre",
+      "nb_paris": 2,
+      "gain": 1.9809999999999999,
+      "mise": 5.4376,
+      "reussite": 1.0
+    },
+    {
+      "strategie": "momentum_kelly_plein",
+      "categorie": "Crypto",
+      "nb_paris": 22,
+      "gain": -61.77489999999999,
+      "mise": 290.22799999999995,
+      "reussite": 0.5454545454545454
+    },
+    {
+      "strategie": "momentum_kelly_plein",
+      "categorie": "Culture",
+      "nb_paris": 5,
+      "gain": 2.9425,
+      "mise": 10.5623,
+      "reussite": 0.8
+    },
+    {
+      "strategie": "momentum_kelly_plein",
+      "categorie": "Météo",
+      "nb_paris": 8,
+      "gain": 7.0014,
+      "mise": 13.4965,
+      "reussite": 0.625
+    },
+    {
+      "strategie": "momentum_kelly_plein",
+      "categorie": "Politique",
+      "nb_paris": 6,
+      "gain": -9.571399999999999,
+      "mise": 14.7271,
+      "reussite": 0.3333333333333333
+    },
+    {
+      "strategie": "momentum_kelly_plein",
+      "categorie": "Sport",
+      "nb_paris": 45,
+      "gain": 7.1242,
+      "mise": 126.70300000000002,
+      "reussite": 0.7555555555555555
+    },
+    {
+      "strategie": "momentum_kelly_plein",
+      "categorie": "Tech & IA",
+      "nb_paris": 6,
+      "gain": 0.5590999999999995,
+      "mise": 14.0743,
+      "reussite": 0.6666666666666666
+    },
+    {
+      "strategie": "momentum_kelly_plein",
+      "categorie": "Économie",
+      "nb_paris": 3,
+      "gain": 1.9654000000000007,
+      "mise": 7.0732,
+      "reussite": 0.6666666666666666
+    }
+  ],
+  "ecarts_calibration_test": [
+    {
+      "categorie": "Autre",
+      "n_test": 170,
+      "ecart_max_points": 0.7
+    },
+    {
+      "categorie": "Crypto",
+      "n_test": 320,
+      "ecart_max_points": 0.2
+    },
+    {
+      "categorie": "Culture",
+      "n_test": 80,
+      "ecart_max_points": 3.5
+    },
+    {
+      "categorie": "Météo",
+      "n_test": 255,
+      "ecart_max_points": 4.2
+    },
+    {
+      "categorie": "Politique",
+      "n_test": 186,
+      "ecart_max_points": 0.8
+    },
+    {
+      "categorie": "Sport",
+      "n_test": 1292,
+      "ecart_max_points": 9.0
+    },
+    {
+      "categorie": "Tech & IA",
+      "n_test": 144,
+      "ecart_max_points": 1.0
+    },
+    {
+      "categorie": "Économie",
+      "n_test": 41,
+      "ecart_max_points": null
+    }
+  ],
+  "brier_test": 0.1345,
+  "aleatoire": {
+    "tirages": 300,
+    "mediane": 26.525,
+    "meilleur": 45.94,
+    "meilleur_plus_haut": 72.14,
+    "part_gagnants_pct": 0.0,
+    "histogramme": [
+      40,
+      51,
+      66,
+      54,
+      39,
+      23,
+      13,
+      6,
+      5,
+      1,
+      0,
+      2
+    ],
+    "bornes": [
+      20.19,
+      22.34,
+      24.48,
+      26.63,
+      28.77,
+      30.92,
+      33.06,
+      35.21,
+      37.36,
+      39.5,
+      41.65,
+      43.79,
+      45.94
+    ]
+  },
+  "regles": {
+    "cagnotte": 50.0,
+    "ecart_min_points": 8.0,
+    "kelly": 0.5,
+    "plafond_pct": 6.0,
+    "max_ouverts": 5,
+    "stop_pct": 40.0,
+    "glissement_points": 1.0,
+    "mise_min": 1.0,
+    "decision_heures": 24,
+    "duree_min_jours": 2.5
+  }
+};
+
+export type Summary = typeof summary;

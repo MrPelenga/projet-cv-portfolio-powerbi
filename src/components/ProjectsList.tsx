@@ -136,7 +136,7 @@ const ProjectsList = ({ limit, projects }: ProjectsListProps) => {
             </div>
             
             <CardHeader>
-              <CardTitle className={`text-xl font-bold text-foreground ${project.id === '6' ? 'break-words' : 'line-clamp-1'}`}>{language === 'en' && project.title_en ? project.title_en : project.title}</CardTitle>
+              <CardTitle className={`text-xl font-bold text-foreground ${project.id === '6' || project.id === '7' ? 'break-words' : 'line-clamp-1'}`}>{language === 'en' && project.title_en ? project.title_en : project.title}</CardTitle>
               <CardDescription className="line-clamp-2">{getDescription(project)}</CardDescription>
             </CardHeader>
             

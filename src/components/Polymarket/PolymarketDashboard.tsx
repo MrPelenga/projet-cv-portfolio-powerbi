@@ -188,7 +188,7 @@ export default function PolymarketDashboard() {
                       <LineChart data={curves} margin={{ top: 8, right: 12, left: 0, bottom: 0 }}>
                         <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
                         <XAxis dataKey="date" tick={axis} tickFormatter={dateFmt} ticks={monthTicks} interval="preserveStartEnd" minTickGap={4} />
-                        <YAxis tick={axis} width={48} tickFormatter={v => `${v} $`} />
+                        <YAxis tick={axis} width={48} tickFormatter={v => (lang === 'fr' ? `${v} $` : `$${v}`)} />
                         <Tooltip {...tooltipStyle} labelFormatter={d => new Date(d).toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-US')}
                           formatter={(v: number, k: string) => [usd(v, lang), NAMES[k as StrategyKey][lang]]} />
                         <ReferenceLine y={50} stroke="hsl(var(--muted-foreground))" strokeDasharray="4 4" />

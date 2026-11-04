@@ -13,7 +13,7 @@ const meteoGap = summary.ecarts_calibration_test.find(g => g.categorie === 'Mét
 
 export const project7: Project = {
   id: '7',
-  title: 'Une IA peut-elle transformer 50 $ en 5 000 $ sur Polymarket ? Backtest et dashboard',
+  title: 'Une IA peut-elle transformer 50\u00a0$ en 5\u00a0000\u00a0$ sur Polymarket\u00a0? Backtest et dashboard',
   title_en: 'Can an AI Turn $50 into $5,000 on Polymarket? Backtest & Dashboard',
   description: `Backtest d'une stratégie de paris virale sur ${fr(summary.volumes.marches_avec_prix)} marchés Polymarket réels, avec un dashboard qui compare la stratégie au hasard.`,
   description_en: `Backtest of a viral betting strategy on ${en(summary.volumes.marches_avec_prix)} real Polymarket markets, with a dashboard comparing it to pure chance.`,
@@ -80,6 +80,7 @@ export const project7Copy = {
     gapSubtitle: 'Écart maximal entre prix et fréquence réelle, par tranche d’au moins 30 marchés. Il faudrait dépasser la ligne des 8 points.',
     gapLabel: 'Écart maximal',
     catTableTitle: 'Détail par catégorie',
+    catSmall: (n: number) => `* Moins de ${n} paris : rendement donné à titre indicatif, l'échantillon est trop petit pour conclure.`,
     catTableHead: ['Catégorie', 'Marchés étudiés', 'Brier', 'Paris Momentum', 'Rendement par $ misé'],
     catNote: `Le pivot météo de l'article : en 2026, la tranche de prix météo la plus mal calibrée ne s'écarte que de ${fr(meteoGap, 1)} points. Le seul écart qui franchit 8 points (en sport) n'est visible qu'après coup, il n'existait pas dans les données 2025.`,
     calTitle: 'Le prix annonce-t-il la bonne probabilité ?',
@@ -95,7 +96,7 @@ export const project7Copy = {
       runs: 'Tirages aléatoires', winners: 'Tirages gagnants', median: 'Cagnotte médiane', best: 'Meilleur tirage',
       bestPeak: (v: string) => `Plus haut atteint en cours de route : ${v}`,
       title: 'Cagnotte finale de 300 stratégies au hasard',
-      subtitle: 'Même règles de mise, sens du pari tiré à pile ou face. En vert : au-dessus de 50 $.',
+      subtitle: 'Mêmes règles de mise, sens du pari tiré à pile ou face. Une barre verte signalerait un tirage au-dessus de 50 $.',
       count: 'Tirages', readTitle: 'Pourquoi c’est important',
       read: [
         `Sur ${fr(rnd.tirages)} tirages, aucun ne finit au-dessus de 50 $. Le glissement d'un point et l'arrêt à −40 % suffisent à rendre l'espérance négative.`,
@@ -157,6 +158,7 @@ export const project7Copy = {
     gapSubtitle: 'Largest gap between price and actual frequency, per bucket of at least 30 markets. It would need to cross the 8-point line.',
     gapLabel: 'Largest gap',
     catTableTitle: 'Details by category',
+    catSmall: (n: number) => `* Fewer than ${n} bets: return shown for reference only, the sample is too small to conclude.`,
     catTableHead: ['Category', 'Markets studied', 'Brier', 'Momentum bets', 'Return per $ staked'],
     catNote: `The article's weather pivot: in 2026, the worst-calibrated weather price bucket is off by only ${en(meteoGap, 1)} points. The only gap above 8 points (in sports) is visible only in hindsight; it did not exist in the 2025 data.`,
     calTitle: 'Does the price state the right probability?',
@@ -172,7 +174,7 @@ export const project7Copy = {
       runs: 'Random runs', winners: 'Winning runs', median: 'Median bankroll', best: 'Best run',
       bestPeak: (v: string) => `Peak reached along the way: ${v}`,
       title: 'Final bankroll of 300 random strategies',
-      subtitle: 'Same staking rules, bet side decided by a coin flip. In green: above $50.',
+      subtitle: 'Same staking rules, bet side decided by a coin flip. A green bar would mean a run above $50.',
       count: 'Runs', readTitle: 'Why it matters',
       read: [
         `Out of ${en(rnd.tirages)} runs, none ends above $50. One point of slippage and the −40% stop are enough to make the expected value negative.`,

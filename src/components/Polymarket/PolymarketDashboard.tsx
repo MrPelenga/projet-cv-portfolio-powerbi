@@ -34,11 +34,14 @@ const CATEGORY_EN: Record<string, string> = {
   'Tech & IA': 'Tech & AI', Culture: 'Culture', Autre: 'Other',
 };
 
-const usd = (v: number, lang: Lang) =>
-  new Intl.NumberFormat(lang === 'fr' ? 'fr-FR' : 'en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: v >= 1000 ? 0 : 2 }).format(v);
+const usd = (v: number, lang: Lang) => {
+  const n = new Intl.NumberFormat(lang === 'fr' ? 'fr-FR' : 'en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(v);
+  return lang === 'fr' ? `${n}\u00a0$` : `$${n}`;
+};
 const num = (v: number, lang: Lang, d = 0) =>
   new Intl.NumberFormat(lang === 'fr' ? 'fr-FR' : 'en-US', { maximumFractionDigits: d, minimumFractionDigits: d }).format(v);
-const pct = (v: number, lang: Lang, d = 1) => `${num(v, lang, d)} %`.replace(' %', lang === 'fr' ? ' %' : '%');
+const pct = (v: number, lang: Lang, d = 1) => `${num(v, lang, d)}${lang === 'fr' ? '\u202f%' : '%'}`;
+const MIN_BETS = 10; // sous ce nombre de paris, un rendement par catégorie ne veut rien dire
 
 const axis = { fontSize: 11, fill: 'currentColor' };
 const tooltipStyle = {
@@ -72,7 +75,7 @@ export default function PolymarketDashboard() {
   const lang: Lang = language === 'en' ? 'en' : 'fr';
   const copy = project7Copy[lang];
   const [tab, setTab] = useState(0);
-  const [strategy, setStrategy] = useState<StrategyKey>('calibration');
+  const [strategy, setStrategy] = useState<StrategyKey>('momentum');
 
   const results = useMemo(() => Object.fromEntries(summary.resultats.map(r => [r.strategie, r])) as Record<StrategyKey, (typeof summary.resultats)[number]>, []);
   const selected = results[strategy];
@@ -113,6 +116,8 @@ export default function PolymarketDashboard() {
   }), []);
 
   const tabs = copy.tabs;
+  // Une graduation par mois sur l'axe des dates (première semaine de chaque mois).
+  const monthTicks = curves.filter((r, i) => i === 0 || String(r.date).slice(0, 7) !== String(curves[i - 1].date).slice(0, 7)).map(r => String(r.date));
   const roiTone = (v: number) => (v > 0 ? 'good' : v < 0 ? 'bad' : undefined);
   const dateFmt = (d: string) => new Date(d).toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-US', { month: 'short', year: '2-digit' });
 
@@ -141,7 +146,7 @@ export default function PolymarketDashboard() {
 
         <div className="page-shell py-10">
           {/* Cadre du rapport, à la manière de Power BI */}
-          <div className="overflow-hidden rounded-xl border border-border bg-muted/40 shadow-sm">
+          <div data-pbi-report className="overflow-hidden rounded-xl border border-border bg-muted/40 shadow-sm">
             <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border bg-card px-4 py-3">
               <div className="min-w-0">
                 <p className="text-sm font-semibold text-foreground">{copy.reportTitle}</p>
@@ -174,7 +179,7 @@ export default function PolymarketDashboard() {
                   <Kpi label={copy.kpi.roi} value={`${selected.roi_pct > 0 ? '+' : ''}${pct(selected.roi_pct, lang)}`} tone={roiTone(selected.roi_pct)} />
                   <Kpi label={copy.kpi.bets} value={num(selected.nb_paris, lang)} />
                   <Kpi label={copy.kpi.hit} value={selected.taux_reussite_pct == null ? '–' : pct(selected.taux_reussite_pct, lang)} />
-                  <Kpi label={copy.kpi.dd} value={`−${pct(selected.drawdown_max_pct, lang)}`}
+                  <Kpi label={copy.kpi.dd} value={selected.drawdown_max_pct > 0 ? `−${pct(selected.drawdown_max_pct, lang)}` : pct(0, lang)}
                     hint={selected.arret_date ? copy.kpi.stopped(new Date(selected.arret_date).toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-US')) : copy.kpi.noStop} />
                 </div>
                 <Panel title={copy.curveTitle} subtitle={copy.curveSubtitle}>
@@ -182,7 +187,7 @@ export default function PolymarketDashboard() {
                     <ResponsiveContainer width="100%" height="100%">
                       <LineChart data={curves} margin={{ top: 8, right: 12, left: 0, bottom: 0 }}>
                         <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-                        <XAxis dataKey="date" tick={axis} tickFormatter={dateFmt} minTickGap={28} />
+                        <XAxis dataKey="date" tick={axis} tickFormatter={dateFmt} ticks={monthTicks} interval="preserveStartEnd" minTickGap={4} />
                         <YAxis tick={axis} width={48} tickFormatter={v => `${v} $`} />
                         <Tooltip {...tooltipStyle} labelFormatter={d => new Date(d).toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-US')}
                           formatter={(v: number, k: string) => [usd(v, lang), NAMES[k as StrategyKey][lang]]} />
@@ -207,7 +212,7 @@ export default function PolymarketDashboard() {
                     <ResponsiveContainer width="100%" height="100%">
                       <BarChart data={categories} layout="vertical" margin={{ top: 4, right: 16, left: 8, bottom: 0 }}>
                         <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" horizontal={false} />
-                        <XAxis type="number" tick={axis} />
+                        <XAxis type="number" tick={axis} tickFormatter={v => num(v, lang, 2)} />
                         <YAxis type="category" dataKey="label" tick={axis} width={78} />
                         <Tooltip {...tooltipStyle} formatter={(v: number) => [num(v, lang, 3), 'Brier']} />
                         <Bar dataKey="brier" fill="#2563EB" radius={[0, 4, 4, 0]} isAnimationActive={false} />
@@ -218,12 +223,12 @@ export default function PolymarketDashboard() {
                 <Panel title={copy.gapTitle} subtitle={copy.gapSubtitle}>
                   <div className="h-72">
                     <ResponsiveContainer width="100%" height="100%">
-                      <BarChart data={categories.filter(c => c.gap !== null)} layout="vertical" margin={{ top: 4, right: 16, left: 8, bottom: 0 }}>
+                      <BarChart data={categories.filter(c => c.gap !== null)} layout="vertical" margin={{ top: 18, right: 16, left: 8, bottom: 0 }}>
                         <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" horizontal={false} />
                         <XAxis type="number" tick={axis} domain={[0, 10]} tickFormatter={v => `${v} pts`} />
                         <YAxis type="category" dataKey="label" tick={axis} width={78} />
                         <ReferenceLine x={summary.regles.ecart_min_points} stroke="#DC2626" strokeDasharray="4 4"
-                          label={{ value: '8 pts', position: 'top', fill: '#DC2626', fontSize: 11 }} />
+                          label={{ value: '8 pts', position: 'insideTopRight', fill: '#DC2626', fontSize: 11 }} />
                         <Tooltip {...tooltipStyle} formatter={(v: number) => [`${num(v, lang, 1)} pts`, copy.gapLabel]} />
                         <Bar dataKey="gap" radius={[0, 4, 4, 0]} isAnimationActive={false}>
                           {categories.filter(c => c.gap !== null).map(c => (
@@ -246,12 +251,13 @@ export default function PolymarketDashboard() {
                           <td className="py-2 pr-3 tabular-nums">{num(c.n, lang)}</td>
                           <td className="py-2 pr-3 tabular-nums">{num(c.brier, lang, 3)}</td>
                           <td className="py-2 pr-3 tabular-nums">{num(c.nb_paris, lang)}</td>
-                          <td className={`py-2 pr-3 tabular-nums ${c.roi == null ? '' : c.roi >= 0 ? 'text-emerald-600 dark:text-emerald-400' : 'text-red-600 dark:text-red-400'}`}>{c.roi == null ? '–' : pct(c.roi, lang)}</td>
+                          <td className={`py-2 pr-3 tabular-nums ${c.roi == null || c.nb_paris < MIN_BETS ? 'text-muted-foreground' : c.roi >= 0 ? 'text-emerald-600 dark:text-emerald-400' : 'text-red-600 dark:text-red-400'}`}>{c.roi == null ? '–' : `${pct(c.roi, lang)}${c.nb_paris < MIN_BETS ? '*' : ''}`}</td>
                         </tr>))}
                       </tbody>
                     </table>
                   </div>
-                  <p className="mt-3 text-xs">{copy.catNote}</p>
+                  <p className="mt-3 text-xs">{copy.catSmall(MIN_BETS)}</p>
+                  <p className="mt-2 text-xs">{copy.catNote}</p>
                 </Panel>
               </div>}
 

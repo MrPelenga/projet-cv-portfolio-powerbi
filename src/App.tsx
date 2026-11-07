@@ -8,6 +8,7 @@ import { TranslationProvider } from "@/hooks/useTranslation";
 import { ThemeProvider } from "@/hooks/useTheme";
 import Index from "./pages/Index";
 import CVPage from "./pages/CVPage";
+import CertificationsPage from "./pages/CertificationsPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
 import ContactPage from "./pages/ContactPage";
@@ -32,6 +33,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/cv" element={<CVPage />} />
+            <Route path="/certifications" element={<CertificationsPage />} />
             <Route path="/projets" element={<ProjectsPage />} />
             <Route path="/projets/:id" element={<ProjectDetailPage />} />
             <Route path="/projets/4" element={<PowerBIDashboardPage />} />

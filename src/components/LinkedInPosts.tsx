@@ -14,7 +14,7 @@ const relativeDate = (iso: string, language: string) => {
   return language === 'fr' ? `Il y a ${days} j` : `${days} days ago`;
 };
 
-// LinkedIn refuses to embed some posts: this static look-alike mimics the embed
+// Every post uses this static look-alike mimics the embed
 // (avatar, name, headline, logo, post text) and links to the real post.
 const StaticLinkedInCard = ({ post }: { post: LinkedInPost }) => {
   const { language } = useTranslation();
@@ -28,7 +28,7 @@ const StaticLinkedInCard = ({ post }: { post: LinkedInPost }) => {
           <p className="truncate text-xs text-muted-foreground">{headline}</p>
           <p className="text-xs text-muted-foreground">{relativeDate(post.date, language)}</p>
         </div>
-        <Linkedin className="h-5 w-5 shrink-0 text-primary" />
+        <Linkedin className="h-5 w-5 shrink-0 text-[#0A66C2]" />
       </div>
       <div className="flex-1 overflow-y-auto px-4 py-3">
         <p className="whitespace-pre-line text-sm leading-relaxed text-foreground">{post.embedText || post.excerpt}</p>
@@ -46,9 +46,7 @@ const LinkedInPostCard = ({ post }: { post: LinkedInPost }) => {
   const excerpt = language === 'en' ? post.excerpt_en || post.excerpt : post.excerpt;
   const date = new Intl.DateTimeFormat(language === 'fr' ? 'fr-FR' : 'en-GB', { dateStyle: 'medium' }).format(new Date(post.date));
   return <article className="surface overflow-hidden flex flex-col">
-    {post.embedUrn
-      ? <iframe title={post.title} loading="lazy" src={`https://www.linkedin.com/embed/feed/update/${post.embedUrn}`} className="w-full h-[420px] border-0" />
-      : <StaticLinkedInCard post={post} />}
+    <StaticLinkedInCard post={post} />
     <div className="flex-1 p-6">
       <time dateTime={post.date} className="text-xs text-muted-foreground">{date}</time>
       <h3 className="font-semibold mt-4 text-xl">{title}</h3>

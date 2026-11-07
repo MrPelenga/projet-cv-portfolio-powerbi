@@ -31,7 +31,7 @@ test('every certification carries the real date it was given', () => {
   }
 });
 
-test('credential IDs are shown only where the owner gave one', () => {
+test('credential IDs stay stored for LinkedIn alignment', () => {
   deepStrictEqual(
     profile.certifications.filter(c => c.credentialId).map(c => `${c.id}:${c.credentialId}`),
     ['azure-ds:FA6731E8268BFFB0', 'dataiku-dev:cae5bmu4w2ry', 'dataiku-ml:k8mitza8bksv'],

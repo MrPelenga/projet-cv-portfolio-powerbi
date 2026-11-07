@@ -8,6 +8,8 @@ export interface LinkedInPost {
   tags: string[];
   title_en?: string;
   excerpt_en?: string;
+  // French-only post body, shown in the static look-alike card when LinkedIn refuses the embed.
+  embedText?: string;
 }
 // One entry = one real post. Keep dates in ISO format, newest first.
 export const linkedinPosts: LinkedInPost[] = [
@@ -18,6 +20,7 @@ export const linkedinPosts: LinkedInPost[] = [
     title: "Certifié Microsoft Power BI Data Analyst Associate (PL-300)",
     excerpt: "J'ai obtenu la certification Microsoft Power BI Data Analyst Associate (PL-300) : Power Query, modélisation, DAX et Power BI Service. Merci à MYPE Consulting, Amadou Dieye et Paul MD Aminul pour la formation.",
     tags: ["Power BI", "PL-300", "Certification", "Data"],
+    embedText: "Je suis heureux de vous annoncer que j'ai obtenu la certification Microsoft Certified: Power BI Data Analyst Associate (PL-300) ! 🎉\n\nCette certification valide les compétences au cœur de mon métier :\n🔹 préparer et transformer les données avec Power Query ;\n🔹 construire un modèle de données solide ;\n🔹 écrire des mesures en DAX ;\n🔹 publier, partager et sécuriser les rapports dans Power BI Service.\n\nUn grand merci à MYPE Consulting, Amadou Dieye et Paul MD Aminul pour leur pédagogie et leurs conseils.",
     title_en: "Microsoft Certified: Power BI Data Analyst Associate (PL-300)",
     excerpt_en: "I earned the Microsoft Power BI Data Analyst Associate (PL-300) certification: Power Query, data modeling, DAX and Power BI Service. Thanks to MYPE Consulting, Amadou Dieye and Paul MD Aminul for the training.",
   },

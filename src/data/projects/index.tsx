@@ -9,7 +9,7 @@ import { project6 } from './project6';
 import { project7 } from './project7';
 
 // Combine all projects in one array for easy access
-export const allProjects: Project[] = [project7, project6, project5, project1, project2, project3, project4];
+export const allProjects: Project[] = [project6, project5, project1, project2, project3, project4, project7];
 
 // Export individual projects for direct access
 export { project1, project2, project3, project4, project5, project6, project7 };

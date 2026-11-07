@@ -66,19 +66,6 @@ const ProjectsPage = () => {
         </header>
 
         <div className="page-shell py-14">
-          {powerBIProjects.length > 0 && (
-            <div className="mb-12">
-              <div className="flex items-center gap-3 mb-6">
-                <BarChart3 className="text-primary" size={26} />
-                <h2 className="text-2xl md:text-3xl font-semibold text-foreground">{t('projects.powerbi.title')}</h2>
-              </div>
-              <p className="text-muted-foreground mb-6 max-w-3xl">
-                {t('projects.powerbi.description')}
-              </p>
-              <ProjectsList projects={powerBIProjects} />
-            </div>
-          )}
-
           <div className="mb-10 animate-fade-in" style={{animationDelay: '0.3s'}}>
             <div className="flex flex-col md:flex-row gap-4">
               <div className="w-full md:w-2/3 relative">
@@ -151,6 +138,18 @@ const ProjectsPage = () => {
               </div>
             )}
           </div>
+          {powerBIProjects.length > 0 && (
+            <div className="mb-12">
+              <div className="flex items-center gap-3 mb-6">
+                <BarChart3 className="text-primary" size={26} />
+                <h2 className="text-2xl md:text-3xl font-semibold text-foreground">{t('projects.powerbi.title')}</h2>
+              </div>
+              <p className="text-muted-foreground mb-6 max-w-3xl">
+                {t('projects.powerbi.description')}
+              </p>
+              <ProjectsList projects={powerBIProjects} />
+            </div>
+          )}
         </div>
         
         <section className="border-t border-border bg-accent/40">

@@ -7,26 +7,55 @@ import { useTranslation } from '@/hooks/useTranslation';
 
 export const LinkedInFollow = () => { const { language } = useTranslation(); return <Button asChild variant="outline"><a href={profile.links.activity} target="_blank" rel="noopener noreferrer"><Linkedin />{language === 'fr' ? 'Me suivre sur LinkedIn' : 'Follow me on LinkedIn'}<ArrowUpRight /></a></Button>; };
 
+const relativeDate = (iso: string, language: string) => {
+  const days = Math.max(0, Math.round((Date.now() - new Date(iso).getTime()) / 86400000));
+  if (days === 0) return language === 'fr' ? "Aujourd'hui" : 'Today';
+  if (days === 1) return language === 'fr' ? 'Hier' : 'Yesterday';
+  return language === 'fr' ? `Il y a ${days} j` : `${days} days ago`;
+};
+
+// LinkedIn refuses to embed some posts: this static look-alike mimics the embed
+// (avatar, name, headline, logo, post text) and links to the real post.
+const StaticLinkedInCard = ({ post }: { post: LinkedInPost }) => {
+  const { language } = useTranslation();
+  const headline = language === 'en' ? profile.title.en : profile.title.fr;
+  return (
+    <a href={post.url} target="_blank" rel="noopener noreferrer" className="flex h-[420px] flex-col border-b border-border bg-card transition-colors hover:bg-muted/40">
+      <div className="flex items-start gap-3 p-4 pb-0">
+        <img src={profile.photo} alt={profile.name} className="h-12 w-12 shrink-0 rounded-full object-cover" />
+        <div className="min-w-0 flex-1">
+          <p className="truncate text-sm font-semibold text-foreground">Gabriel Pelenga-Mangi</p>
+          <p className="truncate text-xs text-muted-foreground">{headline}</p>
+          <p className="text-xs text-muted-foreground">{relativeDate(post.date, language)}</p>
+        </div>
+        <Linkedin className="h-5 w-5 shrink-0 text-primary" />
+      </div>
+      <div className="flex-1 overflow-y-auto px-4 py-3">
+        <p className="whitespace-pre-line text-sm leading-relaxed text-foreground">{post.embedText || post.excerpt}</p>
+      </div>
+      <div className="flex items-center gap-1 border-t border-border px-4 py-2.5 text-xs font-medium text-primary">
+        {language === 'fr' ? 'Voir sur LinkedIn' : 'View on LinkedIn'}<ArrowUpRight className="h-3.5 w-3.5" />
+      </div>
+    </a>
+  );
+};
+
 const LinkedInPostCard = ({ post }: { post: LinkedInPost }) => {
   const { language } = useTranslation();
   const title = language === 'en' ? post.title_en || post.title : post.title;
   const excerpt = language === 'en' ? post.excerpt_en || post.excerpt : post.excerpt;
   const date = new Intl.DateTimeFormat(language === 'fr' ? 'fr-FR' : 'en-GB', { dateStyle: 'medium' }).format(new Date(post.date));
-  const tags = <div className={`flex flex-wrap gap-2 ${post.embedUrn ? 'mt-4' : 'mt-8'}`}>{post.tags.map(tag => <span key={tag} className={`text-primary bg-primary/5 rounded-md ${post.embedUrn ? 'text-xs px-2 py-1' : 'text-sm px-3 py-1.5'}`}>{tag}</span>)}</div>;
-  const heading = <><time dateTime={post.date} className="text-xs text-muted-foreground">{date}</time><h3 className={`font-semibold mt-4 ${post.embedUrn ? 'text-xl' : 'text-3xl leading-tight'}`}>{title}</h3></>;
-  const body = <p className={`mt-5 leading-relaxed text-muted-foreground ${post.embedUrn ? 'text-sm' : 'text-xl border-l-2 border-primary pl-5'}`}>{excerpt}</p>;
-  const footer = post.embedUrn
-    ? <div className="p-6 pt-0"><Button asChild variant="link" className="p-0"><a href={post.url} target="_blank" rel="noopener noreferrer">{language === 'fr' ? 'Lire sur LinkedIn' : 'Read on LinkedIn'}<ArrowUpRight /></a></Button></div>
-    : <div className="border-t border-border p-6"><Button asChild variant="outline" className="w-full justify-center"><a href={post.url} target="_blank" rel="noopener noreferrer"><Linkedin className="h-4 w-4" />{language === 'fr' ? 'Voir le post sur LinkedIn' : 'View the post on LinkedIn'}<ArrowUpRight /></a></Button></div>;
-  // Posts without an embedUrn get a text-only card: content anchored to the top,
-  // extra space spread between blocks so the card stays the same height as the others.
-  const noEmbed = post.embedUrn
-    ? <>{heading}{body}{tags}</>
-    : <><div className="flex items-center gap-3"><span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary"><Linkedin className="h-5 w-5" /></span><span className="min-w-0"><span className="block truncate text-base font-medium">{profile.name}</span><span className="block text-xs text-muted-foreground">LinkedIn</span></span></div>{heading}{body}{tags}</>;
   return <article className="surface overflow-hidden flex flex-col">
-    {post.embedUrn && <iframe title={post.title} loading="lazy" src={`https://www.linkedin.com/embed/feed/update/${post.embedUrn}`} className="w-full h-[420px] border-0" />}
-    <div className={`flex-1 ${post.embedUrn ? 'p-6' : 'p-8 flex flex-col justify-between'}`}>{noEmbed}</div>
-    {footer}
+    {post.embedUrn
+      ? <iframe title={post.title} loading="lazy" src={`https://www.linkedin.com/embed/feed/update/${post.embedUrn}`} className="w-full h-[420px] border-0" />
+      : <StaticLinkedInCard post={post} />}
+    <div className="flex-1 p-6">
+      <time dateTime={post.date} className="text-xs text-muted-foreground">{date}</time>
+      <h3 className="font-semibold mt-4 text-xl">{title}</h3>
+      <p className="mt-5 leading-relaxed text-muted-foreground text-sm">{excerpt}</p>
+      <div className="flex flex-wrap gap-2 mt-4">{post.tags.map(tag => <span key={tag} className="text-primary bg-primary/5 rounded-md text-xs px-2 py-1">{tag}</span>)}</div>
+    </div>
+    <div className="p-6 pt-0"><Button asChild variant="link" className="p-0"><a href={post.url} target="_blank" rel="noopener noreferrer">{language === 'fr' ? 'Lire sur LinkedIn' : 'Read on LinkedIn'}<ArrowUpRight /></a></Button></div>
   </article>;
 };
 

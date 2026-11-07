@@ -22,8 +22,8 @@ export const profile = {
     "en": "Master's in Data graduate from Paris School of Technology & Business and Eugenia School (2026), after a first year of the MSc Analytics for Business at Albert School."
   },
   "current": {
-    "fr": "Dernier poste : Business Analyst Ops chez Partoo (sept. 2025 – sept. 2026)",
-    "en": "Latest role: Business Analyst Ops at Partoo (Sep 2025 – Sep 2026)"
+    "fr": "Dernier poste : Business Analyst Ops (alternance) chez Partoo (sept. 2025 – sept. 2026)",
+    "en": "Latest role: Business Analyst Ops (apprenticeship) at Partoo (Sep 2025 – Sep 2026)"
   },
   "photo": "/photo-gabriel-pelenga-mangi.jpg",
   "email": "gabrielpelenga@gmail.com",
@@ -31,14 +31,14 @@ export const profile = {
   "phoneHref": "tel:+33672620165",
   "links": {
     "cv": "/CV_Gabriel_PELENGA_MANGI.pdf",
-    "linkedin": "https://www.linkedin.com/in/gabriel-pelenga-mangi-820487182/",
-    "activity": "https://www.linkedin.com/in/gabriel-pelenga-mangi-820487182/recent-activity/all/",
+    "linkedin": "https://www.linkedin.com/in/gabriel-pelenga-mangi/",
+    "activity": "https://www.linkedin.com/in/gabriel-pelenga-mangi/recent-activity/all/",
     "calendly": "https://calendly.com/gabrielpelenga/30min"
   },
   "about": [
     {
-      "fr": "Business Analyst spécialisé en opérations commerciales et en data, je recherche un CDI à partir d'octobre 2026, à Paris ou en périphérie.",
-      "en": "Business Analyst specialising in sales operations and data, I am looking for a permanent position from October 2026, in Paris or the surrounding area."
+      "fr": "Business Analyst spécialisé en opérations commerciales et en data, je recherche un CDI, disponible immédiatement, à Paris ou en périphérie.",
+      "en": "Business Analyst specialising in sales operations and data, I am looking for a permanent position, available immediately, in Paris or the surrounding area."
     },
     {
       "fr": "Pendant un an chez Partoo, j'ai géré et réparti les portefeuilles de leads des équipes commerciales, analysé les appels et les rendez-vous des Account Executives, cartographié les territoires clients et fiabilisé les données du CRM. J'y ai automatisé l'attribution des leads (round robin) et créé des web apps pour repérer les leads chauds : ces actions ont contribué à 9 % du pipeline commercial généré.",
@@ -66,8 +66,8 @@ export const profile = {
         "en": "Open to permanent roles"
       },
       "description": {
-        "fr": "À partir d'octobre 2026 · Paris et périphérie",
-        "en": "From October 2026 · Paris area"
+        "fr": "Disponible immédiatement · Paris et périphérie",
+        "en": "Available immediately · Paris area"
       }
     },
     {
@@ -90,15 +90,18 @@ export const profile = {
     "Microsoft Azure",
     "Databricks",
     "Tableau",
-    "Excel"
+    "Excel",
+    "Make",
+    "API",
+    "Dataiku"
   ],
   "experiences": [
     {
       "id": "partoo",
       "company": "Partoo",
       "title": {
-        "fr": "Business Analyst Ops",
-        "en": "Business Analyst Ops"
+        "fr": "Business Analyst Ops (alternance)",
+        "en": "Business Analyst Ops (apprenticeship)"
       },
       "start": "2025-09",
       "end": "2026-09",
@@ -141,8 +144,8 @@ export const profile = {
       "id": "verisure",
       "company": "Verisure",
       "title": {
-        "fr": "Analyste BI",
-        "en": "BI Analyst"
+        "fr": "Analyste BI (stage)",
+        "en": "BI Analyst (internship)"
       },
       "start": "2024-09",
       "end": "2025-03",
@@ -173,8 +176,8 @@ export const profile = {
       "id": "greenflex",
       "company": "GreenFlex",
       "title": {
-        "fr": "Chef de projet",
-        "en": "Project Manager"
+        "fr": "Chef de projet (stage)",
+        "en": "Project Manager (internship)"
       },
       "start": "2024-04",
       "end": "2024-09",
@@ -209,8 +212,8 @@ export const profile = {
       "id": "koesio",
       "company": "Koesio",
       "title": {
-        "fr": "Chargé d'affaires",
-        "en": "Account Manager"
+        "fr": "Chargé d'affaires (alternance)",
+        "en": "Account Manager (apprenticeship)"
       },
       "start": "2022-11",
       "end": "2023-09",
@@ -265,12 +268,12 @@ export const profile = {
     {
       "school": "ICD Business School",
       "degree": {
-        "fr": "Bachelor Responsable Commercial Marketing",
-        "en": "Bachelor in Sales & Marketing Management"
+        "fr": "Bachelor Responsable Commercial Marketing (alternance)",
+        "en": "Bachelor in Sales & Marketing Management (apprenticeship)"
       },
       "period": {
-        "fr": "",
-        "en": ""
+        "fr": "2022 – 2023",
+        "en": "2022 – 2023"
       },
       "courses": {
         "fr": "Marketing, Statistiques, Communication, Négociation, Management, E-commerce",
@@ -449,8 +452,8 @@ export const profile = {
     {
       "name": "Basketball",
       "period": {
-        "fr": "2014 – 2022 (7 ans)",
-        "en": "2014 – 2022 (7 years)"
+        "fr": "2014 – 2022 (8 ans)",
+        "en": "2014 – 2022 (8 years)"
       },
       "title": {
         "fr": "Capitaine des U-19",

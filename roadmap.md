@@ -1,4 +1,5 @@
 # Portfolio redesign
+- [x] Apply requested bilingual content corrections, LinkedIn URLs and project order; create and verify share image and metadata without publishing.
 - [x] Add energy renovation project first, bilingual case study/detail, uploaded screenshots and external links; verify desktop/mobile and both themes.
 - [x] Add Lead Engine live-app and GitHub links in the case study and detail page, FR/EN, verified on both themes and screen sizes.
 - [ ] Unify profile data and localized dates without changing facts.

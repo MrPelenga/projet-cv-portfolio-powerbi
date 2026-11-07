@@ -14,7 +14,7 @@ export const linkedinPosts: LinkedInPost[] = [
   {
     id: "certification-pl300-2026-11",
     url: "https://www.linkedin.com/posts/gabriel-pelenga-mangi_powerbi-pl300-dataanalyst-activity-7524645510054387712-_YjA",
-    embedUrn: "urn:li:activity:7524645510054387712",
+    embedUrn: "urn:li:ugcPost:7524645509253275648",
     date: "2026-11-07",
     title: "Certifié Microsoft Power BI Data Analyst Associate (PL-300)",
     excerpt: "J'ai obtenu la certification Microsoft Power BI Data Analyst Associate (PL-300) : Power Query, modélisation, DAX et Power BI Service. Merci à MYPE Consulting, Amadou Dieye et Paul MD Aminul pour la formation.",

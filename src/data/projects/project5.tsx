@@ -35,10 +35,14 @@ export const project5: Project = {
     'Before / after performance dashboard',
     'Test on a 200-lead file',
   ],
-  description_extended: `Les leads entrants étaient répartis à la main depuis un tableur marketing. Les leads chauds étaient contactés le lendemain, deux commerciaux recevaient la moitié du volume, et des leads hors cible encombraient les files de travail. Résultat : des deals qualifiés perdus dès l'entrée du pipeline.
+  description_extended: `Cas d'usage simulé : les données et le contexte sont fictifs, construits pour reproduire une situation courante en équipe commerciale.
+
+Les leads entrants étaient répartis à la main depuis un tableur marketing. Les leads chauds étaient contactés le lendemain, deux commerciaux recevaient la moitié du volume, et des leads hors cible encombraient les files de travail. Résultat : des deals qualifiés perdus dès l'entrée du pipeline.
 
 Lead Engine est une application en 7 modules : BDR Targeter, scoring explicable (fit firmographique /50 + engagement /50, grades A à D), moteur d'assignation (sourcing, compte, segment, territoire, Round Robin pondéré), files de travail avec SLA, tableau de pilotage, documentation SLA générée automatiquement et import/diagnostic d'exports CRM.`,
-  description_extended_en: `Inbound leads were distributed by hand from a marketing spreadsheet. Hot leads were contacted the next day, two reps received half of the volume, and off-target leads cluttered the work queues. The result: qualified deals lost at the very top of the pipeline.
+  description_extended_en: `Simulated use case: the data and context are fictional, built to reproduce a common sales-team situation.
+
+Inbound leads were distributed by hand from a marketing spreadsheet. Hot leads were contacted the next day, two reps received half of the volume, and off-target leads cluttered the work queues. The result: qualified deals lost at the very top of the pipeline.
 
 Lead Engine is a 7-module app: BDR Targeter, explainable scoring (firmographic fit /50 + engagement /50, grades A to D), routing engine (sourcing, account, segment, territory, weighted Round Robin), work queues with SLA, performance dashboard, auto-generated SLA documentation and CRM export import/diagnostic.`,
   objectives: [
@@ -57,6 +61,7 @@ Lead Engine is a 7-module app: BDR Targeter, explainable scoring (firmographic f
   ],
   technologies: ['Python', 'Streamlit', 'Pandas', 'SQLite', 'Altair', 'Graphviz', 'API Hunter / Apollo / Lusha / Kaspr', 'Gemini'],
   client: 'Projet personnel - Portfolio RevOps',
+  client_en: 'Personal project - RevOps Portfolio',
   period: '2026',
   period_en: '2026',
   logo: cover,

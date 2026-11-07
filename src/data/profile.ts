@@ -6,8 +6,8 @@ export type Certification = { id: string; name: string; issuer: string; skills: 
 export const profile = {
   "name": "Gabriel Pelenga Mangi",
   "title": {
-    "fr": "Business Analyst Ops · Sales Ops & BI",
-    "en": "Business Analyst Ops · Sales Ops & BI"
+    "fr": "Data & Business Analyst · Sales Ops, RevOps & BI",
+    "en": "Data & Business Analyst · Sales Ops, RevOps & BI"
   },
   "tagline": {
     "fr": "Je fiabilise les données commerciales, construis des tableaux de bord utiles aux équipes et automatise les processus de vente.",
@@ -431,8 +431,8 @@ export const profile = {
         "en": "Spanish"
       },
       "level": {
-        "fr": "Professionnel limité",
-        "en": "Limited working"
+        "fr": "Notions",
+        "en": "Basic"
       }
     }
   ],

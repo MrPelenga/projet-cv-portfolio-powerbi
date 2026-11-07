@@ -30,7 +30,8 @@ export const project1: Project = {
     "Present data in a clear and visually appealing way"
   ],
   technologies: ["Power BI", "DAX", "NBA Stats", "Power Query"],
-  client: "Freelance",
+  client: "Projet personnel - Portfolio Data",
+  client_en: "Personal project - Data Portfolio",
   period: "Saison 2023-2024",
   period_en: "2023-2024 Season"
 };

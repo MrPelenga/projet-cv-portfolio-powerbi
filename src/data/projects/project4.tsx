@@ -3,8 +3,8 @@ import { Project } from '@/components/ProjectsList';
 export const project4: Project = {
   id: '4',
   title: 'Dashboard Power BI - Sales KPI',
-  description: 'Application web interactive reproduisant un tableau de bord commercial avec métriques de vente en temps réel et graphiques dynamiques pour le pilotage des performances business.',
-  description_en: 'Interactive web application replicating a commercial dashboard with real-time sales metrics and dynamic charts for business performance management.',
+  description: "Reproduction web d'un rapport Power BI de pilotage commercial : KPI de ventes, filtres par année et par pays, graphiques interactifs.",
+  description_en: 'Web reproduction of a Power BI sales performance report: sales KPIs, filters by year and country, interactive charts.',
   image: '/lovable-uploads/47e56869-f196-4f8f-ab58-de458a03262b.png',
   tags: ['Power BI', 'Dashboard', 'React', 'Charts', 'Analytics'],
   tags_en: ['Power BI', 'Dashboard', 'React', 'Charts', 'Analytics'],
@@ -41,7 +41,8 @@ The dashboard presents essential KPIs such as total revenue (€10.03M), number 
     "Tailwind CSS",
     "Shadcn/ui"
   ],
-  client: "Gabriel PELENGA MANGI - Portfolio",
+  client: "Projet personnel - Portfolio Data",
+  client_en: "Personal project - Data Portfolio",
   period: "2024-2025",
   period_en: "2024-2025",
   logo: '/lovable-uploads/47e56869-f196-4f8f-ab58-de458a03262b.png'

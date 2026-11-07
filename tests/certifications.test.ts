@@ -8,13 +8,12 @@ test('certifications are listed newest first, Power BI PL-300 on top', () => {
 
 test('PL-300 shows its November 2026 date, its new badge and the training note', () => {
   const pl300 = profile.certifications.find(c => c.id === 'pl300');
-  ok(pl300);
-  strictEqual(pl300.name, 'Microsoft Certified: Power BI Data Analyst Associate (exam PL-300)');
-  strictEqual(pl300.issuer, 'Microsoft');
-  deepStrictEqual(pl300.date, { fr: 'Nov. 2026', en: 'Nov 2026' });
-  strictEqual(pl300.isNew, true);
-  strictEqual(pl300.note.fr, 'Formation suivie chez MYPE Consulting');
-  strictEqual(pl300.note.en, 'Training completed at MYPE Consulting');
+  strictEqual(pl300?.name, 'Microsoft Certified: Power BI Data Analyst Associate (exam PL-300)');
+  strictEqual(pl300?.issuer, 'Microsoft');
+  deepStrictEqual(pl300?.date, { fr: 'Nov. 2026', en: 'Nov 2026' });
+  strictEqual(pl300?.isNew, true);
+  strictEqual(pl300?.note?.fr, 'Formation suivie chez MYPE Consulting');
+  strictEqual(pl300?.note?.en, 'Training completed at MYPE Consulting');
 });
 
 test('certifications without a given date show none, and no verification link is invented', () => {

@@ -14,17 +14,6 @@ export interface LinkedInPost {
 // One entry = one real post. Keep dates in ISO format, newest first.
 export const linkedinPosts: LinkedInPost[] = [
   {
-    id: "certification-pl300-2026-11",
-    url: "https://www.linkedin.com/posts/gabriel-pelenga-mangi_powerbi-pl300-dataanalyst-activity-7524645510054387712-_YjA",
-    date: "2026-11-07",
-    title: "Certifié Microsoft Power BI Data Analyst Associate (PL-300)",
-    excerpt: "J'ai obtenu la certification Microsoft Power BI Data Analyst Associate (PL-300) : Power Query, modélisation, DAX et Power BI Service. Merci à MYPE Consulting, Amadou Dieye et Paul MD Aminul pour la formation.",
-    tags: ["Power BI", "PL-300", "Certification", "Data"],
-    embedText: "Je suis heureux de vous annoncer que j'ai obtenu la certification Microsoft Certified: Power BI Data Analyst Associate (PL-300) ! 🎉\n\nCette certification valide les compétences au cœur de mon métier :\n🔹 préparer et transformer les données avec Power Query ;\n🔹 construire un modèle de données solide ;\n🔹 écrire des mesures en DAX ;\n🔹 publier, partager et sécuriser les rapports dans Power BI Service.\n\nUn grand merci à MYPE Consulting, Amadou Dieye et Paul MD Aminul pour leur pédagogie et leurs conseils.",
-    title_en: "Microsoft Certified: Power BI Data Analyst Associate (PL-300)",
-    excerpt_en: "I earned the Microsoft Power BI Data Analyst Associate (PL-300) certification: Power Query, data modeling, DAX and Power BI Service. Thanks to MYPE Consulting, Amadou Dieye and Paul MD Aminul for the training.",
-  },
-  {
     id: "panier-moyen-vs-mediane-2026-10",
     url: "https://www.linkedin.com/feed/update/urn:li:share:7521163935643938817",
     embedUrn: "urn:li:share:7521163935643938817",

@@ -23,14 +23,14 @@ The dashboard presents essential KPIs such as total revenue (€10.03M), number 
   objectives: [
     "Créer une interface dashboard moderne et interactive",
     "Implémenter des graphiques dynamiques avec barres horizontales visibles",
-    "Développer un système de filtres en temps réel par année et pays",
+    "Développer un système de filtres dynamiques par année et pays",
     "Assurer une navigation fluide entre les vues analytiques",
     "Reproduire l'expérience utilisateur Power BI avec des couleurs cohérentes"
   ],
   objectives_en: [
     "Create a modern and interactive dashboard interface",
     "Implement dynamic charts with visible horizontal bars",
-    "Develop a real-time filter system by year and country",
+    "Develop a dynamic filter system by year and country",
     "Ensure smooth navigation between analytical views",
     "Replicate the Power BI user experience with consistent colors"
   ],

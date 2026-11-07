@@ -523,7 +523,7 @@ export const profile = {
         "en": "Cloud computing fundamentals on AWS."
       }
     }
-  ]
+  ] as Certification[]
 };
 export const localized = (value: Localized, language: Language) => value[language];
 const months = { fr: ["Janv.", "Févr.", "Mars", "Avr.", "Mai", "Juin", "Juil.", "Août", "Sept.", "Oct.", "Nov.", "Déc."], en: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"] };

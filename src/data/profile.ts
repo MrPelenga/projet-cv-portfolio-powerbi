@@ -2,7 +2,7 @@
 import type { Language } from "@/hooks/useTranslation";
 export type Localized = { fr: string; en: string };
 export type Education = { school: string; degree: Localized; period: Localized; courses?: Localized; tools?: string };
-export type Certification = { id: string; name: string; issuer: string; skills: Localized; date?: Localized; isNew?: boolean; note?: Localized; icon: 'chart' | 'brain' | 'clipboard' | 'cloud' };
+export type Certification = { id: string; name: string; issuer: string; skills: Localized; date?: Localized; validUntil?: Localized; credentialId?: string; isNew?: boolean; note?: Localized; icon: 'chart' | 'brain' | 'clipboard' | 'cloud' | 'pipeline' | 'flask' | 'analytics' | 'database' };
 export const profile = {
   "name": "Gabriel Pelenga Mangi",
   "title": {

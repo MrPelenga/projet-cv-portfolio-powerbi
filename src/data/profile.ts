@@ -2,7 +2,7 @@
 import type { Language } from "@/hooks/useTranslation";
 export type Localized = { fr: string; en: string };
 export type Education = { school: string; degree: Localized; period: Localized; courses?: Localized; tools?: string };
-export type Certification = { id: string; name: string; issuer: string; skills: Localized; date?: Localized; isNew?: boolean; note?: Localized; icon: 'chart' | 'brain' | 'clipboard' | 'cloud' };
+export type Certification = { id: string; name: string; issuer: string; skills: Localized; date?: Localized; validUntil?: Localized; credentialId?: string; isNew?: boolean; note?: Localized; icon: 'chart' | 'brain' | 'clipboard' | 'cloud' | 'pipeline' | 'flask' | 'analytics' | 'database' };
 export const profile = {
   "name": "Gabriel Pelenga Mangi",
   "title": {
@@ -472,7 +472,7 @@ export const profile = {
     "fr": "Paris et périphérie",
     "en": "Paris area"
   },
-  // Newest first. Only the dates given by the owner are stored here; no credential IDs or verification links are invented.
+  // Newest first. Only the dates, validity ends and credential IDs given by the owner are stored here; no verification links are invented.
   "certifications": [
     {
       "id": "pl300",
@@ -480,8 +480,8 @@ export const profile = {
       "issuer": "Microsoft",
       "icon": "chart",
       "date": {
-        "fr": "Nov. 2026",
-        "en": "Nov 2026"
+        "fr": "7 novembre 2026",
+        "en": "7 November 2026"
       },
       "isNew": true,
       "skills": {
@@ -494,10 +494,33 @@ export const profile = {
       }
     },
     {
+      "id": "aws",
+      "name": "AWS Academy Graduate – Cloud Foundations",
+      "issuer": "Amazon Web Services",
+      "icon": "cloud",
+      "date": {
+        "fr": "Juil. 2026",
+        "en": "Jul 2026"
+      },
+      "skills": {
+        "fr": "Fondamentaux du cloud computing sur AWS.",
+        "en": "Cloud computing fundamentals on AWS."
+      }
+    },
+    {
       "id": "azure-ds",
-      "name": "Microsoft Certified: Azure Data Scientist Associate",
+      "name": "Microsoft Certified: Azure Data Scientist Associate (exam DP-100)",
       "issuer": "Microsoft",
       "icon": "brain",
+      "date": {
+        "fr": "Juin 2026",
+        "en": "Jun 2026"
+      },
+      "validUntil": {
+        "fr": "Juin 2027",
+        "en": "Jun 2027"
+      },
+      "credentialId": "FA6731E8268BFFB0",
       "skills": {
         "fr": "Entraînement et déploiement de modèles de machine learning sur Azure.",
         "en": "Training and deploying machine learning models on Azure."
@@ -508,19 +531,75 @@ export const profile = {
       "name": "PMI Project Management Ready™",
       "issuer": "Project Management Institute (PMI)",
       "icon": "clipboard",
+      "date": {
+        "fr": "Févr. 2026",
+        "en": "Feb 2026"
+      },
+      "validUntil": {
+        "fr": "Févr. 2031",
+        "en": "Feb 2031"
+      },
       "skills": {
         "fr": "Fondamentaux de la gestion de projet.",
         "en": "Project management fundamentals."
       }
     },
     {
-      "id": "aws",
-      "name": "AWS Academy Graduate – Cloud Foundations",
-      "issuer": "Amazon Web Services",
-      "icon": "cloud",
+      "id": "dataiku-dev",
+      "name": "Dataiku Developer",
+      "issuer": "Dataiku",
+      "icon": "pipeline",
+      "date": {
+        "fr": "Oct. 2025",
+        "en": "Oct 2025"
+      },
+      "credentialId": "cae5bmu4w2ry",
       "skills": {
-        "fr": "Fondamentaux du cloud computing sur AWS.",
-        "en": "Cloud computing fundamentals on AWS."
+        "fr": "Conception de pipelines de données et automatisation de projets dans Dataiku DSS.",
+        "en": "Building data pipelines and automating projects in Dataiku DSS."
+      }
+    },
+    {
+      "id": "dataiku-ml",
+      "name": "Dataiku ML Practitioner",
+      "issuer": "Dataiku",
+      "icon": "flask",
+      "date": {
+        "fr": "Mars 2025",
+        "en": "Mar 2025"
+      },
+      "credentialId": "k8mitza8bksv",
+      "skills": {
+        "fr": "Construction, évaluation et déploiement de modèles de machine learning dans Dataiku.",
+        "en": "Building, evaluating and deploying machine learning models in Dataiku."
+      }
+    },
+    {
+      "id": "dataiku-analytics",
+      "name": "Dataiku Certified Data Analytics – Specialty",
+      "issuer": "Dataiku",
+      "icon": "analytics",
+      "date": {
+        "fr": "Mars 2025",
+        "en": "Mar 2025"
+      },
+      "skills": {
+        "fr": "Préparation, analyse et visualisation des données dans Dataiku.",
+        "en": "Data preparation, analysis and visualization in Dataiku."
+      }
+    },
+    {
+      "id": "datacamp-sql",
+      "name": "Introduction to SQL",
+      "issuer": "DataCamp",
+      "icon": "database",
+      "date": {
+        "fr": "Mars 2025",
+        "en": "Mar 2025"
+      },
+      "skills": {
+        "fr": "Requêtes SQL, filtrage et agrégations (SQL, Microsoft SQL Server).",
+        "en": "SQL queries, filtering and aggregations (SQL, Microsoft SQL Server)."
       }
     }
   ] as Certification[]

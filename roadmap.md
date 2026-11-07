@@ -8,3 +8,4 @@
 - [ ] Harmonize projects, case studies and contact; remove interface emojis.
 - [ ] Update requested SEO metadata.
 - [ ] Verify routes, FR/EN, light/dark and mobile; retain all original content.
+- [ ] Add /certifications page with bilingual cards, navbar link and homepage "see all" link; verify both themes and screen sizes.

@@ -2,6 +2,7 @@
 import type { Language } from "@/hooks/useTranslation";
 export type Localized = { fr: string; en: string };
 export type Education = { school: string; degree: Localized; period: Localized; courses?: Localized; tools?: string };
+export type Certification = { id: string; name: string; issuer: string; skills: Localized; date?: Localized; isNew?: boolean; note?: Localized; icon: 'chart' | 'brain' | 'clipboard' | 'cloud' };
 export const profile = {
   "name": "Gabriel Pelenga Mangi",
   "title": {
@@ -471,10 +472,57 @@ export const profile = {
     "fr": "Paris et périphérie",
     "en": "Paris area"
   },
+  // Newest first. Only the dates given by the owner are stored here; no credential IDs or verification links are invented.
   "certifications": [
-    "Microsoft Certified: Azure Data Scientist Associate",
-    "AWS Academy Graduate – Cloud Foundations",
-    "PMI Project Management Ready™"
+    {
+      "id": "pl300",
+      "name": "Microsoft Certified: Power BI Data Analyst Associate (exam PL-300)",
+      "issuer": "Microsoft",
+      "icon": "chart",
+      "date": {
+        "fr": "Nov. 2026",
+        "en": "Nov 2026"
+      },
+      "isNew": true,
+      "skills": {
+        "fr": "Préparation et transformation des données avec Power Query, modélisation des données, mesures DAX, publication, partage et sécurisation des rapports dans Power BI Service.",
+        "en": "Preparing and transforming data with Power Query, data modeling, DAX measures, publishing, sharing and securing reports in Power BI Service."
+      },
+      "note": {
+        "fr": "Formation suivie chez MYPE Consulting",
+        "en": "Training completed at MYPE Consulting"
+      }
+    },
+    {
+      "id": "azure-ds",
+      "name": "Microsoft Certified: Azure Data Scientist Associate",
+      "issuer": "Microsoft",
+      "icon": "brain",
+      "skills": {
+        "fr": "Entraînement et déploiement de modèles de machine learning sur Azure.",
+        "en": "Training and deploying machine learning models on Azure."
+      }
+    },
+    {
+      "id": "pmi",
+      "name": "PMI Project Management Ready™",
+      "issuer": "Project Management Institute (PMI)",
+      "icon": "clipboard",
+      "skills": {
+        "fr": "Fondamentaux de la gestion de projet.",
+        "en": "Project management fundamentals."
+      }
+    },
+    {
+      "id": "aws",
+      "name": "AWS Academy Graduate – Cloud Foundations",
+      "issuer": "Amazon Web Services",
+      "icon": "cloud",
+      "skills": {
+        "fr": "Fondamentaux du cloud computing sur AWS.",
+        "en": "Cloud computing fundamentals on AWS."
+      }
+    }
   ]
 };
 export const localized = (value: Localized, language: Language) => value[language];

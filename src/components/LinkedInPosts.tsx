@@ -14,7 +14,7 @@ const relativeDate = (iso: string, language: string) => {
   return language === 'fr' ? `Il y a ${days} j` : `${days} days ago`;
 };
 
-// Every post uses this static look-alike mimics the embed
+// LinkedIn refuses to embed some posts: this static look-alike mimics the embed
 // (avatar, name, headline, logo, post text) and links to the real post.
 const StaticLinkedInCard = ({ post }: { post: LinkedInPost }) => {
   const { language } = useTranslation();
@@ -46,7 +46,9 @@ const LinkedInPostCard = ({ post }: { post: LinkedInPost }) => {
   const excerpt = language === 'en' ? post.excerpt_en || post.excerpt : post.excerpt;
   const date = new Intl.DateTimeFormat(language === 'fr' ? 'fr-FR' : 'en-GB', { dateStyle: 'medium' }).format(new Date(post.date));
   return <article className="surface overflow-hidden flex flex-col">
-    <StaticLinkedInCard post={post} />
+    {post.embedUrn
+      ? <iframe title={post.title} loading="lazy" src={`https://www.linkedin.com/embed/feed/update/${post.embedUrn}`} className="w-full h-[420px] border-0" />
+      : <StaticLinkedInCard post={post} />}
     <div className="flex-1 p-6">
       <time dateTime={post.date} className="text-xs text-muted-foreground">{date}</time>
       <h3 className="font-semibold mt-4 text-xl">{title}</h3>

@@ -14,8 +14,8 @@ export const profile = {
     "en": "I make sales data reliable, build dashboards teams actually use, and automate sales processes."
   },
   "availability": {
-    "fr": "En recherche d'un CDI · à partir d'octobre 2026",
-    "en": "Open to permanent roles · from October 2026"
+    "fr": "En recherche d'un CDI · Disponible immédiatement",
+    "en": "Looking for a permanent role · Available immediately"
   },
   "qualification": {
     "fr": "Diplômé d'un Master Data obtenu à Paris School of Technology & Business et Eugenia School (2026), après un M1 MSc Analytics for Business à l'Albert School.",

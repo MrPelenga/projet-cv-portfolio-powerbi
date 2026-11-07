@@ -587,20 +587,6 @@ export const profile = {
         "fr": "Préparation, analyse et visualisation des données dans Dataiku.",
         "en": "Data preparation, analysis and visualization in Dataiku."
       }
-    },
-    {
-      "id": "datacamp-sql",
-      "name": "Introduction to SQL",
-      "issuer": "DataCamp",
-      "icon": "database",
-      "date": {
-        "fr": "Mars 2025",
-        "en": "Mar 2025"
-      },
-      "skills": {
-        "fr": "Requêtes SQL, filtrage et agrégations (SQL, Microsoft SQL Server).",
-        "en": "SQL queries, filtering and aggregations (SQL, Microsoft SQL Server)."
-      }
     }
   ] as Certification[]
 };

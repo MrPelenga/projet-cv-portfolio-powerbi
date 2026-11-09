@@ -14,6 +14,18 @@ export interface LinkedInPost {
 // One entry = one real post. Keep dates in ISO format, newest first.
 export const linkedinPosts: LinkedInPost[] = [
   {
+    id: "tester-ia-50-cas-2026-11",
+    url: "https://www.linkedin.com/feed/update/urn:li:share:7525459686926696449",
+    embedUrn: "urn:li:share:7525459686926696449",
+    embedText: "50 demandes, un tableur et une après-midi. C'est le test que je ferais passer à n'importe quelle IA avant de l'automatiser. 🧪\n\nExemple fictif : on veut qu'un modèle de langage trie les demandes du formulaire de contact en 4 catégories. Prospect, partenaire, candidature, spam.\n\nLa démo est bluffante. Mais une démo, ce sont trois exemples bien choisis.\n\nLe test, en 4 étapes :\n\n1. Prendre 50 demandes déjà traitées, dont on connaît la bonne catégorie. Colonne A : le texte. Colonne B : la bonne réponse.\n\n2. Les faire passer dans le modèle, via Make, avec le prompt prévu. Sa réponse va en colonne C.\n\n3. Colonne D : =SI(B2=C2;1;0). On fait la somme.\n\n4. Lire les erreurs une par une. C'est là qu'est l'information. 🔍\n\nDisons 46 sur 50. 46 ÷ 50 = 92 %. Ça a l'air très bien.\n\nSauf si les 4 erreurs sont des prospects classés en spam. Ce sont précisément les demandes qu'on ne peut pas se permettre de perdre.\n\nDans ce cas : une catégorie « incertain » qui part chez un humain, un prompt corrigé, et on relance sur les mêmes 50. Même jeu de test, sinon la comparaison ne veut rien dire.\n\n⚠️ Limite : 50 cas, c'est un premier filtre, pas une preuve. Et on refait le test à chaque changement de prompt ou de modèle.\n\nUne IA ne se juge pas sur sa démo. Elle se juge sur ses erreurs.\n\n#IA #Automatisation #SalesOps #Make #Data",
+    date: "2026-11-09",
+    title: "Tester une IA sur 50 cas avant de l'automatiser",
+    excerpt: "50 demandes, un tableur et une après-midi : c'est le test que je ferais passer à n'importe quelle IA avant de l'automatiser. Une IA ne se juge pas sur sa démo, elle se juge sur ses erreurs.",
+    tags: ["IA", "Automatisation", "SalesOps", "Make"],
+    title_en: "Testing an AI on 50 cases before automating it",
+    excerpt_en: "50 requests, a spreadsheet and an afternoon: that's the test I would put any AI through before automating it. An AI is not judged on its demo, it is judged on its errors.",
+  },
+  {
     id: "panier-moyen-vs-mediane-2026-10",
     url: "https://www.linkedin.com/feed/update/urn:li:share:7521163935643938817",
     embedUrn: "urn:li:share:7521163935643938817",

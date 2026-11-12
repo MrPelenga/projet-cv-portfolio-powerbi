@@ -14,6 +14,18 @@ export interface LinkedInPost {
 // One entry = one real post. Keep dates in ISO format, newest first.
 export const linkedinPosts: LinkedInPost[] = [
   {
+    id: "clients-actifs-trois-definitions-2026-11",
+    url: "https://www.linkedin.com/feed/update/urn:li:share:7526229760809631744",
+    embedUrn: "urn:li:share:7526229760809631744",
+    embedText: "« On a combien de clients actifs ? »\n\nTrois services, trois réponses. 🤷🏾‍♂️\n\nExemple fictif, mais la scène est classique.\n\nLes ventes disent 412 : les comptes avec un contrat signé dans Salesforce.\nLa finance dit 368 : ceux qui ont payé une facture sur les 12 derniers mois.\nLe marketing dit 530 : tous les contacts qui ont acheté au moins une fois.\n\nPersonne ne ment. Personne ne s'est trompé dans ses formules.\nIls ne comptent simplement pas la même chose.\n\nEt la réunion se passe à défendre son chiffre plutôt qu'à décider.\n\nAucun dashboard ne règle ça tout seul. Le problème n'est pas technique, il est dans la définition.\n\nCe que je ferais avant de construire le moindre rapport : 📖\n\n→ écrire chaque indicateur en une phrase : ce qu'on compte, depuis quelle source, sur quelle période\n→ le faire valider une fois par un responsable\n→ le traduire en une seule mesure Power BI, réutilisée dans tous les rapports\n→ donner un autre nom aux variantes : « clients payants 12 mois », « clients CRM »\n\nTrois définitions, ça peut se défendre.\nTrois chiffres sous le même nom, non. 🎯\n\n#Data #BusinessIntelligence #PowerBI #SalesOps #DataGovernance",
+    date: "2026-11-11",
+    title: "« On a combien de clients actifs ? » Trois services, trois réponses",
+    excerpt: "Personne ne ment, ils ne comptent simplement pas la même chose. Avant de construire le moindre rapport, j'écrirais chaque indicateur en une phrase, je le ferais valider, puis je le traduirais en une seule mesure Power BI réutilisée dans tous les rapports. Trois définitions, ça peut se défendre. Trois chiffres sous le même nom, non.",
+    tags: ["Data", "Business Intelligence", "Power BI", "Data Governance"],
+    title_en: "\"How many active customers do we have?\" Three departments, three answers",
+    excerpt_en: "Nobody is lying, they simply aren't counting the same thing. Before building any report, I would write each indicator in one sentence, have it validated, then translate it into a single Power BI measure reused across all reports. Three definitions can be defended. Three numbers under the same name cannot.",
+  },
+  {
     id: "tester-ia-50-cas-2026-11",
     url: "https://www.linkedin.com/feed/update/urn:li:share:7525459686926696449",
     embedUrn: "urn:li:share:7525459686926696449",

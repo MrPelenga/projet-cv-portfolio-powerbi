@@ -14,6 +14,18 @@ export interface LinkedInPost {
 // One entry = one real post. Keep dates in ISO format, newest first.
 export const linkedinPosts: LinkedInPost[] = [
   {
+    id: "attribution-leads-tour-de-role-2026-11",
+    url: "https://www.linkedin.com/feed/update/urn:li:share:7526931944555716608",
+    embedUrn: "urn:li:share:7526931944555716608",
+    embedText: "L'erreur classique quand on automatise l'attribution des leads : viser l'égalité parfaite. 🎯\n\nLe principe a l'air sain. Un formulaire est rempli, un lead se crée dans Salesforce, et un scénario Make ou Zapier l'attribue au commercial suivant. Chacun son tour.\n\nSur le papier, c'est équitable. En pratique, trois erreurs reviennent.\n\n1. Oublier les absents. 📅\nLe tour tombe sur quelqu'un en congé, et le lead attend son retour.\nExemple fictif : 4 commerciaux, 60 leads par mois, soit 15 chacun. Si l'un d'eux est absent 2 semaines sur 4, environ 7 ou 8 de ses leads dorment.\nLa parade : un simple champ « disponible » que le scénario consulte avant d'attribuer.\n\n2. Ignorer le contexte.\nUn client existant qui remplit le formulaire n'a rien à faire dans la file. Avant le tour de rôle, on vérifie si l'entreprise a déjà un propriétaire dans le CRM, et on lui renvoie le lead.\n\n3. S'arrêter à l'attribution.\nAttribuer, c'est la moitié du travail. Un contrôle quotidien suffit : tout lead sans aucune activité 48 h après attribution remonte au manager. 🔔\n\nLe tour de rôle n'est pas le problème. C'est une règle de départ, pas un système.\n\n#Automatisation #SalesOps #Salesforce #Make #LeadManagement",
+    date: "2026-11-13",
+    title: "Attribution des leads : le tour de rôle ne suffit pas",
+    excerpt: "L'erreur classique quand on automatise l'attribution des leads : viser l'égalité parfaite. Trois erreurs reviennent : oublier les absents, ignorer le contexte et s'arrêter à l'attribution. Le tour de rôle n'est pas le problème, c'est une règle de départ, pas un système.",
+    tags: ["Automatisation", "SalesOps", "Salesforce", "Lead Management"],
+    title_en: "Lead assignment: round-robin is not enough",
+    excerpt_en: "The classic mistake when automating lead assignment: aiming for perfect equality. Three mistakes keep coming up: forgetting who is absent, ignoring context and stopping at assignment. Round-robin is not the problem, it is a starting rule, not a system.",
+  },
+  {
     id: "clients-actifs-trois-definitions-2026-11",
     url: "https://www.linkedin.com/feed/update/urn:li:share:7526229760809631744",
     embedUrn: "urn:li:share:7526229760809631744",

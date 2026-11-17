@@ -14,6 +14,18 @@ export interface LinkedInPost {
 // One entry = one real post. Keep dates in ISO format, newest first.
 export const linkedinPosts: LinkedInPost[] = [
   {
+    id: "automatisation-casse-en-silence-2026-11",
+    url: "https://www.linkedin.com/feed/update/urn:li:share:7528000180164427776",
+    embedUrn: "urn:li:share:7528000180164427776",
+    embedText: "Une automatisation qui plante, c'est une bonne nouvelle. ✅\n\nCelle qui s'arrête sans rien dire, beaucoup moins.\n\nExemple fictif : un scénario Make enrichit les nouveaux leads depuis des mois. Un jour, la connexion à Salesforce expire.\n\nAucune alerte. Les fiches arrivent simplement à moitié vides.\nOn s'en rend compte trois semaines plus tard, quand un commercial demande pourquoi il n'a plus d'emails. 🔕\n\nLe problème n'était pas l'outil. Personne n'avait prévu le jour où ça casserait.\n\nCe que je prévois dans chaque scénario, Make ou Zapier : 🛠️\n\n1. Une gestion d'erreur qui envoie une alerte, par mail ou dans Teams, avec le nom du scénario et l'enregistrement en cause.\n\n2. Un contrôle de volume. Si le scénario traite 0 lead un jour où il en arrive d'habitude une vingtaine, ça mérite aussi un message. Zéro erreur ne veut pas dire que tout va bien.\n\n3. Un responsable nommé, et trois lignes de documentation : ce que fait le scénario, d'où viennent les données, quoi faire s'il s'arrête.\n\nRien de spectaculaire. C'est pourtant ce qui sépare un gain de temps d'une dette.\n\nCombien de vos automatisations vous préviendraient si elles s'arrêtaient ce soir ? 👇🏾\n\n#Automatisation #Make #Zapier #SalesOps #NoCode",
+    date: "2026-11-16",
+    title: "L'automatisation qui casse en silence",
+    excerpt: "Une automatisation qui plante, c'est une bonne nouvelle. Celle qui s'arrête sans rien dire, beaucoup moins. Dans chaque scénario Make ou Zapier, je prévois une alerte en cas d'erreur, un contrôle de volume et un responsable nommé avec trois lignes de documentation.",
+    tags: ["Automatisation", "Make", "Zapier", "SalesOps"],
+    title_en: "The automation that breaks silently",
+    excerpt_en: "An automation that crashes is good news. One that stops without saying anything, much less so. In every Make or Zapier scenario, I set up an error alert, a volume check and a named owner with three lines of documentation.",
+  },
+  {
     id: "attribution-leads-tour-de-role-2026-11",
     url: "https://www.linkedin.com/feed/update/urn:li:share:7526931944555716608",
     embedUrn: "urn:li:share:7526931944555716608",

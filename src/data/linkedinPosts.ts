@@ -14,6 +14,18 @@ export interface LinkedInPost {
 // One entry = one real post. Keep dates in ISO format, newest first.
 export const linkedinPosts: LinkedInPost[] = [
   {
+    id: "moyenne-de-pourcentages-2026-11",
+    url: "https://www.linkedin.com/feed/update/urn:li:share:7528732481756479488",
+    embedUrn: "urn:li:share:7528732481756479488",
+    embedText: "Le taux de conversion de cette équipe : 30 % ou 20 % ? 🤔\n\nExemple fictif, mais l'erreur est partout dans les reportings commerciaux.\n\nTrois commerciaux :\n→ A : 3 deals signés sur 5 leads = 60 %\n→ B : 20 sur 100 = 20 %\n→ C : 2 sur 20 = 10 %\n\nMoyenne des trois taux : (60 + 20 + 10) ÷ 3 = 30 %.\n\nMais l'équipe a signé 25 deals sur 125 leads. 25 ÷ 125 = 20 %.\n\nLes deux calculs sont « justes ». Un seul répond à la question.\n\nLa moyenne des taux donne le même poids aux 5 leads de A qu'aux 100 leads de B. Résultat : un chiffre gonflé de 10 points, porté par le plus petit volume. 📉\n\nLa règle que j'applique : un taux se recalcule toujours à partir des totaux. On ne fait pas la moyenne de pourcentages.\n\nEn pratique 🛠️\n- Excel : SOMME(signés) / SOMME(leads), pas MOYENNE de la colonne %\n- Power BI : une mesure DIVIDE(SUM(signés), SUM(leads)), pas une colonne de taux agrégée en « Moyenne »\n\nLe tableau a l'air propre. C'est justement pour ça que personne ne vérifie le chiffre de l'équipe.\n\n#Data #PowerBI #Excel #SalesOps #Analytics",
+    date: "2026-11-18",
+    title: "Taux de conversion : 30 % ou 20 % ? Ne pas faire la moyenne de pourcentages",
+    excerpt: "La moyenne des trois taux donne 30 %, mais l'équipe a signé 25 deals sur 125 leads, soit 20 %. La règle que j'applique : un taux se recalcule toujours à partir des totaux. On ne fait pas la moyenne de pourcentages.",
+    tags: ["Data", "Power BI", "Excel", "SalesOps"],
+    title_en: "Conversion rate: 30% or 20%? Don't average percentages",
+    excerpt_en: "The average of the three rates gives 30%, but the team signed 25 deals out of 125 leads, which is 20%. The rule I apply: a rate is always recalculated from the totals. You don't average percentages.",
+  },
+  {
     id: "automatisation-casse-en-silence-2026-11",
     url: "https://www.linkedin.com/feed/update/urn:li:share:7528000180164427776",
     embedUrn: "urn:li:share:7528000180164427776",

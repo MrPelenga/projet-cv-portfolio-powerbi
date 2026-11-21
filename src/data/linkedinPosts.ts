@@ -14,6 +14,18 @@ export interface LinkedInPost {
 // One entry = one real post. Keep dates in ISO format, newest first.
 export const linkedinPosts: LinkedInPost[] = [
   {
+    id: "relance-devis-automatique-2026-11",
+    url: "https://www.linkedin.com/feed/update/urn:li:share:7529498805185105921",
+    embedUrn: "urn:li:share:7529498805185105921",
+    embedText: "Le devis est parti il y a 12 jours. Personne ne l'a relancé. 📄\n\nExemple fictif. Et ce n'est presque jamais de la paresse : simplement, rien n'a rappelé à personne de le faire.\n\nVoici le petit workflow que je monterais dans Make pour que ça n'arrive plus. ⚙️\n\n1. Chaque matin, Make interroge Salesforce : les opportunités au stade « Devis envoyé », sans aucune activité depuis 3 jours.\n\n2. Un filtre écarte celles où le client a déjà répondu, et celles marquées « ne pas relancer ».\n\n3. Pour les autres, Make crée une tâche au commercial, avec un brouillon de mail prêt : nom du contact, montant, date du devis.\n\n4. À J+10 sans réponse, l'opportunité passe en « à risque » et le manager est prévenu.\n\nLe point qui compte : le mail ne part pas tout seul chez le client. Le commercial relit, ajuste, envoie.\nUne relance robotique reçue par quelqu'un qui a appelé la veille fait plus de dégâts que pas de relance du tout.\n\n⚠️ La limite : tout repose sur le stade de l'opportunité. S'il n'est pas tenu à jour dans Salesforce, le workflow relance dans le vide.\n\nL'automatisation ne fait pas la relance à votre place. Elle empêche de l'oublier.\n\n#Automatisation #SalesOps #Make #Salesforce #CRM",
+    date: "2026-11-20",
+    title: "Le devis parti il y a 12 jours que personne n'a relancé",
+    excerpt: "Le devis est parti il y a 12 jours. Personne ne l'a relancé. Voici le petit workflow que je monterais dans Make pour que ça n'arrive plus. L'automatisation ne fait pas la relance à votre place. Elle empêche de l'oublier.",
+    tags: ["Automatisation", "SalesOps", "Make", "Salesforce"],
+    title_en: "The quote sent 12 days ago that nobody followed up on",
+    excerpt_en: "The quote went out 12 days ago. Nobody followed up on it. Here is the small workflow I would set up in Make so it doesn't happen again. Automation doesn't do the follow-up for you. It keeps you from forgetting it.",
+  },
+  {
     id: "moyenne-de-pourcentages-2026-11",
     url: "https://www.linkedin.com/feed/update/urn:li:share:7528732481756479488",
     embedUrn: "urn:li:share:7528732481756479488",

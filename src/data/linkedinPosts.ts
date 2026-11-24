@@ -14,6 +14,18 @@ export interface LinkedInPost {
 // One entry = one real post. Keep dates in ISO format, newest first.
 export const linkedinPosts: LinkedInPost[] = [
   {
+    id: "ia-ne-repare-pas-le-crm-2026-11",
+    url: "https://www.linkedin.com/feed/update/urn:li:share:7530578411405312000",
+    embedUrn: "urn:li:share:7530578411405312000",
+    embedText: "L'IA ne va pas réparer votre CRM. 🤖\n\nLe scénario classique : on branche un assistant IA sur Salesforce, avec la promesse d'un scoring automatique, d'emails personnalisés et de prévisions plus fiables.\n\nSauf que dans le CRM, il y a :\n\n- des comptes en double, parfois en triple\n- des fiches sans secteur ni taille d'entreprise\n- des opportunités « en cours » dont la date de closing est passée depuis six mois\n\nL'IA ne corrige rien de tout ça. Elle écrit juste un email très bien tourné à la mauvaise personne, plus vite qu'avant.\n\nAvant un projet IA, trois questions me semblent plus utiles que n'importe quelle démo :\n\nCombien de doublons ?\nQuels champs sont vraiment remplis ?\nQui est responsable de la qualité de la donnée ?\n\nC'est moins excitant qu'un assistant qui parle. Mais c'est là que ça se joue. 🎯\n\n#IA #CRM #DataQuality #Salesforce",
+    date: "2026-11-23",
+    title: "L'IA ne va pas réparer votre CRM",
+    excerpt: "L'IA ne corrige pas les doublons ni les fiches incomplètes : elle écrit juste un email très bien tourné à la mauvaise personne, plus vite qu'avant. Avant un projet IA, trois questions me semblent plus utiles que n'importe quelle démo : combien de doublons, quels champs sont vraiment remplis, qui est responsable de la qualité de la donnée.",
+    tags: ["IA", "CRM", "Data Quality", "Salesforce"],
+    title_en: "AI won't fix your CRM",
+    excerpt_en: "AI doesn't fix duplicates or incomplete records: it just writes a very well-crafted email to the wrong person, faster than before. Before an AI project, three questions seem more useful to me than any demo: how many duplicates, which fields are actually filled in, and who is responsible for data quality.",
+  },
+  {
     id: "relance-devis-automatique-2026-11",
     url: "https://www.linkedin.com/feed/update/urn:li:share:7529498805185105921",
     embedUrn: "urn:li:share:7529498805185105921",

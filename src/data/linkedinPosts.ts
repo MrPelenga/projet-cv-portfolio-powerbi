@@ -14,6 +14,18 @@ export interface LinkedInPost {
 // One entry = one real post. Keep dates in ISO format, newest first.
 export const linkedinPosts: LinkedInPost[] = [
   {
+    id: "api-sans-coder-2026-11",
+    url: "https://www.linkedin.com/feed/update/urn:li:share:7531310735772045312",
+    embedUrn: "urn:li:share:7531310735772045312",
+    embedText: "Le mot « API » fait fuir beaucoup de gens qui pourraient s'en servir en dix minutes. 🔌\n\nUne API, c'est une adresse web à laquelle on pose une question précise et qui renvoie une réponse structurée.\n\nExemple avec Hunter :\n\nJe lui envoie un prénom, un nom et un nom de domaine.\nElle me renvoie une adresse email et un score de confiance.\n\nDans Make, ça se fait sans une ligne de code, avec le module HTTP :\n\n1. L'adresse de l'API (elle est dans la documentation de l'outil)\n2. Ma clé API, qui sert de badge d'accès 🔑\n3. Les paramètres : ce que j'envoie\n4. La réponse, dont je récupère les champs pour les envoyer où je veux, par exemple dans Salesforce\n\nTrois choses à vérifier avant de se lancer : le quota d'appels inclus dans l'abonnement, ce que l'API renvoie quand elle ne trouve rien, et où la clé est stockée (pas en clair dans un fichier partagé).\n\nUne fois qu'on a fait ça une fois, la plupart des outils du quotidien deviennent connectables entre eux. C'est le moment où l'automatisation change d'échelle.\n\nQuel outil rêveriez-vous de connecter à un autre ? 👇🏾\n\n#API #Automatisation #NoCode #Make",
+    date: "2026-11-25",
+    title: "Le mot « API » fait fuir ceux qui pourraient s'en servir en dix minutes",
+    excerpt: "Une API, c'est une adresse web à laquelle on pose une question précise et qui renvoie une réponse structurée. Dans Make, ça se fait sans une ligne de code, avec le module HTTP : une fois qu'on a fait ça une fois, la plupart des outils du quotidien deviennent connectables entre eux.",
+    tags: ["Automatisation", "API", "NoCode", "Make"],
+    title_en: "The word \"API\" scares off people who could use one in ten minutes",
+    excerpt_en: "An API is a web address you ask a precise question and that sends back a structured answer. In Make, it takes no code at all, using the HTTP module: once you've done it once, most everyday tools become connectable to each other.",
+  },
+  {
     id: "ia-ne-repare-pas-le-crm-2026-11",
     url: "https://www.linkedin.com/feed/update/urn:li:share:7530578411405312000",
     embedUrn: "urn:li:share:7530578411405312000",

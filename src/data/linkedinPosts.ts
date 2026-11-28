@@ -14,6 +14,18 @@ export interface LinkedInPost {
 // One entry = one real post. Keep dates in ISO format, newest first.
 export const linkedinPosts: LinkedInPost[] = [
   {
+    id: "power-query-excel-2026-11",
+    url: "https://www.linkedin.com/feed/update/urn:li:share:7532001537167065089",
+    embedUrn: "urn:li:share:7532001537167065089",
+    embedText: "L'outil d'automatisation le plus sous-estimé est déjà installé sur votre ordinateur. 💡\n\nIl s'appelle Power Query. Il est dans Excel, onglet Données > Obtenir des données.\n\nLe problème qu'il règle :\nChaque mois, les mêmes exports. On supprime les mêmes colonnes, on corrige les mêmes dates au mauvais format, on colle tout dans le même onglet.\n\nL'usage :\n→ Connecter Power Query au dossier où arrivent les exports\n→ Faire le nettoyage une seule fois : colonnes, formats, filtres, fusion avec une autre table\n→ Chaque action est enregistrée comme une étape, rejouable à l'identique\n\nLe mois suivant, on dépose le nouveau fichier dans le dossier et on clique sur « Actualiser ». 🔄\n\nLe gain : le nettoyage n'est plus refait à la main, et il est le même d'un mois sur l'autre. Plus d'étape oubliée un vendredi soir.\n\nBonus : c'est le même moteur dans Power BI. Ce qu'on apprend dans l'un sert dans l'autre.\n\nLes limites ⚠️\n- Si une colonne change de nom dans l'export, l'étape qui l'utilise casse.\n- Sur de gros volumes, l'actualisation ralentit : Excel n'est pas une base de données.\n- Sur Mac, la connexion à un dossier n'est pas proposée directement.\n- Des étapes jamais renommées, et plus personne ne sait reprendre le fichier.\n\nAvant d'acheter un nouvel outil, regardez ce que vous avez déjà.\n\n#Excel #PowerQuery #PowerBI #Automatisation #Data",
+    date: "2026-11-27",
+    title: "Power Query : l'outil d'automatisation le plus sous-estimé est déjà dans Excel",
+    excerpt: "Avec Power Query, on fait le nettoyage des exports une seule fois, chaque action est enregistrée comme une étape rejouable à l'identique, et le mois suivant on clique sur « Actualiser ». Avant d'acheter un nouvel outil, regardez ce que vous avez déjà.",
+    tags: ["Excel", "Power Query", "Power BI", "Automatisation"],
+    title_en: "Power Query: the most underrated automation tool is already in Excel",
+    excerpt_en: "With Power Query, you clean up your exports only once, every action is recorded as a step that can be replayed identically, and the following month you just click \"Refresh\". Before buying a new tool, look at what you already have.",
+  },
+  {
     id: "api-sans-coder-2026-11",
     url: "https://www.linkedin.com/feed/update/urn:li:share:7531310735772045312",
     embedUrn: "urn:li:share:7531310735772045312",
